@@ -339,6 +339,13 @@ function renderPlano() {
     dupBtn.onclick = () => { cloneDisplay(display.id); renderAll(); toast('Duplicated display'); };
     actions.appendChild(dupBtn);
 
+    const clrBtn = document.createElement('button');
+    clrBtn.className = 'btn';
+    clrBtn.textContent = 'Clear';
+    clrBtn.title = 'Remove all products from this display';
+    clrBtn.onclick = () => { clearDisplay(display.id); };
+    actions.appendChild(clrBtn);
+
     const rmBtn = document.createElement('button');
     rmBtn.className = 'btn';
     rmBtn.textContent = 'Remove';
@@ -806,18 +813,38 @@ function mvTip(e){const t=document.getElementById('tooltip');let x=e.clientX+14,
 //  ACTIONS
 // ================================================================
 function resetAll(){
-  displays=[];nextDisplayId=1;
-  createDisplay(currentConfig);
+  // Reset Display 1 to current config, keep other displays
+  currentConfig=currentConfig||'all';
+  const cfg=CONFIGS[currentConfig];
+  if(displays.length>0){
+    const d=displays[0];
+    for(const sid of['top','mid','bot']){d.layout[sid]=cfg.layout[sid].map(col=>({b:col.b,f:col.f||null}))}
+    d.hidden=new Set(cfg.hidden);
+  }
   renderAll();
-  toast('Reset to '+CONFIGS[currentConfig].name);
+  toast('Reset Display 1 to '+cfg.name);
 }
 
 function loadConfig(id){
+  // Apply config to Display 1 only, keep other displays
   currentConfig=id;
-  displays=[];nextDisplayId=1;
-  createDisplay(id);
+  const cfg=CONFIGS[id];
+  if(displays.length>0){
+    const d=displays[0];
+    for(const sid of['top','mid','bot']){d.layout[sid]=cfg.layout[sid].map(col=>({b:col.b,f:col.f||null}))}
+    d.hidden=new Set(cfg.hidden);
+  }
   renderAll();
-  toast('Loaded: '+CONFIGS[id].name);
+  toast('Loaded: '+cfg.name+' (Display 1)');
+}
+
+function clearDisplay(displayId){
+  const display=getDisplay(displayId);
+  if(!display)return;
+  for(const sid of['top','mid','bot']){display.layout[sid]=[]}
+  display.hidden.clear();
+  renderAll();
+  toast('Cleared display');
 }
 
 function renderConfigs(){
