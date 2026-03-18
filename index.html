@@ -16,8 +16,15 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;b
 .main{display:flex;gap:12px;padding:12px;align-items:flex-start;max-width:1500px;margin:0 auto}
 .plano-wrap{flex:1;min-width:0;overflow-x:auto}
 
+.display-wrapper{margin-bottom:24px}
+.display-controls{display:flex;justify-content:space-between;align-items:center;padding:8px 14px;background:#1a1a2e;border-radius:8px 8px 0 0;max-width:444px;margin:0 auto}
+.display-name{color:#fff;font-weight:700;font-size:13px}
+.display-actions{display:flex;gap:4px}
+.add-display-btn{display:block;margin:12px auto;padding:8px 20px;background:#2a2a4a;color:#ccc;border:2px dashed #555;border-radius:8px;cursor:pointer;font-size:12px;font-weight:600;transition:all .15s}
+.add-display-btn:hover{background:#0f3460;border-color:#e94560;color:#fff}
+
 .display-unit{margin:0 auto;filter:drop-shadow(0 4px 20px rgba(0,0,0,.18))}
-.display-header{background:#f5f2ed;border-radius:12px 12px 0 0;padding:10px 14px 6px;text-align:center;border:2px solid #c8b99a;border-bottom:none}
+.display-header{background:#f5f2ed;border-radius:0;padding:10px 14px 6px;text-align:center;border:2px solid #c8b99a;border-bottom:none}
 .display-header .brand{font-size:8px;color:#999;letter-spacing:1px}
 .display-header .title{font-size:18px;font-weight:800;margin:2px 0}.display-header .title span{color:#e53935}
 .red-banner{background:linear-gradient(135deg,#c62828,#e53935);color:#fff;padding:3px 12px;display:flex;justify-content:space-between;align-items:center;font-weight:800;font-size:11px;letter-spacing:.5px;border-left:2px solid #c8b99a;border-right:2px solid #c8b99a}
@@ -78,6 +85,10 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;b
 .idx-item .idx-shelf{font-size:8px;color:#d32f2f;font-weight:600}
 .idx-eye{width:22px;height:22px;border:none;background:none;cursor:pointer;font-size:14px;flex-shrink:0;border-radius:3px;display:flex;align-items:center;justify-content:center}
 .idx-eye:hover{background:#f0e8e0}
+.idx-add,.idx-remove{width:22px;height:22px;border:1px solid #ddd;background:#fff;cursor:pointer;font-size:14px;flex-shrink:0;border-radius:3px;display:flex;align-items:center;justify-content:center;line-height:1;padding:0}
+.idx-add:hover{background:#e8f5e9;border-color:#43A047;color:#2E7D32}
+.idx-remove:hover{background:#ffebee;border-color:#e53935;color:#c62828}
+.idx-qty{font-size:9px;font-weight:700;color:#d32f2f;background:#fff5f5;border:1px solid #ffcdd2;border-radius:8px;padding:1px 5px;flex-shrink:0;line-height:1.3}
 .idx-filter{width:100%;padding:4px 8px;border:1px solid #ddd;border-radius:4px;font-size:10px;margin-bottom:6px;outline:none}
 .idx-filter:focus{border-color:#e94560}
 
@@ -93,7 +104,9 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;b
 .cfg-btn.active{border-color:#d32f2f;background:#fff5f5;color:#d32f2f}
 .toast{position:fixed;bottom:20px;right:20px;background:#1a1a2e;border:1px solid #e94560;color:#fff;padding:8px 16px;border-radius:6px;font-size:12px;z-index:10000;opacity:0;transition:opacity .3s;pointer-events:none}
 .toast.show{opacity:1}
-@media print{.topbar,.sidebar{display:none}body{background:#fff}.main{padding:0}.display-unit{filter:none}}
+.idx-display-hdr{padding:5px 4px 2px;font-size:10px;font-weight:800;color:#1a1a2e;border-bottom:2px solid #d32f2f;background:#f5f0e8;border-radius:3px}
+.stats-display-hdr{font-size:10px;font-weight:800;color:#1a1a2e;padding-bottom:2px;border-bottom:2px solid #d32f2f}
+@media print{.topbar,.sidebar,.display-controls,.add-display-btn{display:none}body{background:#fff}.main{padding:0}.display-unit{filter:none}}
 </style>
 </head>
 <body>
@@ -101,7 +114,7 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;b
 <div class="topbar">
   <div>
     <h1>Fine Fettle — Smoke Shop in a Box Planogram</h1>
-    <div class="sub">FRONT VIEW &bull; Drag products across shelves &bull; Toggle visibility in Product Index</div>
+    <div class="sub">FRONT VIEW &bull; Drag products across shelves &amp; displays &bull; Toggle visibility in Product Index</div>
   </div>
   <div class="controls">
     <button class="btn" onclick="resetAll()">Reset</button>
@@ -111,7 +124,7 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;b
 </div>
 
 <div class="main">
-  <div class="plano-wrap"><div class="display-unit" id="root"></div></div>
+  <div class="plano-wrap" id="plano-container"></div>
   <div class="sidebar">
     <div class="panel">
       <h3>Preset Configurations</h3>
@@ -182,9 +195,6 @@ const SHELVES=[{id:'top',name:'Top Shelf',cl:12},{id:'mid',name:'Middle Shelf',c
 
 // ================================================================
 //  PRESET CONFIGURATIONS
-//  Total product width = 126.8" across 82.5" of shelf.
-//  "Paired" configs use back/front depth sharing to fit everything.
-//  "Spread" configs show fewer products, each in its own column.
 // ================================================================
 const CONFIGS = {
   all: {
@@ -232,47 +242,136 @@ const CONFIGS = {
 let currentConfig = 'all';
 
 // ================================================================
-//  MUTABLE STATE
+//  MULTI-DISPLAY STATE
 // ================================================================
-let state = { layout: null, hidden: new Set() };
+let displays = [];
+let nextDisplayId = 1;
 
-function initState(configId) {
-  currentConfig = configId || 'all';
-  const cfg = CONFIGS[currentConfig];
-  state.layout = {};
+function createDisplay(configId) {
+  configId = configId || currentConfig;
+  const cfg = CONFIGS[configId];
+  const display = {
+    id: nextDisplayId++,
+    layout: {},
+    hidden: new Set(cfg.hidden)
+  };
   for (const sid of ['top','mid','bot']) {
-    state.layout[sid] = cfg.layout[sid].map(col => ({b:col.b, f:col.f}));
+    display.layout[sid] = cfg.layout[sid].map(col => ({b:col.b, f:col.f||null}));
   }
-  state.hidden = new Set(cfg.hidden);
+  displays.push(display);
+  return display;
 }
 
-// Get all product IDs with their shelf + position
-function allPlacements() {
+function cloneDisplay(displayId) {
+  const src = getDisplay(displayId);
+  if (!src) return null;
+  const dup = {
+    id: nextDisplayId++,
+    layout: {},
+    hidden: new Set(src.hidden)
+  };
+  for (const sid of ['top','mid','bot']) {
+    dup.layout[sid] = src.layout[sid].map(col => ({b:col.b, f:col.f||null}));
+  }
+  displays.push(dup);
+  return dup;
+}
+
+function removeDisplay(displayId) {
+  if (displays.length <= 1) return;
+  displays = displays.filter(d => d.id !== displayId);
+}
+
+function getDisplay(displayId) {
+  return displays.find(d => d.id === parseInt(displayId));
+}
+
+function allPlacements(display) {
   const out = [];
   for (const sid of ['top','mid','bot']) {
-    state.layout[sid].forEach((col,ci) => {
-      out.push({id:col.b, shelf:sid, col:ci, pos:'back'});
-      if (col.f) out.push({id:col.f, shelf:sid, col:ci, pos:'front'});
+    display.layout[sid].forEach((col,ci) => {
+      out.push({id:col.b, shelf:sid, col:ci, pos:'back', displayId:display.id});
+      if (col.f) out.push({id:col.f, shelf:sid, col:ci, pos:'front', displayId:display.id});
     });
   }
   return out;
 }
 
-function shelfOfProduct(pid) {
-  for (const sid of ['top','mid','bot']) {
-    for (const col of state.layout[sid]) {
-      if (col.b===pid || col.f===pid) return sid;
-    }
-  }
-  return null;
+// ================================================================
+//  RENDER ALL
+// ================================================================
+function renderAll() {
+  renderPlano();
+  renderIndex();
+  updateStats();
+  renderConfigs();
 }
 
 // ================================================================
-//  RENDER PLANOGRAM
+//  RENDER PLANOGRAM (ALL DISPLAYS)
 // ================================================================
 function renderPlano() {
-  const root = document.getElementById('root');
-  root.innerHTML = '';
+  const container = document.getElementById('plano-container');
+  container.innerHTML = '';
+
+  displays.forEach((display, di) => {
+    const wrapper = document.createElement('div');
+    wrapper.className = 'display-wrapper';
+    wrapper.dataset.displayId = display.id;
+
+    // Display controls header
+    const controls = document.createElement('div');
+    controls.className = 'display-controls';
+
+    const name = document.createElement('span');
+    name.className = 'display-name';
+    name.textContent = 'Display ' + (di + 1);
+    controls.appendChild(name);
+
+    const actions = document.createElement('div');
+    actions.className = 'display-actions';
+
+    const dupBtn = document.createElement('button');
+    dupBtn.className = 'btn';
+    dupBtn.textContent = 'Duplicate';
+    dupBtn.title = 'Duplicate this display';
+    dupBtn.onclick = () => { cloneDisplay(display.id); renderAll(); toast('Duplicated display'); };
+    actions.appendChild(dupBtn);
+
+    const rmBtn = document.createElement('button');
+    rmBtn.className = 'btn';
+    rmBtn.textContent = 'Remove';
+    rmBtn.title = 'Remove this display';
+    if (displays.length <= 1) {
+      rmBtn.disabled = true;
+      rmBtn.style.opacity = '.4';
+      rmBtn.style.cursor = 'not-allowed';
+    }
+    rmBtn.onclick = () => { if(displays.length>1){removeDisplay(display.id);renderAll();toast('Removed display')} };
+    actions.appendChild(rmBtn);
+
+    controls.appendChild(actions);
+    wrapper.appendChild(controls);
+
+    // Display unit
+    const root = document.createElement('div');
+    root.className = 'display-unit';
+    root.dataset.displayId = display.id;
+    renderDisplayUnit(display, root);
+    wrapper.appendChild(root);
+
+    container.appendChild(wrapper);
+  });
+
+  // Add display button
+  const addBtn = document.createElement('button');
+  addBtn.className = 'add-display-btn';
+  addBtn.textContent = '+ Add Display';
+  addBtn.onclick = () => { createDisplay(); renderAll(); toast('Added new display'); };
+  container.appendChild(addBtn);
+}
+
+function renderDisplayUnit(display, root) {
   root.style.width = (SW*PX+4)+'px';
 
   const hdr = document.createElement('div');
@@ -284,14 +383,12 @@ function renderPlano() {
     if(si===1){const b=document.createElement('div');b.className='red-banner';b.innerHTML='<span>GRAB & GO!</span><span class="st">THE STUFF FOR YOUR PUFF</span>';root.appendChild(b)}
     if(si===2){const b=document.createElement('div');b.className='red-banner';b.innerHTML='<span>SESSION READY!</span><span class="st">FIND YOUR GEAR HERE</span>';root.appendChild(b)}
 
-    const cols=state.layout[shelf.id];
+    const cols = display.layout[shelf.id];
 
-    // Calculate visible width — skip hidden products, collapse their space
     let usedW=0;
     cols.forEach(c=>{
-      const bkHid=state.hidden.has(c.b), frHid=!c.f||state.hidden.has(c.f);
+      const bkHid=display.hidden.has(c.b), frHid=!c.f||display.hidden.has(c.f);
       const bk=P[c.b], fr=c.f?P[c.f]:null;
-      // Column visible width: depends on which items are showing
       const visBack=bk&&!bkHid, visFront=fr&&!frHid;
       if(visBack||visFront){
         let w=0;
@@ -310,24 +407,20 @@ function renderPlano() {
     area.style.width=(SW*PX)+'px';
     area.style.height=(shelf.cl*PX)+'px';
     area.dataset.shelf=shelf.id;
+    area.dataset.displayId=display.id;
 
     let x=0;
-    cols.forEach(col=>{
+    cols.forEach((col,ci)=>{
       const bk=P[col.b],fr=col.f?P[col.f]:null;
-      const bkVis=bk&&!state.hidden.has(col.b);
-      const frVis=fr&&!state.hidden.has(col.f);
-
-      // Skip entirely hidden columns
+      const bkVis=bk&&!display.hidden.has(col.b);
+      const frVis=fr&&!display.hidden.has(col.f);
       if(!bkVis&&!frVis)return;
-
-      // Visible column width
       let colW=0;
       if(bkVis)colW=Math.max(colW,bk.w);
       if(frVis)colW=Math.max(colW,fr.w);
-
       const bkDeep=fr&&frVis?1:Math.floor(SD/(bk?bk.d:1));
-      if(bkVis) area.appendChild(mkProd(col.b,bk,x,frVis?'is-back':'is-single',bkDeep,shelf.id));
-      if(frVis) area.appendChild(mkProd(col.f,fr,x,bkVis?'is-front':'is-single',1,shelf.id));
+      if(bkVis) area.appendChild(mkProd(col.b,bk,x,frVis?'is-back':'is-single',bkDeep,shelf.id,ci,'back',display.id));
+      if(frVis) area.appendChild(mkProd(col.f,fr,x,bkVis?'is-front':'is-single',1,shelf.id,ci,'front',display.id));
       x+=colW;
     });
 
@@ -336,10 +429,9 @@ function renderPlano() {
   });
 
   const ftr=document.createElement('div');ftr.className='display-footer';ftr.innerHTML='<div class="brand">Powered by LuvBuds</div>';root.appendChild(ftr);
-  updateStats();
 }
 
-function mkProd(id,item,x,cls,deep,shelfId){
+function mkProd(id,item,x,cls,deep,shelfId,colIdx,pos,displayId){
   const el=document.createElement('div');
   el.className=`product cat-${item.c} ${cls}`;
   el.style.left=(x*PX)+'px';
@@ -347,6 +439,9 @@ function mkProd(id,item,x,cls,deep,shelfId){
   el.style.height=(item.h*PX)+'px';
   el.dataset.id=id;
   el.dataset.shelf=shelfId;
+  el.dataset.col=colIdx;
+  el.dataset.pos=pos;
+  el.dataset.displayId=displayId;
 
   const img=document.createElement('img');img.className='pimg';img.src=ip(id);img.alt=item.n;img.draggable=false;
   img.onerror=function(){this.style.display='none';const t=document.createElement('div');t.style.cssText='position:absolute;inset:0;display:flex;align-items:center;justify-content:center;font-size:8px;color:#888;text-align:center;padding:2px;line-height:1.1';t.textContent=item.n;el.appendChild(t)};
@@ -365,7 +460,6 @@ function mkProd(id,item,x,cls,deep,shelfId){
   el.addEventListener('pointerleave',()=>document.getElementById('tooltip').classList.remove('vis'));
   el.addEventListener('pointermove',e=>{if(!dragState)mvTip(e)});
 
-  // Drag start
   el.addEventListener('pointerdown',e=>{
     if(e.button)return;e.preventDefault();
     startDrag(id,item,el,e);
@@ -375,7 +469,7 @@ function mkProd(id,item,x,cls,deep,shelfId){
 }
 
 // ================================================================
-//  CROSS-SHELF DRAG
+//  CROSS-SHELF / CROSS-DISPLAY DRAG
 // ================================================================
 let dragState=null;
 
@@ -383,7 +477,6 @@ function startDrag(id,item,el,e){
   el.classList.add('dragging');
   document.getElementById('tooltip').classList.remove('vis');
 
-  // Create ghost
   const ghost=document.createElement('div');
   ghost.className='drag-ghost';
   ghost.style.width=(item.w*PX)+'px';
@@ -392,7 +485,14 @@ function startDrag(id,item,el,e){
   ghost.appendChild(img);
   document.body.appendChild(ghost);
 
-  dragState={id,item,srcEl:el,ghost,offX:e.clientX-el.getBoundingClientRect().left,offY:e.clientY-el.getBoundingClientRect().top};
+  dragState={id,item,srcEl:el,ghost,
+    offX:e.clientX-el.getBoundingClientRect().left,
+    offY:e.clientY-el.getBoundingClientRect().top,
+    srcShelf:el.dataset.shelf,
+    srcCol:parseInt(el.dataset.col),
+    srcPos:el.dataset.pos,
+    srcDisplayId:parseInt(el.dataset.displayId)
+  };
   posGhost(e);
 
   document.addEventListener('pointermove',onDragMove);
@@ -408,7 +508,6 @@ function posGhost(e){
 function onDragMove(e){
   if(!dragState)return;
   posGhost(e);
-  // Highlight target shelf
   document.querySelectorAll('.shelf-front').forEach(s=>s.classList.remove('drop-target'));
   const target=getShelfUnder(e);
   if(target)target.classList.add('drop-target');
@@ -425,44 +524,48 @@ function onDragEnd(e){
   const target=getShelfUnder(e);
   if(target){
     const targetShelf=target.dataset.shelf;
+    const targetDisplayId=parseInt(target.dataset.displayId);
     const rect=target.getBoundingClientRect();
     const dropX=Math.max(0,(e.clientX-rect.left)/PX);
-
-    // Move product to target shelf at dropX
-    moveProduct(dragState.id, targetShelf, dropX);
+    moveProduct(dragState.id, targetShelf, dropX,
+      dragState.srcShelf, dragState.srcCol, dragState.srcPos,
+      dragState.srcDisplayId, targetDisplayId);
   }
 
   dragState=null;
-  renderPlano();
-  renderIndex();
+  renderAll();
 }
 
 function getShelfUnder(e){
-  // Temporarily hide ghost to hit-test
   if(dragState&&dragState.ghost)dragState.ghost.style.display='none';
   const el=document.elementFromPoint(e.clientX,e.clientY);
   if(dragState&&dragState.ghost)dragState.ghost.style.display='';
   if(!el)return null;
-  const shelf=el.closest('.shelf-front');
-  return shelf;
+  return el.closest('.shelf-front');
 }
 
-function moveProduct(pid, targetShelf, dropX){
-  // Remove from current position
-  for(const sid of['top','mid','bot']){
-    state.layout[sid]=state.layout[sid].map(col=>{
-      if(col.b===pid)return{b:col.f||'__empty__',f:null}; // promote front to back
-      if(col.f===pid)return{b:col.b,f:null};
-      return col;
-    }).filter(col=>col.b!=='__empty__');
+function moveProduct(pid, targetShelf, dropX, srcShelf, srcCol, srcPos, srcDisplayId, targetDisplayId){
+  // Remove from source display/shelf
+  const srcDisplay = getDisplay(srcDisplayId);
+  if(srcDisplay && srcShelf!==undefined && srcCol!==undefined){
+    const srcCols=srcDisplay.layout[srcShelf];
+    if(srcCol<srcCols.length){
+      const c=srcCols[srcCol];
+      if(srcPos==='front'&&c.f===pid){
+        c.f=null;
+      }else if(c.b===pid){
+        if(c.f){c.b=c.f;c.f=null}
+        else{srcCols.splice(srcCol,1)}
+      }
+    }
   }
 
-  // Insert into target shelf at dropX position
+  // Insert into target display/shelf
+  const targetDisplay = getDisplay(targetDisplayId);
   const item=P[pid];
-  if(!item)return;
+  if(!item||!targetDisplay)return;
 
-  // Find insertion point based on dropX
-  const cols=state.layout[targetShelf];
+  const cols=targetDisplay.layout[targetShelf];
   let x=0, insertIdx=cols.length;
   for(let i=0;i<cols.length;i++){
     const bk=P[cols[i].b],fr=cols[i].f?P[cols[i].f]:null;
@@ -471,7 +574,6 @@ function moveProduct(pid, targetShelf, dropX){
     x+=cw;
   }
 
-  // Insert as a new single column
   cols.splice(insertIdx,0,{b:pid,f:null});
 }
 
@@ -482,88 +584,125 @@ function renderIndex(){
   const list=document.getElementById('idx-list');
   list.innerHTML='';
 
-  const placements=allPlacements();
-
-  // Sort: by shelf (top, mid, bot), then by column index
-  const sorted=[...placements].sort((a,b)=>{
-    const so={top:0,mid:1,bot:2};
-    return(so[a.shelf]-so[b.shelf])||a.col-b.col;
-  });
-
-  let lastShelf='';
-  sorted.forEach(pl=>{
-    const item=P[pl.id];if(!item)return;
-    const isHidden=state.hidden.has(pl.id);
-    const shelfName=SHELVES.find(s=>s.id===pl.shelf).name;
-
-    // Shelf divider
-    if(pl.shelf!==lastShelf){
-      lastShelf=pl.shelf;
-      const div=document.createElement('div');
-      div.style.cssText='padding:4px 4px 2px;font-size:9px;font-weight:700;color:#d32f2f;border-bottom:1px solid #eee;margin-top:4px';
-      div.textContent=shelfName;
-      list.appendChild(div);
+  displays.forEach((display, di) => {
+    // Display divider (only show header when multiple displays)
+    if(displays.length > 1){
+      const dDiv=document.createElement('div');
+      dDiv.className='idx-display-hdr';
+      dDiv.style.marginTop=di>0?'8px':'0';
+      dDiv.textContent='Display '+(di+1);
+      list.appendChild(dDiv);
     }
 
-    const row=document.createElement('div');
-    row.className='idx-item'+(isHidden?' idx-hidden':'');
-    row.dataset.id=pl.id;
-
-    // Category dot
-    const dot=document.createElement('div');
-    dot.className='idx-dot';
-    dot.style.background=catColors[item.c]||'#999';
-    row.appendChild(dot);
-
-    // Thumbnail
-    const thumb=document.createElement('img');
-    thumb.className='idx-thumb';
-    thumb.src=ip(pl.id);
-    thumb.alt='';
-    thumb.onerror=function(){this.style.display='none'};
-    row.appendChild(thumb);
-
-    // Info
-    const info=document.createElement('div');
-    info.className='idx-info';
-    info.innerHTML=`<div class="idx-sku">${pl.id}</div>
-      <div class="idx-meta">${item.w}\u2033w \u00d7 ${item.h}\u2033h &bull; ${pl.pos}</div>`;
-    row.appendChild(info);
-
-    // Eye toggle
-    const eye=document.createElement('button');
-    eye.className='idx-eye';
-    eye.textContent=isHidden?'\u{1F6AB}':'\u{1F441}';
-    eye.title=isHidden?'Show':'Hide';
-    eye.addEventListener('click',e=>{
-      e.stopPropagation();
-      toggleProduct(pl.id);
+    const placements=allPlacements(display);
+    const sorted=[...placements].sort((a,b)=>{
+      const so={top:0,mid:1,bot:2};
+      return(so[a.shelf]-so[b.shelf])||a.col-b.col;
     });
-    row.appendChild(eye);
 
-    // Click to highlight on planogram
-    row.addEventListener('click',()=>highlightProduct(pl.id));
+    let lastShelf='';
+    sorted.forEach(pl=>{
+      const item=P[pl.id];if(!item)return;
+      const isHidden=display.hidden.has(pl.id);
+      const shelfName=SHELVES.find(s=>s.id===pl.shelf).name;
 
-    list.appendChild(row);
+      if(pl.shelf!==lastShelf){
+        lastShelf=pl.shelf;
+        const div=document.createElement('div');
+        div.style.cssText='padding:4px 4px 2px;font-size:9px;font-weight:700;color:#d32f2f;border-bottom:1px solid #eee;margin-top:4px';
+        div.textContent=shelfName;
+        list.appendChild(div);
+      }
+
+      const row=document.createElement('div');
+      row.className='idx-item'+(isHidden?' idx-hidden':'');
+      row.dataset.id=pl.id;
+      row.dataset.displayId=display.id;
+
+      const dot=document.createElement('div');
+      dot.className='idx-dot';
+      dot.style.background=catColors[item.c]||'#999';
+      row.appendChild(dot);
+
+      const thumb=document.createElement('img');
+      thumb.className='idx-thumb';
+      thumb.src=ip(pl.id);
+      thumb.alt='';
+      thumb.onerror=function(){this.style.display='none'};
+      row.appendChild(thumb);
+
+      const info=document.createElement('div');
+      info.className='idx-info';
+      info.innerHTML=`<div class="idx-sku">${pl.id}</div>
+        <div class="idx-meta">${item.w}\u2033w \u00d7 ${item.h}\u2033h &bull; ${pl.pos}</div>`;
+      row.appendChild(info);
+
+      const eye=document.createElement('button');
+      eye.className='idx-eye';
+      eye.textContent=isHidden?'\u{1F6AB}':'\u{1F441}';
+      eye.title=isHidden?'Show':'Hide';
+      eye.addEventListener('click',e=>{
+        e.stopPropagation();
+        toggleProduct(pl.id, display.id);
+      });
+      row.appendChild(eye);
+
+      const instCount=countInstances(pl.id, display);
+      if(instCount>1){
+        const badge=document.createElement('span');
+        badge.className='idx-qty';
+        badge.textContent='\u00d7'+instCount;
+        badge.title=instCount+' instances on this display';
+        row.appendChild(badge);
+      }
+
+      const addBtn=document.createElement('button');
+      addBtn.className='idx-add';
+      addBtn.textContent='+';
+      addBtn.title='Add duplicate to this shelf';
+      addBtn.addEventListener('click',e=>{
+        e.stopPropagation();
+        duplicateProduct(pl.id, pl.shelf, display.id);
+      });
+      row.appendChild(addBtn);
+
+      if(instCount>1){
+        const rmBtn=document.createElement('button');
+        rmBtn.className='idx-remove';
+        rmBtn.textContent='\u00d7';
+        rmBtn.title='Remove this instance';
+        rmBtn.addEventListener('click',e=>{
+          e.stopPropagation();
+          removeInstance(pl.id, pl.shelf, pl.col, pl.pos, display.id);
+        });
+        row.appendChild(rmBtn);
+      }
+
+      row.addEventListener('click',()=>highlightProduct(pl.id, display.id));
+
+      list.appendChild(row);
+    });
   });
 }
 
-function toggleProduct(pid){
-  if(state.hidden.has(pid))state.hidden.delete(pid);
-  else state.hidden.add(pid);
-  // Full re-render so hidden products release their shelf space
-  renderPlano();
-  renderIndex();
+function toggleProduct(pid, displayId){
+  const display = getDisplay(displayId);
+  if(!display) return;
+  if(display.hidden.has(pid))display.hidden.delete(pid);
+  else display.hidden.add(pid);
+  renderAll();
 }
 
 function toggleAll(){
-  const allIds=allPlacements().map(p=>p.id);
-  if(state.hidden.size<allIds.length/2){
-    allIds.forEach(id=>state.hidden.add(id));
-  }else{
-    state.hidden.clear();
-  }
-  renderPlano();renderIndex();
+  displays.forEach(display => {
+    const allIds=allPlacements(display).map(p=>p.id);
+    if(display.hidden.size<allIds.length/2){
+      allIds.forEach(id=>display.hidden.add(id));
+    }else{
+      display.hidden.clear();
+    }
+  });
+  renderAll();
 }
 
 function filterIndex(q){
@@ -576,9 +715,12 @@ function filterIndex(q){
   });
 }
 
-function highlightProduct(pid){
+function highlightProduct(pid, displayId){
   document.querySelectorAll('.product.highlighted').forEach(el=>el.classList.remove('highlighted'));
-  document.querySelectorAll(`.product[data-id="${pid}"]`).forEach(el=>{
+  const selector = displayId
+    ? `.display-unit[data-display-id="${displayId}"] .product[data-id="${pid}"]`
+    : `.product[data-id="${pid}"]`;
+  document.querySelectorAll(selector).forEach(el=>{
     el.classList.add('highlighted');
     el.scrollIntoView({behavior:'smooth',block:'nearest'});
     setTimeout(()=>el.classList.remove('highlighted'),2000);
@@ -586,23 +728,71 @@ function highlightProduct(pid){
 }
 
 // ================================================================
+//  DUPLICATE / REMOVE INSTANCES
+// ================================================================
+function countInstances(pid, display){
+  let count=0;
+  for(const sid of['top','mid','bot']){
+    for(const col of display.layout[sid]){
+      if(col.b===pid)count++;
+      if(col.f===pid)count++;
+    }
+  }
+  return count;
+}
+
+function duplicateProduct(pid, shelfId, displayId){
+  const display = getDisplay(displayId);
+  const item=P[pid];
+  if(!item||!display)return;
+  display.hidden.delete(pid);
+  display.layout[shelfId].push({b:pid,f:null});
+  renderAll();
+  toast('Added duplicate: '+item.n);
+}
+
+function removeInstance(pid, shelfId, colIdx, pos, displayId){
+  const display = getDisplay(displayId);
+  if(!display)return;
+  const cols=display.layout[shelfId];
+  if(colIdx>=cols.length)return;
+  const col=cols[colIdx];
+  if(pos==='front'&&col.f===pid){
+    col.f=null;
+  }else if(col.b===pid){
+    if(col.f){col.b=col.f;col.f=null}
+    else{cols.splice(colIdx,1)}
+  }
+  renderAll();
+  toast('Removed instance: '+P[pid].n);
+}
+
+// ================================================================
 //  STATS
 // ================================================================
 function updateStats(){
   let html='';
-  SHELVES.forEach(s=>{
-    const cols=state.layout[s.id];let w=0;
-    cols.forEach(c=>{
-      const bk=P[c.b],fr=c.f?P[c.f]:null;
-      const bkVis=bk&&!state.hidden.has(c.b), frVis=fr&&!state.hidden.has(c.f);
-      if(bkVis||frVis){let cw=0;if(bkVis)cw=Math.max(cw,bk.w);if(frVis)cw=Math.max(cw,fr.w);w+=cw}
+  displays.forEach((display, di) => {
+    if(displays.length > 1){
+      html+=`<div class="stats-display-hdr" style="margin-top:${di>0?'8':'0'}px">Display ${di+1}</div>`;
+    }
+    SHELVES.forEach(s=>{
+      const cols=display.layout[s.id];let w=0;
+      cols.forEach(c=>{
+        const bk=P[c.b],fr=c.f?P[c.f]:null;
+        const bkVis=bk&&!display.hidden.has(c.b), frVis=fr&&!display.hidden.has(c.f);
+        if(bkVis||frVis){let cw=0;if(bkVis)cw=Math.max(cw,bk.w);if(frVis)cw=Math.max(cw,fr.w);w+=cw}
+      });
+      const pct=w/SW*100;const cls=pct>100?'u-over':pct>90?'u-warn':'u-ok';
+      html+=`<div class="stat-row"><span>${s.name}</span><span>${w.toFixed(1)}&Prime;/${SW}&Prime; (${pct.toFixed(0)}%)</span></div><div class="util-bar"><div class="util-fill ${cls}" style="width:${Math.min(pct,100)}%"></div></div>`;
     });
-    const pct=w/SW*100;const cls=pct>100?'u-over':pct>90?'u-warn':'u-ok';
-    html+=`<div class="stat-row"><span>${s.name}</span><span>${w.toFixed(1)}&Prime;/${SW}&Prime; (${pct.toFixed(0)}%)</span></div><div class="util-bar"><div class="util-fill ${cls}" style="width:${Math.min(pct,100)}%"></div></div>`;
+    const plc=allPlacements(display);
+    const total=plc.length;
+    let hidCount=0;
+    plc.forEach(p=>{if(display.hidden.has(p.id))hidCount++});
+    const visible=total-hidCount;
+    html+=`<div class="stat-row" style="margin-top:4px;padding-top:4px;border-top:2px solid #ddd"><span>Visible / Total</span><span>${visible} / ${total}</span></div>`;
   });
-  const total=allPlacements().length;
-  const visible=total-state.hidden.size;
-  html+=`<div class="stat-row" style="margin-top:4px;padding-top:4px;border-top:2px solid #ddd"><span>Visible / Total</span><span>${visible} / ${total}</span></div>`;
   document.getElementById('stats').innerHTML=html;
 }
 
@@ -614,9 +804,20 @@ function mvTip(e){const t=document.getElementById('tooltip');let x=e.clientX+14,
 // ================================================================
 //  ACTIONS
 // ================================================================
-function resetAll(){initState(currentConfig);renderPlano();renderIndex();renderConfigs();toast('Reset to '+CONFIGS[currentConfig].name)}
+function resetAll(){
+  displays=[];nextDisplayId=1;
+  createDisplay(currentConfig);
+  renderAll();
+  toast('Reset to '+CONFIGS[currentConfig].name);
+}
 
-function loadConfig(id){initState(id);renderPlano();renderIndex();renderConfigs();toast('Loaded: '+CONFIGS[id].name)}
+function loadConfig(id){
+  currentConfig=id;
+  displays=[];nextDisplayId=1;
+  createDisplay(id);
+  renderAll();
+  toast('Loaded: '+CONFIGS[id].name);
+}
 
 function renderConfigs(){
   const c=document.getElementById('config-btns');c.innerHTML='';
@@ -628,22 +829,25 @@ function renderConfigs(){
 }
 
 function dlJSON(){
-  const d={generated:new Date().toISOString(),shelves:SHELVES.map(s=>({name:s.name,clearance:s.cl,
-    columns:state.layout[s.id].map(c=>{const bk=P[c.b],fr=c.f?P[c.f]:null;return{
-      back:{id:c.b,w:bk.w,h:bk.h,d:bk.d},front:fr?{id:c.f,w:fr.w,h:fr.h,d:fr.d}:null,
-      columnWidth:Math.max(bk.w,fr?fr.w:0)}})})),hidden:[...state.hidden]};
+  const d={generated:new Date().toISOString(),displays:displays.map((display,di)=>({
+    name:'Display '+(di+1),
+    shelves:SHELVES.map(s=>({name:s.name,clearance:s.cl,
+      columns:display.layout[s.id].map(c=>{const bk=P[c.b],fr=c.f?P[c.f]:null;return{
+        back:{id:c.b,w:bk.w,h:bk.h,d:bk.d},front:fr?{id:c.f,w:fr.w,h:fr.h,d:fr.d}:null,
+        columnWidth:Math.max(bk.w,fr?fr.w:0)}})})),
+    hidden:[...display.hidden]
+  }))};
   const a=document.createElement('a');a.href=URL.createObjectURL(new Blob([JSON.stringify(d,null,2)],{type:'application/json'}));
-  a.download='planogram.json';a.click();toast('Exported');}
+  a.download='planogram.json';a.click();toast('Exported');
+}
 
 function toast(m){const t=document.getElementById('toast');t.textContent=m;t.classList.add('show');setTimeout(()=>t.classList.remove('show'),2500)}
 
 // ================================================================
 //  INIT
 // ================================================================
-initState('all');
-renderPlano();
-renderIndex();
-renderConfigs();
+createDisplay('all');
+renderAll();
 </script>
 </body>
 </html>
