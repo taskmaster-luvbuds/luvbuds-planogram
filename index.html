@@ -120,6 +120,7 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;b
   <div class="controls">
     <button class="btn" onclick="resetAll()">Reset</button>
     <button class="btn" onclick="dlJSON()">Export JSON</button>
+    <button class="btn" onclick="generateOrderCSV()" style="background:#1B5E20;border-color:#43A047;color:#fff">Order CSV</button>
     <button class="btn pri" onclick="window.print()">Print</button>
   </div>
 </div>
@@ -891,6 +892,79 @@ function dlJSON(){
   }))};
   const a=document.createElement('a');a.href=URL.createObjectURL(new Blob([JSON.stringify(d,null,2)],{type:'application/json'}));
   a.download='planogram.json';a.click();toast('Exported');
+}
+
+// BigCommerce full product names (from SSIAB dimensions sheet)
+const BC_NAMES={
+  'ZZ114-48':'Zig-Zag - 48pk "Orange Papers, 1 1/4, 32 ct',
+  'ZZHW-OGP':'Zig-Zag - 25pk Hemp Wraps, OG Purp, 2 ct',
+  'ZZHMP48':'Zig-Zag Organic Hemp Papers, 1 1/4, 48ct',
+  'ZZUT48':'Zig-Zag - Ultra Thin Papers, 1 1/4, 48ct',
+  'ZZHW-NAT':'Zig-Zag - 25pk Hemp Wraps, Natural, 2 ct',
+  'ZZHW-BD':'Zig-Zag - 25pk Hemp Wraps, Blue Dream, 2 ct',
+  'RAW-CONE6PK':'RAW - Classic Cones, 1 1/4, 32ct, 6pk',
+  'RAW-BLACKKSLIM':'RAW - 50pk Classic Black Papers, King Size Slim',
+  'RAW-114':'RAW - Classic Papers, 1 1/4, 24 ct',
+  'RAW-BLKCONE3PK':'RAW - Black Classic Cones, King Size, 32ct. 3pk',
+  'RAW-TIPSPREROLLED':'RAW - 20pk Pre-Rolled Tops, 21pc',
+  'RAW-REGTIP':'RAW - 50pk Original Tips Regular, 50ct',
+  'PC-6PCK-PINK-MC':'Blazy Susan - 21pk Pink Cones, 1 1/4, 6ct',
+  'WP-SG12':'Luvbuds - 12" Soft Glass Water Pipe',
+  'SE-HP-4P85G-BX':'SirEEL - 25pc 4.5" Bulk Pipes, Assorted Colors',
+  'SE-HP-CHILL3-BX':'SirEEL - 36pc 3" Assorted Bulk Chillums',
+  'HP-SIL-COBB':'LuvBuds - 4.5" Silicone Cobb Pipe with Glass Bowl, Assorted Colors',
+  'BT-V850D':'Pulsar - 10pk 510 DL 2.0 PRO 1000mAh Auto Draw Variable Voltage Battery',
+  'LOOK-SH-PRO-PLUS-BK':'Lookah - Seahorse Pro Plus, Black',
+  'FL-SB5-HAZMAT':'Special Blue - 12pk 5X Butane, 300mL per can',
+  'F-420':'Formula 420',
+  'KA-AYR-CLIP-HAZMAT':'AYR Custom CLIPPER Lighter',
+  'WP-INSERT':'Water Pipe Display Insert',
+  'BAT-INSERT-1':'Battery Display Insert #1 (BT-350VV)',
+  'BAT-INSERT-2':'Battery Display Insert #2 (Ooze HiVo)',
+  'BAT-INSERT-3':'Battery Display Insert #3 (YoCan Evolve)',
+};
+
+function generateOrderCSV(){
+  // Aggregate visible products per display, with depth-based quantities
+  const rows=[['Display','SKU','Product Name','Qty (Depth)','Category']];
+
+  displays.forEach((display,di)=>{
+    const skuData={};
+
+    SHELVES.forEach(shelf=>{
+      const cols=display.layout[shelf.id];
+      cols.forEach(col=>{
+        const bk=P[col.b],fr=col.f?P[col.f]:null;
+        const bkVis=bk&&!display.hidden.has(col.b);
+        const frVis=fr&&!display.hidden.has(col.f);
+
+        if(bkVis){
+          const depth=frVis?1:Math.floor(SD/bk.d);
+          if(!skuData[col.b])skuData[col.b]={qty:0,item:bk};
+          skuData[col.b].qty+=depth;
+        }
+        if(frVis){
+          if(!skuData[col.f])skuData[col.f]={qty:0,item:fr};
+          skuData[col.f].qty+=1;
+        }
+      });
+    });
+
+    for(const[sku,d]of Object.entries(skuData)){
+      const fullName=BC_NAMES[sku]||d.item.n;
+      rows.push(['Display '+(di+1),sku,fullName,d.qty,d.item.c]);
+    }
+  });
+
+  if(rows.length<=1){toast('No visible products to export');return}
+
+  const csv=rows.map(r=>r.map(v=>'"'+String(v).replace(/"/g,'""')+'"').join(',')).join('\n');
+  const blob=new Blob([csv],{type:'text/csv;charset=utf-8;'});
+  const a=document.createElement('a');
+  a.href=URL.createObjectURL(blob);
+  a.download='planogram-order-'+new Date().toISOString().slice(0,10)+'.csv';
+  a.click();
+  toast('BigCommerce order CSV downloaded');
 }
 
 function toast(m){const t=document.getElementById('toast');t.textContent=m;t.classList.add('show');setTimeout(()=>t.classList.remove('show'),2500)}
