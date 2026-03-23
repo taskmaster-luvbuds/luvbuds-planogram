@@ -911,39 +911,39 @@ function dlJSON(){
   a.download='planogram.json';a.click();toast('Exported');
 }
 
-// BigCommerce full product names (from SSIAB dimensions sheet)
-const BC_NAMES={
-  'ZZ114-48':'Zig-Zag - 48pk "Orange Papers, 1 1/4, 32 ct',
-  'ZZHW-OGP':'Zig-Zag - 25pk Hemp Wraps, OG Purp, 2 ct',
-  'ZZHMP48':'Zig-Zag Organic Hemp Papers, 1 1/4, 48ct',
-  'ZZUT48':'Zig-Zag - Ultra Thin Papers, 1 1/4, 48ct',
-  'ZZHW-NAT':'Zig-Zag - 25pk Hemp Wraps, Natural, 2 ct',
-  'ZZHW-BD':'Zig-Zag - 25pk Hemp Wraps, Blue Dream, 2 ct',
-  'RAW-CONE6PK':'RAW - Classic Cones, 1 1/4, 32ct, 6pk',
-  'RAW-BLACKKSLIM':'RAW - 50pk Classic Black Papers, King Size Slim',
-  'RAW-114':'RAW - Classic Papers, 1 1/4, 24 ct',
-  'RAW-BLKCONE3PK':'RAW - Black Classic Cones, King Size, 32ct. 3pk',
-  'RAW-TIPSPREROLLED':'RAW - 20pk Pre-Rolled Tops, 21pc',
-  'RAW-REGTIP':'RAW - 50pk Original Tips Regular, 50ct',
-  'PC-6PCK-PINK-MC':'Blazy Susan - 21pk Pink Cones, 1 1/4, 6ct',
-  'WP-SG12':'Luvbuds - 12" Soft Glass Water Pipe',
-  'SE-HP-4P85G-BX':'SirEEL - 25pc 4.5" Bulk Pipes, Assorted Colors',
-  'SE-HP-CHILL3-BX':'SirEEL - 36pc 3" Assorted Bulk Chillums',
-  'HP-SIL-COBB':'LuvBuds - 4.5" Silicone Cobb Pipe with Glass Bowl, Assorted Colors',
-  'BT-V850D':'Pulsar - 10pk 510 DL 2.0 PRO 1000mAh Auto Draw Variable Voltage Battery',
-  'LOOK-SH-PRO-PLUS-BK':'Lookah - Seahorse Pro Plus, Black',
-  'FL-SB5-HAZMAT':'Special Blue - 12pk 5X Butane, 300mL per can',
-  'F-420':'Formula 420',
-  'KA-AYR-CLIP-HAZMAT':'AYR Custom CLIPPER Lighter',
-  'WP-INSERT':'Water Pipe Display Insert',
-  'BAT-INSERT-1':'Battery Display Insert #1 (BT-350VV)',
-  'BAT-INSERT-2':'Battery Display Insert #2 (Ooze HiVo)',
-  'BAT-INSERT-3':'Battery Display Insert #3 (YoCan Evolve)',
+// BigCommerce product catalog mapping (product_id, variant_id, name, price, cost, brand)
+const BC={
+  'ZZ114-48':{pid:0,vid:0,name:'Zig-Zag - 48pk Orange Papers, 1 1/4, 32ct',price:'18.0000',cost:'12.0000',brand:'ZIG-ZAG'},
+  'ZZHW-OGP':{pid:2703,vid:3174,name:'Zig-Zag - 25pk Hemp Wraps, OG Purp, 2ct',price:'15.0000',cost:'10.2300',brand:'ZIG-ZAG'},
+  'ZZHMP48':{pid:0,vid:0,name:'Zig-Zag - Organic Hemp Papers, 1 1/4, 48ct',price:'18.0000',cost:'12.0000',brand:'ZIG-ZAG'},
+  'ZZUT48':{pid:0,vid:0,name:'Zig-Zag - Ultra Thin Papers, 1 1/4, 48ct',price:'18.0000',cost:'12.0000',brand:'ZIG-ZAG'},
+  'ZZHW-NAT':{pid:2702,vid:3173,name:'Zig-Zag - 25pk Hemp Wraps, Natural, 2ct',price:'15.0000',cost:'10.2300',brand:'ZIG-ZAG'},
+  'ZZHW-BD':{pid:0,vid:0,name:'Zig-Zag - 25pk Hemp Wraps, Blue Dream, 2ct',price:'15.0000',cost:'10.2300',brand:'ZIG-ZAG'},
+  'RAW-CONE6PK':{pid:238,vid:393,name:'RAW - Classic Cones, 1 1/4, 32ct, 6pk',price:'39.5000',cost:'31.2000',brand:'RAW'},
+  'RAW-BLACKKSLIM':{pid:215,vid:325,name:'RAW - Classic Black Papers, King Size Slim, 50ct',price:'33.0000',cost:'23.0000',brand:'RAW'},
+  'RAW-114':{pid:216,vid:326,name:'RAW - Classic Papers, 1 1/4, 24ct',price:'18.0000',cost:'13.0000',brand:'RAW'},
+  'RAW-BLKCONE3PK':{pid:3166,vid:3637,name:'RAW - Black Classic Cones, 1 1/4, 32ct, 6pk',price:'46.0000',cost:'35.7000',brand:'RAW'},
+  'RAW-TIPSPREROLLED':{pid:0,vid:0,name:'RAW - 20pk Pre-Rolled Tips, 21pc',price:'22.0000',cost:'15.0000',brand:'RAW'},
+  'RAW-REGTIP':{pid:0,vid:0,name:'RAW - Original Tips Regular, 50ct',price:'12.0000',cost:'8.0000',brand:'RAW'},
+  'PC-6PCK-PINK-MC':{pid:2744,vid:3215,name:'Blazy Susan - 21pk Pink Cones, 1 1/4, 6ct',price:'28.5000',cost:'21.5000',brand:'Blazy Susan'},
+  'WP-SG12':{pid:0,vid:0,name:'Luvbuds - 12" Soft Glass Water Pipe',price:'12.5000',cost:'5.0000',brand:'LuvBuds'},
+  'SE-HP-4P85G-BX':{pid:531,vid:998,name:'SirEEL - 25pc 4.5" Bulk Glass Hand Pipes, Assorted Colors',price:'4.7500',cost:'1.8000',brand:'SirEEL'},
+  'SE-HP-CHILL3-BX':{pid:0,vid:0,name:'SirEEL - 36pc 3" Assorted Bulk Chillums',price:'3.5000',cost:'1.2000',brand:'SirEEL'},
+  'HP-SIL-COBB':{pid:0,vid:0,name:'LuvBuds - 4.5" Silicone Cobb Pipe with Glass Bowl, Assorted Colors',price:'6.0000',cost:'2.0000',brand:'LuvBuds'},
+  'BT-V850D':{pid:0,vid:0,name:'Pulsar - 10pk 510 DL 2.0 PRO 1000mAh Variable Voltage Battery',price:'15.0000',cost:'8.0000',brand:'Pulsar'},
+  'LOOK-SH-PRO-PLUS-BK':{pid:3647,vid:4119,name:'Lookah - Seahorse Pro Plus, Black',price:'24.5000',cost:'18.5000',brand:'Lookah'},
+  'FL-SB5-HAZMAT':{pid:2481,vid:2952,name:'Special Blue - 12pk 5X Butane, 300mL per can',price:'21.0000',cost:'14.5300',brand:'Special Blue'},
+  'F-420':{pid:0,vid:0,name:'Formula 420 Original Cleaner',price:'8.0000',cost:'4.0000',brand:'Formula 420'},
+  'KA-AYR-CLIP-HAZMAT':{pid:3122,vid:3593,name:'AYR Custom CLIPPER Lighter, Retail Display',price:'44.9500',cost:'20.2200',brand:'Clipper'},
+  'WP-INSERT':{pid:0,vid:0,name:'Water Pipe Display Insert (4 water pipes)',price:'0.0000',cost:'0.0000',brand:'LuvBuds',isInsert:true},
+  'BAT-INSERT-1':{pid:0,vid:0,name:'Battery Display Insert #1 (BT-350VV)',price:'0.0000',cost:'0.0000',brand:'LuvBuds',isInsert:true},
+  'BAT-INSERT-2':{pid:0,vid:0,name:'Battery Display Insert #2 (Ooze HiVo)',price:'0.0000',cost:'0.0000',brand:'LuvBuds',isInsert:true},
+  'BAT-INSERT-3':{pid:0,vid:0,name:'Battery Display Insert #3 (YoCan Evolve)',price:'0.0000',cost:'0.0000',brand:'LuvBuds',isInsert:true},
 };
 
 function generateOrderCSV(){
-  // Aggregate visible products per display, with depth-based quantities
-  const rows=[['Display','SKU','Product Name','Qty (Depth)','Category']];
+  // Build BigCommerce Orders V2 API-format JSON payload
+  const allProducts=[];
 
   displays.forEach((display,di)=>{
     const skuData={};
@@ -957,31 +957,99 @@ function generateOrderCSV(){
 
         if(bkVis){
           const depth=frVis?1:Math.floor(SD/bk.d);
-          if(!skuData[col.b])skuData[col.b]={qty:0,item:bk};
+          if(!skuData[col.b])skuData[col.b]={qty:0};
           skuData[col.b].qty+=depth;
         }
         if(frVis){
-          if(!skuData[col.f])skuData[col.f]={qty:0,item:fr};
+          if(!skuData[col.f])skuData[col.f]={qty:0};
           skuData[col.f].qty+=1;
         }
       });
     });
 
     for(const[sku,d]of Object.entries(skuData)){
-      const fullName=BC_NAMES[sku]||d.item.n;
-      rows.push(['Display '+(di+1),sku,fullName,d.qty,d.item.c]);
+      const bc=BC[sku];
+      if(!bc||bc.isInsert)continue; // skip display inserts
+      const qty=d.qty;
+      const basePrice=bc.price;
+      const baseTotal=(parseFloat(basePrice)*qty).toFixed(4);
+      const costPrice=bc.cost;
+
+      allProducts.push({
+        product_id:bc.pid,
+        variant_id:bc.vid,
+        order_pickup_method_id:0,
+        name:bc.name,
+        name_customer:bc.name,
+        name_merchant:bc.name,
+        sku:sku,
+        upc:"",
+        type:"physical",
+        base_price:basePrice,
+        price_ex_tax:basePrice,
+        price_inc_tax:basePrice,
+        price_tax:"0.0000",
+        base_total:baseTotal,
+        total_ex_tax:baseTotal,
+        total_inc_tax:baseTotal,
+        total_tax:"0.0000",
+        weight:"0.0000",
+        width:String(P[sku].w.toFixed(4)),
+        height:String(P[sku].h.toFixed(4)),
+        depth:String(P[sku].d.toFixed(4)),
+        quantity:qty,
+        base_cost_price:costPrice,
+        cost_price_inc_tax:costPrice,
+        cost_price_ex_tax:costPrice,
+        cost_price_tax:"0.0000",
+        is_refunded:false,
+        quantity_refunded:0,
+        refund_amount:"0.0000",
+        return_id:0,
+        wrapping_id:0,
+        wrapping_name:"",
+        base_wrapping_cost:"0.0000",
+        wrapping_cost_ex_tax:"0.0000",
+        wrapping_cost_inc_tax:"0.0000",
+        wrapping_cost_tax:"0.0000",
+        wrapping_message:"",
+        quantity_shipped:0,
+        event_name:null,
+        event_date:null,
+        fixed_shipping_cost:"0.0000",
+        ebay_item_id:"",
+        ebay_transaction_id:"",
+        option_set_id:null,
+        parent_order_product_id:null,
+        is_bundled_product:false,
+        bin_picking_number:"",
+        external_id:null,
+        fulfillment_source:"",
+        brand:bc.brand,
+        gift_certificate_id:null,
+        applied_discounts:[],
+        product_options:[],
+        configurable_fields:[],
+        discounted_total_inc_tax:baseTotal,
+        _display:'Display '+(di+1),
+        _needs_product_id:bc.pid===0
+      });
     }
   });
 
-  if(rows.length<=1){toast('No visible products to export');return}
+  if(allProducts.length===0){toast('No visible products to export');return}
 
-  const csv=rows.map(r=>r.map(v=>'"'+String(v).replace(/"/g,'""')+'"').join(',')).join('\n');
-  const blob=new Blob([csv],{type:'text/csv;charset=utf-8;'});
+  const blob=new Blob([JSON.stringify(allProducts,null,2)],{type:'application/json'});
   const a=document.createElement('a');
   a.href=URL.createObjectURL(blob);
-  a.download='planogram-order-'+new Date().toISOString().slice(0,10)+'.csv';
+  a.download='bigcommerce-order-'+new Date().toISOString().slice(0,10)+'.json';
   a.click();
-  toast('BigCommerce order CSV downloaded');
+
+  const missing=allProducts.filter(p=>p._needs_product_id).length;
+  const msg=missing>0
+    ?'BC order JSON exported ('+missing+' SKUs need product_id lookup)'
+    :'BC order JSON exported — ready for API';
+  toast(msg);
 }
 
 function toast(m){const t=document.getElementById('toast');t.textContent=m;t.classList.add('show');setTimeout(()=>t.classList.remove('show'),2500)}
