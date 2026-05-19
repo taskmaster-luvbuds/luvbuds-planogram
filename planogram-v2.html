@@ -97,6 +97,13 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;b
 .idx-line-filter{display:flex;flex-wrap:wrap;gap:3px;margin-bottom:6px}
 .idx-line-chip{padding:1px 6px;border-radius:10px;font-size:8px;cursor:pointer;border:1px solid #ddd;background:#fafafa;color:#555;white-space:nowrap}
 .idx-line-chip.on{color:#fff;border-color:transparent}
+.idx-dim-filter{display:flex;flex-wrap:wrap;gap:3px;margin-bottom:4px}
+.idx-dim-chip{padding:1px 6px;border-radius:10px;font-size:8px;cursor:pointer;border:1px solid #ddd;background:#fafafa;color:#555;white-space:nowrap}
+.idx-dim-chip.on{border-color:#FF8F00;background:#fff8e1;color:#E65100;font-weight:700}
+.idx-sort-row{display:flex;gap:4px;margin-bottom:6px;align-items:center}
+.idx-sort-row label{font-size:9px;color:#888;white-space:nowrap}
+.idx-sort-row select{padding:2px 4px;border:1px solid #ddd;border-radius:4px;font-size:9px;color:#555;outline:none;background:#fff}
+.idx-sort-row select:focus{border-color:#e94560}
 
 .legend-item{display:flex;align-items:center;gap:5px;padding:1px 0;font-size:10px;color:#555}
 .legend-sw{width:10px;height:10px;border-radius:2px;border:2px solid;flex-shrink:0;background:#fff}
@@ -153,6 +160,19 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;b
     <div class="panel">
       <h3>Product Index <span class="toggle-all" onclick="toggleAll()">show/hide all</span></h3>
       <input class="idx-filter" type="text" placeholder="Search by SKU or description..." oninput="filterIndex(this.value)">
+      <div class="idx-dim-filter" id="dim-filter"></div>
+      <div class="idx-sort-row">
+        <label for="sort-select">Sort:</label>
+        <select id="sort-select" onchange="setSort(this.value)">
+          <option value="default">Shelf order</option>
+          <option value="revenue-desc">Revenue ↓</option>
+          <option value="revenue-asc">Revenue ↑</option>
+          <option value="qty-desc">Qty Sold ↓</option>
+          <option value="qty-asc">Qty Sold ↑</option>
+          <option value="price-desc">Price ↓</option>
+          <option value="price-asc">Price ↑</option>
+        </select>
+      </div>
       <div class="idx-line-filter" id="line-filter"></div>
       <div class="idx-list" id="idx-list"></div>
     </div>
@@ -215,8 +235,10 @@ let viewMode = 'shape';    // 'shape' | 'image' | 'mixed'
 let displays = [];
 let nextDisplayId = 1;
 let activeLineFilter = null;
+	let activeDimFilter = null;  // null = all, 'has' = has dimensions, 'est' = estimated
+	let activeSort = 'default';  // 'default' | 'revenue-desc' | 'revenue-asc' | 'qty-desc' | 'qty-asc' | 'price-desc' | 'price-asc'
 
-// ================================================================
+	// ================================================================
 //  DATA LOADING
 // ================================================================
 async function loadCatalog() {
@@ -345,6 +367,7 @@ function renderAll() {
   renderLegend();
   renderCatalogStats();
   renderLineFilter();
+  renderDimFilter();
 }
 
 // ================================================================
@@ -755,21 +778,53 @@ function renderIndex() {
     }
 
     const placements = allPlacements(display);
-    const sorted = [...placements].sort((a, b) => {
-      const so = {top:0, mid:1, bot:2};
-      return (so[a.shelf] - so[b.shelf]) || a.col - b.col;
-    });
+    let all = [...placements];
 
     // Filter by active line
-    const filtered = activeLineFilter
-      ? sorted.filter(pl => {
-          const p = getProduct(pl.id);
-          return p && p.line === activeLineFilter;
-        })
-      : sorted;
+    if (activeLineFilter) {
+      all = all.filter(pl => {
+        const p = getProduct(pl.id);
+        return p && p.line === activeLineFilter;
+      });
+    }
+
+    // Filter by dimension status
+    if (activeDimFilter) {
+      all = all.filter(pl => {
+        const dims = getProductDims(pl.id);
+        return activeDimFilter === 'has' ? !dims.estimated : dims.estimated;
+      });
+    }
+
+    // Sort
+    const so = {top:0, mid:1, bot:2};
+    if (activeSort === 'default') {
+      all.sort((a, b) => (so[a.shelf] - so[b.shelf]) || a.col - b.col);
+    } else if (activeSort === 'revenue-desc' || activeSort === 'revenue-asc') {
+      all.sort((a, b) => {
+        const pa = getProduct(a.id), pb = getProduct(b.id);
+        const va = pa ? (pa.revenue || 0) : 0;
+        const vb = pb ? (pb.revenue || 0) : 0;
+        return activeSort === 'revenue-desc' ? vb - va : va - vb;
+      });
+    } else if (activeSort === 'qty-desc' || activeSort === 'qty-asc') {
+      all.sort((a, b) => {
+        const pa = getProduct(a.id), pb = getProduct(b.id);
+        const va = pa ? (pa.qtySold || 0) : 0;
+        const vb = pb ? (pb.qtySold || 0) : 0;
+        return activeSort === 'qty-desc' ? vb - va : va - vb;
+      });
+    } else if (activeSort === 'price-desc' || activeSort === 'price-asc') {
+      all.sort((a, b) => {
+        const pa = getProduct(a.id), pb = getProduct(b.id);
+        const va = pa ? (pa.unitPrice || 0) : 0;
+        const vb = pb ? (pb.unitPrice || 0) : 0;
+        return activeSort === 'price-desc' ? vb - va : va - vb;
+      });
+    }
 
     let lastShelf = '';
-    filtered.forEach(pl => {
+    all.forEach(pl => {
       const product = getProduct(pl.id);
       if (!product) return;
       const dims = getProductDims(pl.id);
@@ -892,7 +947,7 @@ function renderLineFilter() {
   const allChip = document.createElement('span');
   allChip.className = 'idx-line-chip' + (!activeLineFilter ? ' on' : '');
   allChip.textContent = 'All';
-  allChip.onclick = () => { activeLineFilter = null; renderIndex(); renderLineFilter(); };
+  allChip.onclick = () => { activeLineFilter = null; renderIndex(); renderLineFilter(); renderDimFilter(); };
   container.appendChild(allChip);
 
   lines.forEach(lid => {
@@ -906,9 +961,38 @@ function renderLineFilter() {
       activeLineFilter = activeLineFilter === lid ? null : lid;
       renderIndex();
       renderLineFilter();
+      renderDimFilter();
     };
     container.appendChild(chip);
   });
+}
+
+function renderDimFilter() {
+  const container = document.getElementById('dim-filter');
+  container.innerHTML = '';
+
+  const chips = [
+    { val: null, label: 'All' },
+    { val: 'has', label: 'Has Dims' },
+    { val: 'est', label: 'Estimated' },
+  ];
+
+  chips.forEach(({ val, label }) => {
+    const chip = document.createElement('span');
+    chip.className = 'idx-dim-chip' + (activeDimFilter === val ? ' on' : '');
+    chip.textContent = label;
+    chip.onclick = () => {
+      activeDimFilter = activeDimFilter === val ? null : val;
+      renderIndex();
+      renderDimFilter();
+    };
+    container.appendChild(chip);
+  });
+}
+
+function setSort(val) {
+  activeSort = val;
+  renderIndex();
 }
 
 function toggleProduct(pid, displayId) {
@@ -937,7 +1021,13 @@ function filterIndex(q) {
     const id = row.dataset.id || '';
     const p = getProduct(id);
     const text = (id + ' ' + (p ? p.name : '')).toLowerCase();
-    row.style.display = text.includes(q) ? '' : 'none';
+    if (!text.includes(q)) { row.style.display = 'none'; return; }
+    if (activeDimFilter) {
+      const dims = getProductDims(id);
+      const match = activeDimFilter === 'est' ? dims.estimated : !dims.estimated;
+      if (!match) { row.style.display = 'none'; return; }
+    }
+    row.style.display = '';
   });
 }
 
