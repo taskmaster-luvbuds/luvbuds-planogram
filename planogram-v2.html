@@ -62,11 +62,11 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;b
 .display-footer .brand{font-size:8px;color:#999;letter-spacing:1px}
 
 /* Sidebar */
-.inv-panel{width:310px;flex-shrink:0;display:flex;flex-direction:column;gap:6px;max-height:calc(100vh - 160px);overflow-y:auto;position:sticky;top:12px}
-.bottom-bar{display:flex;gap:12px;padding:8px 12px;flex-wrap:wrap;background:#e8e4dc;border-top:3px solid #e94560;max-height:340px;overflow-y:auto;align-items:flex-start}
-.bottom-bar .panel{min-width:240px;flex:1;max-width:480px}
-.bottom-bar .panel h3{font-size:11px}
-.bottom-bar .idx-list{max-height:200px}
+.inv-panel{width:310px;flex-shrink:0;display:flex;flex-direction:column;gap:6px;max-height:calc(100vh - 160px);overflow-y:auto;position:sticky;top:12px;order:1}
+.plano-wrap{order:2}
+.key-panel{width:310px;flex-shrink:0;display:flex;flex-direction:column;gap:6px;max-height:calc(100vh - 160px);overflow-y:auto;position:sticky;top:12px;order:3}
+.key-panel .panel h3{font-size:11px}
+.key-panel .idx-list{max-height:300px}
 .panel{background:#fff;border-radius:8px;padding:10px 12px;border:1px solid #ddd;box-shadow:0 1px 3px rgba(0,0,0,.06)}
 .panel h3{font-size:12px;margin-bottom:6px;color:#d32f2f;font-weight:700;display:flex;justify-content:space-between;align-items:center}
 .panel h3 .toggle-all{font-size:9px;font-weight:400;color:#888;cursor:pointer;text-decoration:underline}
@@ -138,7 +138,7 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;b
 .inv-shelf{position:relative;background:linear-gradient(180deg,#faf8f4,#f0ece0);border-left:2px solid #c8b99a;border-right:2px solid #c8b99a;border-bottom:2px solid #c8b99a;border-radius:0 0 8px 8px;overflow:visible}
 .inv-shelf .product{position:absolute;bottom:auto}
 .inv-shelf .product:hover{z-index:500!important}
-@media print{.topbar,.inv-panel,.bottom-bar,.display-controls,.add-display-btn,.view-toggle,.inv-section{display:none}body{background:#fff}.main{padding:0}.display-unit{filter:none}}
+@media print{.topbar,.inv-panel,.key-panel,.display-controls,.add-display-btn,.view-toggle,.inv-section{display:none}body{background:#fff}.main{padding:0}.display-unit{filter:none}}
 </style>
 </head>
 <body>
@@ -167,36 +167,36 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;b
 </div>
 
 <div class="main">
-  <div class="plano-wrap">
-    <div id="plano-container"></div>
-  </div>
   <div class="inv-panel" id="inv-panel">
     <div id="inventory-container"></div>
   </div>
-</div>
-<div class="bottom-bar" id="bottom-bar">
-  <div class="panel"><h3>Shelf Utilization</h3><div id="stats"></div></div>
-  <div class="panel">
-    <h3>Product Index <span class="toggle-all" onclick="toggleAll()">show/hide all</span></h3>
-    <input class="idx-filter" type="text" placeholder="Search by SKU or description..." oninput="filterIndex(this.value)">
-    <div class="idx-dim-filter" id="dim-filter"></div>
-    <div class="idx-sort-row">
-      <label for="sort-select">Sort:</label>
-      <select id="sort-select" onchange="setSort(this.value)">
-        <option value="default">Shelf order</option>
-        <option value="revenue-desc">Revenue ↓</option>
-        <option value="revenue-asc">Revenue ↑</option>
-        <option value="qty-desc">Qty Sold ↓</option>
-        <option value="qty-asc">Qty Sold ↑</option>
-        <option value="price-desc">Price ↓</option>
-        <option value="price-asc">Price ↑</option>
-      </select>
-    </div>
-    <div class="idx-line-filter" id="line-filter"></div>
-    <div class="idx-list" id="idx-list"></div>
+  <div class="plano-wrap">
+    <div id="plano-container"></div>
   </div>
-  <div class="panel"><h3>Legend</h3><div id="legend"></div></div>
-  <div class="panel" id="catalog-stats-panel"><h3>Catalog Stats</h3><div id="catalog-stats"></div></div>
+  <div class="key-panel" id="key-panel">
+    <div class="panel"><h3>Shelf Utilization</h3><div id="stats"></div></div>
+    <div class="panel">
+      <h3>Product Index <span class="toggle-all" onclick="toggleAll()">show/hide all</span></h3>
+      <input class="idx-filter" type="text" placeholder="Search by SKU or description..." oninput="filterIndex(this.value)">
+      <div class="idx-dim-filter" id="dim-filter"></div>
+      <div class="idx-sort-row">
+        <label for="sort-select">Sort:</label>
+        <select id="sort-select" onchange="setSort(this.value)">
+          <option value="default">Shelf order</option>
+          <option value="revenue-desc">Revenue ↓</option>
+          <option value="revenue-asc">Revenue ↑</option>
+          <option value="qty-desc">Qty Sold ↓</option>
+          <option value="qty-asc">Qty Sold ↑</option>
+          <option value="price-desc">Price ↓</option>
+          <option value="price-asc">Price ↑</option>
+        </select>
+      </div>
+      <div class="idx-line-filter" id="line-filter"></div>
+      <div class="idx-list" id="idx-list"></div>
+    </div>
+    <div class="panel"><h3>Legend</h3><div id="legend"></div></div>
+    <div class="panel" id="catalog-stats-panel"><h3>Catalog Stats</h3><div id="catalog-stats"></div></div>
+  </div>
 </div>
 
 <div class="toast" id="toast"></div>
@@ -974,7 +974,8 @@ function startDrag(id, dims, el, e) {
     srcCol: parseInt(el.dataset.col),
     srcPos: el.dataset.pos,
     srcDisplayId: parseInt(el.dataset.displayId),
-    srcInventory: el.dataset.inventory === 'true'
+    srcInventory: el.dataset.inventory === 'true',
+    startX: e.clientX, startY: e.clientY
   };
   posGhost(e);
 
@@ -996,6 +997,44 @@ function onDragMove(e) {
   if (target) target.classList.add('drop-target');
 }
 
+function clickToAddToDisplay(sku) {
+  // Insert into the first display at the first available shelf position.
+  if (!displays.length) return false;
+  const display = displays[0];
+  const shelfOrder = ['top','mid','bot'];
+  const dims = getProductDims(sku);
+  const w = dims.w;
+
+  // Check all shelf rows for available width
+  for (let r = 1; r <= (display.shelfRows || 1); r++) {
+    for (const sid of shelfOrder) {
+      const key = r === 1 ? sid : sid + r;
+      const cols = display.layout[key] || [];
+      let used = 0;
+      for (const col of cols) {
+        const bd = getProductDims(col.b);
+        const fd = col.f ? getProductDims(col.f) : null;
+        used += Math.max(bd.w, fd ? fd.w : 0);
+      }
+      if (used + w <= SW) {
+        if (!display.layout[key]) display.layout[key] = [];
+        display.layout[key].push({b: sku, f: null});
+        toast(`Added ${sku} to ${display.label} → ${getShelfName(key)}`);
+        return true;
+      }
+    }
+  }
+  // No room in existing rows — add a new row
+  const newRow = (display.shelfRows || 1) + 1;
+  display.shelfRows = newRow;
+  for (const sid of shelfOrder) {
+    display.layout[sid + newRow] = [];
+  }
+  display.layout['top' + newRow].push({b: sku, f: null});
+  toast(`Added ${sku} to ${display.label} → ${getShelfName('top' + newRow)} (new row)`);
+  return true;
+}
+
 function onDragEnd(e) {
   if (!dragState) return;
   document.removeEventListener('pointermove', onDragMove);
@@ -1005,6 +1044,10 @@ function onDragEnd(e) {
   dragState.srcEl.classList.remove('dragging');
 
   const target = getShelfUnder(e);
+  const dx = e.clientX - dragState.startX;
+  const dy = e.clientY - dragState.startY;
+  const moved = Math.sqrt(dx * dx + dy * dy);
+
   if (target) {
     const targetShelf = target.dataset.shelf;
     const targetDisplayId = parseInt(target.dataset.displayId);
@@ -1017,6 +1060,9 @@ function onDragEnd(e) {
         dragState.srcShelf, dragState.srcCol, dragState.srcPos,
         dragState.srcDisplayId, targetDisplayId);
     }
+  } else if (dragState.srcInventory && moved < 8) {
+    // Click-to-add: quick tap on inventory item → auto-place in first display
+    clickToAddToDisplay(dragState.id);
   }
 
   dragState = null;
