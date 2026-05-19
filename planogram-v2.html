@@ -368,6 +368,7 @@ function renderAll() {
   renderCatalogStats();
   renderLineFilter();
   renderDimFilter();
+  reapplySearch();
 }
 
 // ================================================================
@@ -947,7 +948,7 @@ function renderLineFilter() {
   const allChip = document.createElement('span');
   allChip.className = 'idx-line-chip' + (!activeLineFilter ? ' on' : '');
   allChip.textContent = 'All';
-  allChip.onclick = () => { activeLineFilter = null; renderIndex(); renderLineFilter(); renderDimFilter(); };
+  allChip.onclick = () => { activeLineFilter = null; renderIndex(); renderLineFilter(); renderDimFilter(); reapplySearch(); };
   container.appendChild(allChip);
 
   lines.forEach(lid => {
@@ -962,6 +963,7 @@ function renderLineFilter() {
       renderIndex();
       renderLineFilter();
       renderDimFilter();
+      reapplySearch();
     };
     container.appendChild(chip);
   });
@@ -985,6 +987,7 @@ function renderDimFilter() {
       activeDimFilter = activeDimFilter === val ? null : val;
       renderIndex();
       renderDimFilter();
+      reapplySearch();
     };
     container.appendChild(chip);
   });
@@ -993,6 +996,7 @@ function renderDimFilter() {
 function setSort(val) {
   activeSort = val;
   renderIndex();
+  reapplySearch();
 }
 
 function toggleProduct(pid, displayId) {
@@ -1029,6 +1033,11 @@ function filterIndex(q) {
     }
     row.style.display = '';
   });
+}
+
+function reapplySearch() {
+  const inp = document.querySelector('.idx-filter');
+  if (inp && inp.value.trim()) filterIndex(inp.value);
 }
 
 function highlightProduct(pid, displayId) {
@@ -1184,6 +1193,13 @@ function mvTip(e) {
 //  ACTIONS
 // ================================================================
 function resetAll() {
+  // Clear filters + search
+  activeLineFilter = null;
+  activeDimFilter = null;
+  activeSort = 'default';
+  const inp = document.querySelector('.idx-filter');
+  if (inp) inp.value = '';
+  document.getElementById('sort-select').value = 'default';
   // Rebuild all displays from catalog
   displays = [];
   buildDefaultDisplays();
