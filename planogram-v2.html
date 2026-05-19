@@ -298,9 +298,10 @@ function createDisplay(label, lineId, skus) {
     label: label || 'Display',
     lineId: lineId || null,
     layout: {top:[], mid:[], bot:[]},
+    shelfRows: 1,
     hidden: new Set()
   };
-  // Auto-place products across 3 shelves
+  // Auto-place products across shelves with width awareness
   if (skus && skus.length > 0) {
     autoPlaceProducts(display, skus);
   }
@@ -309,15 +310,96 @@ function createDisplay(label, lineId, skus) {
 }
 
 function autoPlaceProducts(display, skus) {
-  // Distribute SKUs across shelves, fitting by width
+  // Width-aware placement: fill each shelf up to SW (27.5").
+  // When all 3 shelves in a row overflow, create additional shelf rows
+  // so all products are visible and accessible.
   const shelfOrder = ['top','mid','bot'];
-  let si = 0;
+
+  // Always reset layout for fresh placement
+  display.layout = {top:[], mid:[], bot:[]};
+  display.shelfRows = 1;
+
+  // Track current width used per shelf in the active row
+  let rowWidths = {top: 0, mid: 0, bot: 0};
+  let currentRow = 1;
+
   for (const sku of skus) {
     const dims = getProductDims(sku);
-    const shelfId = shelfOrder[si % 3];
-    display.layout[shelfId].push({b: sku, f: null});
-    si++;
+    const w = dims.w;
+
+    // Find first shelf in current row with enough remaining width
+    let placed = false;
+    for (const sid of shelfOrder) {
+      if (rowWidths[sid] + w <= SW) {
+        const key = currentRow === 1 ? sid : sid + currentRow;
+        if (!display.layout[key]) display.layout[key] = [];
+        display.layout[key].push({b: sku, f: null});
+        rowWidths[sid] += w;
+        placed = true;
+        break;
+      }
+    }
+
+    if (!placed) {
+      // Start a new shelf row
+      currentRow++;
+      display.shelfRows = currentRow;
+      rowWidths = {top: 0, mid: 0, bot: 0};
+
+      // Create layout keys for new row
+      for (const sid of shelfOrder) {
+        display.layout[sid + currentRow] = [];
+      }
+
+      // Place on top shelf of new row
+      const newKey = 'top' + currentRow;
+      display.layout[newKey].push({b: sku, f: null});
+      rowWidths.top = w;
+    }
   }
+}
+
+// Shelf ID helpers for multi-row displays
+function getShelfBase(shelfId) {
+  return shelfId.replace(/\d+$/, '');
+}
+
+function getShelfRow(shelfId) {
+  const m = shelfId.match(/\d+$/);
+  return m ? parseInt(m[0]) : 1;
+}
+
+function getRowShelfIds(display) {
+  const shelfOrder = ['top','mid','bot'];
+  const rows = display.shelfRows || 1;
+  const ids = [];
+  for (let r = 1; r <= rows; r++) {
+    for (const s of shelfOrder) {
+      ids.push(r === 1 ? s : s + r);
+    }
+  }
+  return ids;
+}
+
+function getShelfName(shelfId) {
+  const base = getShelfBase(shelfId);
+  const row = getShelfRow(shelfId);
+  const shelf = SHELVES.find(s => s.id === base);
+  const baseName = shelf ? shelf.name : shelfId;
+  return row > 1 ? baseName + ' ' + row : baseName;
+}
+
+function getShelfClearance(shelfId) {
+  const base = getShelfBase(shelfId);
+  const shelf = SHELVES.find(s => s.id === base);
+  return shelf ? shelf.cl : 12;
+}
+
+function shelfSortKey(shelfId) {
+  const base = getShelfBase(shelfId);
+  const row = getShelfRow(shelfId);
+  const baseOrder = {top:0, mid:1, bot:2};
+  return (row - 1) * 10 + (baseOrder[base] || 0);
 }
 
 function getDisplay(displayId) {
@@ -332,10 +414,11 @@ function cloneDisplay(displayId) {
     label: src.label + ' (copy)',
     lineId: src.lineId,
     layout: {},
+    shelfRows: src.shelfRows || 1,
     hidden: new Set(src.hidden)
   };
-  for (const sid of ['top','mid','bot']) {
-    dup.layout[sid] = src.layout[sid].map(col => ({b: col.b, f: col.f || null}));
+  for (const sid of getRowShelfIds(src)) {
+    dup.layout[sid] = (src.layout[sid] || []).map(col => ({b: col.b, f: col.f || null}));
   }
   displays.push(dup);
   return dup;
@@ -348,8 +431,8 @@ function removeDisplay(displayId) {
 
 function allPlacements(display) {
   const out = [];
-  for (const sid of ['top','mid','bot']) {
-    display.layout[sid].forEach((col, ci) => {
+  for (const sid of getRowShelfIds(display)) {
+    (display.layout[sid] || []).forEach((col, ci) => {
       out.push({id: col.b, shelf: sid, col: ci, pos: 'back', displayId: display.id});
       if (col.f) out.push({id: col.f, shelf: sid, col: ci, pos: 'front', displayId: display.id});
     });
@@ -449,85 +532,97 @@ function renderDisplayUnit(display, root) {
   const hdr = document.createElement('div');
   hdr.className = 'display-header';
   hdr.style.borderColor = lc;
-  const lineLabel = display.lineId ? CATALOG.lines[display.lineId]?.label || display.label : display.label;
   hdr.innerHTML = `<div class="brand">Powered by LuvBuds</div><div class="title">STUFF <span>FOR</span> YOUR <span>PUFF</span></div>`;
   root.appendChild(hdr);
 
-  SHELVES.forEach((shelf, si) => {
-    if (si === 1) {
-      const b = document.createElement('div');
-      b.className = 'red-banner';
-      b.style.borderLeftColor = lc;
-      b.style.borderRightColor = lc;
-      b.innerHTML = '<span>GRAB & GO!</span><span class="st">THE STUFF FOR YOUR PUFF</span>';
-      root.appendChild(b);
-    }
-    if (si === 2) {
-      const b = document.createElement('div');
-      b.className = 'red-banner';
-      b.style.borderLeftColor = lc;
-      b.style.borderRightColor = lc;
-      b.innerHTML = '<span>SESSION READY!</span><span class="st">FIND YOUR GEAR HERE</span>';
-      root.appendChild(b);
+  const rows = display.shelfRows || 1;
+  for (let r = 1; r <= rows; r++) {
+    // Row separator between shelf rows
+    if (r > 1) {
+      const sep = document.createElement('div');
+      sep.style.cssText = 'height:10px;background:linear-gradient(180deg,#c8b99a 0%,#f5f0e8 40%,#f5f0e8 60%,#c8b99a 100%);border-left:2px solid ' + lc + ';border-right:2px solid ' + lc;
+      root.appendChild(sep);
     }
 
-    const cols = display.layout[shelf.id];
-    let usedW = 0;
-    cols.forEach(c => {
-      const bkHidden = display.hidden.has(c.b), frHidden = c.f && display.hidden.has(c.f);
-      const bkDims = bkHidden ? null : getProductDims(c.b);
-      const frDims = (frHidden || !c.f) ? null : getProductDims(c.f);
-      if (bkDims || frDims) {
-        usedW += Math.max(bkDims ? bkDims.w : 0, frDims ? frDims.w : 0);
+    SHELVES.forEach((shelf, si) => {
+      // Banners only on first row
+      if (r === 1 && si === 1) {
+        const b = document.createElement('div');
+        b.className = 'red-banner';
+        b.style.borderLeftColor = lc;
+        b.style.borderRightColor = lc;
+        b.innerHTML = '<span>GRAB & GO!</span><span class="st">THE STUFF FOR YOUR PUFF</span>';
+        root.appendChild(b);
       }
+      if (r === 1 && si === 2) {
+        const b = document.createElement('div');
+        b.className = 'red-banner';
+        b.style.borderLeftColor = lc;
+        b.style.borderRightColor = lc;
+        b.innerHTML = '<span>SESSION READY!</span><span class="st">FIND YOUR GEAR HERE</span>';
+        root.appendChild(b);
+      }
+
+      const shelfKey = r === 1 ? shelf.id : shelf.id + r;
+      const cols = display.layout[shelfKey] || [];
+      let usedW = 0;
+      cols.forEach(c => {
+        const bkHidden = display.hidden.has(c.b), frHidden = c.f && display.hidden.has(c.f);
+        const bkDims = bkHidden ? null : getProductDims(c.b);
+        const frDims = (frHidden || !c.f) ? null : getProductDims(c.f);
+        if (bkDims || frDims) {
+          usedW += Math.max(bkDims ? bkDims.w : 0, frDims ? frDims.w : 0);
+        }
+      });
+
+      const shelfName = r === 1 ? shelf.name : shelf.name + ' ' + r;
+      const lbl = document.createElement('div');
+      lbl.className = 'shelf-label';
+      lbl.style.borderLeftColor = lc;
+      lbl.style.borderRightColor = lc;
+      lbl.innerHTML = `<strong>${shelfName}</strong><span>${shelf.cl}″ cl · ${usedW.toFixed(1)}″/${SW}″</span>`;
+      root.appendChild(lbl);
+
+      const area = document.createElement('div');
+      area.className = 'shelf-front';
+      area.style.width = (SW * PX) + 'px';
+      area.style.height = (shelf.cl * PX) + 'px';
+      area.style.borderLeftColor = lc;
+      area.style.borderRightColor = lc;
+      area.dataset.shelf = shelfKey;
+      area.dataset.displayId = display.id;
+
+      let x = 0;
+      cols.forEach((col, ci) => {
+        const bkHidden = display.hidden.has(col.b);
+        const frHidden = col.f && display.hidden.has(col.f);
+        const bkDims = bkHidden ? null : getProductDims(col.b);
+        const frDims = (frHidden || !col.f) ? null : getProductDims(col.f);
+        if (!bkDims && !frDims) return;
+        let colW = 0;
+        if (bkDims) colW = Math.max(colW, bkDims.w);
+        if (frDims) colW = Math.max(colW, frDims.w);
+        const hasFront = frDims && !frHidden;
+        const bkDepth = (hasFront && frDims) ? 1 : Math.floor(SD / (bkDims ? bkDims.d : 1));
+        if (bkDims && !bkHidden) {
+          area.appendChild(mkProduct(col.b, bkDims, x,
+            hasFront ? 'is-back' : 'is-single', bkDepth, shelfKey, ci, 'back', display.id));
+        }
+        if (frDims && !frHidden) {
+          area.appendChild(mkProduct(col.f, frDims, x,
+            bkDims && !bkHidden ? 'is-front' : 'is-single', 1, shelfKey, ci, 'front', display.id));
+        }
+        x += colW;
+      });
+
+      root.appendChild(area);
+      const lip = document.createElement('div');
+      lip.className = 'shelf-surface';
+      lip.style.borderLeftColor = lc;
+      lip.style.borderRightColor = lc;
+      root.appendChild(lip);
     });
-
-    const lbl = document.createElement('div');
-    lbl.className = 'shelf-label';
-    lbl.style.borderLeftColor = lc;
-    lbl.style.borderRightColor = lc;
-    lbl.innerHTML = `<strong>${shelf.name}</strong><span>${shelf.cl}″ cl · ${usedW.toFixed(1)}″/${SW}″</span>`;
-    root.appendChild(lbl);
-
-    const area = document.createElement('div');
-    area.className = 'shelf-front';
-    area.style.width = (SW * PX) + 'px';
-    area.style.height = (shelf.cl * PX) + 'px';
-    area.style.borderLeftColor = lc;
-    area.style.borderRightColor = lc;
-    area.dataset.shelf = shelf.id;
-    area.dataset.displayId = display.id;
-
-    let x = 0;
-    cols.forEach((col, ci) => {
-      const bkHidden = display.hidden.has(col.b);
-      const frHidden = col.f && display.hidden.has(col.f);
-      const bkDims = bkHidden ? null : getProductDims(col.b);
-      const frDims = (frHidden || !col.f) ? null : getProductDims(col.f);
-      if (!bkDims && !frDims) return;
-      let colW = 0;
-      if (bkDims) colW = Math.max(colW, bkDims.w);
-      if (frDims) colW = Math.max(colW, frDims.w);
-      const hasFront = frDims && !frHidden;
-      const bkDepth = (hasFront && frDims) ? 1 : Math.floor(SD / (bkDims ? bkDims.d : 1));
-      if (bkDims && !bkHidden) {
-        area.appendChild(mkProduct(col.b, bkDims, x,
-          hasFront ? 'is-back' : 'is-single', bkDepth, shelf.id, ci, 'back', display.id));
-      }
-      if (frDims && !frHidden) {
-        area.appendChild(mkProduct(col.f, frDims, x,
-          bkDims && !bkHidden ? 'is-front' : 'is-single', 1, shelf.id, ci, 'front', display.id));
-      }
-      x += colW;
-    });
-
-    root.appendChild(area);
-    const lip = document.createElement('div');
-    lip.className = 'shelf-surface';
-    lip.style.borderLeftColor = lc;
-    lip.style.borderRightColor = lc;
-    root.appendChild(lip);
-  });
+  }
 
   const ftr = document.createElement('div');
   ftr.className = 'display-footer';
@@ -798,9 +893,8 @@ function renderIndex() {
     }
 
     // Sort
-    const so = {top:0, mid:1, bot:2};
     if (activeSort === 'default') {
-      all.sort((a, b) => (so[a.shelf] - so[b.shelf]) || a.col - b.col);
+      all.sort((a, b) => (shelfSortKey(a.shelf) - shelfSortKey(b.shelf)) || a.col - b.col);
     } else if (activeSort === 'revenue-desc' || activeSort === 'revenue-asc') {
       all.sort((a, b) => {
         const pa = getProduct(a.id), pb = getProduct(b.id);
@@ -830,7 +924,7 @@ function renderIndex() {
       if (!product) return;
       const dims = getProductDims(pl.id);
       const isHidden = display.hidden.has(pl.id);
-      const shelfName = SHELVES.find(s => s.id === pl.shelf).name;
+      const shelfName = getShelfName(pl.shelf);
 
       if (pl.shelf !== lastShelf) {
         lastShelf = pl.shelf;
@@ -1057,8 +1151,8 @@ function highlightProduct(pid, displayId) {
 // ================================================================
 function countInstances(pid, display) {
   let count = 0;
-  for (const sid of ['top','mid','bot']) {
-    for (const col of display.layout[sid]) {
+  for (const sid of getRowShelfIds(display)) {
+    for (const col of (display.layout[sid] || [])) {
       if (col.b === pid) count++;
       if (col.f === pid) count++;
     }
@@ -1100,8 +1194,8 @@ function updateStats() {
     if (displays.length > 1) {
       html += `<div class="stats-display-hdr" style="margin-top:${di>0?'8':'0'}px">${display.label}</div>`;
     }
-    SHELVES.forEach(s => {
-      const cols = display.layout[s.id];
+    for (const sid of getRowShelfIds(display)) {
+      const cols = display.layout[sid] || [];
       let w = 0, skus = 0;
       cols.forEach(c => {
         const bkHidden = display.hidden.has(c.b);
@@ -1116,9 +1210,9 @@ function updateStats() {
       });
       const pct = w / SW * 100;
       const cls = pct > 100 ? 'u-over' : pct > 90 ? 'u-warn' : 'u-ok';
-      html += `<div class="stat-row"><span>${s.name}</span><span>${w.toFixed(1)}″/${SW}″ (${pct.toFixed(0)}%) · ${skus} items</span></div>
+      html += `<div class="stat-row"><span>${getShelfName(sid)}</span><span>${w.toFixed(1)}″/${SW}″ (${pct.toFixed(0)}%) · ${skus} items</span></div>
         <div class="util-bar"><div class="util-fill ${cls}" style="width:${Math.min(pct,100)}%"></div></div>`;
-    });
+    }
     const plc = allPlacements(display);
     const total = plc.length;
     let hidCount = 0;
@@ -1210,7 +1304,9 @@ function resetAll() {
 function clearDisplay(displayId) {
   const display = getDisplay(displayId);
   if (!display) return;
-  for (const sid of ['top','mid','bot']) { display.layout[sid] = []; }
+  for (const sid of getRowShelfIds(display)) { display.layout[sid] = []; }
+  display.shelfRows = 1;
+  display.layout = {top:[], mid:[], bot:[]};
   display.hidden.clear();
   renderAll();
   toast('Cleared display');
@@ -1222,18 +1318,21 @@ function dlJSON() {
     displays: displays.map((display, di) => ({
       name: display.label,
       lineId: display.lineId,
-      shelves: SHELVES.map(s => ({
-        name: s.name, clearance: s.cl,
-        columns: display.layout[s.id].map(c => {
-          const bkDims = getProductDims(c.b);
-          const frDims = c.f ? getProductDims(c.f) : null;
-          return {
-            back: {id: c.b, ...bkDims},
-            front: frDims ? {id: c.f, ...frDims} : null,
-            columnWidth: Math.max(bkDims.w, frDims ? frDims.w : 0)
-          };
-        })
-      })),
+      shelves: getRowShelfIds(display).map(sid => {
+        const clearance = getShelfClearance(sid);
+        return {
+          name: getShelfName(sid), clearance: clearance,
+          columns: (display.layout[sid] || []).map(c => {
+            const bkDims = getProductDims(c.b);
+            const frDims = c.f ? getProductDims(c.f) : null;
+            return {
+              back: {id: c.b, ...bkDims},
+              front: frDims ? {id: c.f, ...frDims} : null,
+              columnWidth: Math.max(bkDims.w, frDims ? frDims.w : 0)
+            };
+          })
+        };
+      }),
       hidden: [...display.hidden]
     }))
   };
@@ -1250,8 +1349,8 @@ function generateOrderJSON() {
   displays.forEach((display, di) => {
     const skuData = {};
 
-    SHELVES.forEach(shelf => {
-      const cols = display.layout[shelf.id];
+    for (const sid of getRowShelfIds(display)) {
+      const cols = display.layout[sid] || [];
       cols.forEach(col => {
         [col.b, col.f].filter(Boolean).forEach(sku => {
           if (display.hidden.has(sku)) return;
@@ -1263,7 +1362,7 @@ function generateOrderJSON() {
           skuData[sku].qty += (sku === col.f ? 1 : deep);
         });
       });
-    });
+    }
 
     for (const [sku, d] of Object.entries(skuData)) {
       const p = getProduct(sku);
