@@ -125,7 +125,16 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;b
 .view-toggle{display:flex;gap:2px;background:#2a2a4a;border-radius:4px;padding:2px}
 .view-toggle button{padding:3px 10px;border:none;background:transparent;color:#888;cursor:pointer;font-size:9px;border-radius:3px}
 .view-toggle button.on{background:#e94560;color:#fff}
-@media print{.topbar,.sidebar,.display-controls,.add-display-btn,.view-toggle{display:none}body{background:#fff}.main{padding:0}.display-unit{filter:none}}
+.inv-section{margin-bottom:10px}
+.inv-header{background:#1a1a2e;padding:8px 14px;border-radius:8px 8px 0 0;display:flex;align-items:center;gap:8px;cursor:pointer;user-select:none;max-width:464px;margin:0 auto}
+.inv-header:hover{background:#2a2a4e}
+.inv-caret{color:#e94560;font-size:12px;width:14px;flex-shrink:0}
+.inv-header span:nth-child(2){color:#fff;font-weight:700;font-size:13px}
+.inv-count{color:#888;font-size:10px;margin-left:auto}
+.inv-shelf{position:relative;background:linear-gradient(180deg,#faf8f4,#f0ece0);border-left:2px solid #c8b99a;border-right:2px solid #c8b99a;border-bottom:2px solid #c8b99a;border-radius:0 0 8px 8px;max-width:464px;margin:0 auto;overflow:visible}
+.inv-shelf .product{position:absolute;bottom:auto}
+.inv-shelf .product:hover{z-index:500!important}
+@media print{.topbar,.sidebar,.display-controls,.add-display-btn,.view-toggle,.inv-section{display:none}body{background:#fff}.main{padding:0}.display-unit{filter:none}}
 </style>
 </head>
 <body>
@@ -154,7 +163,9 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;b
 </div>
 
 <div class="main">
-  <div class="plano-wrap" id="plano-container"></div>
+  <div class="plano-wrap">
+    <div id="inventory-container"></div>
+    <div id="plano-container"></div>
   <div class="sidebar">
     <div class="panel"><h3>Shelf Utilization</h3><div id="stats"></div></div>
     <div class="panel">
@@ -195,6 +206,13 @@ const SHELVES = [
   {id:'bot', name:'Bottom Shelf', cl:10.5}
 ];
 
+// Inventory categories — group lines into 3 browseable pools
+const INVENTORY_CATEGORIES = {
+  'herb':  { label: 'Herb Inventory',  lines: ['herb-green','herb-yellow'] },
+  'glass': { label: 'Glass Inventory', lines: ['glass-green','glass-yellow'] },
+  'vape':  { label: 'Vape Inventory',  lines: ['vape-green','vape-yellow'] },
+};
+
 // Default dimensions for products missing real dimensions (by subcategory)
 const DEFAULT_DIMS = {
   'Atomizers': {w:2, h:2, d:1},
@@ -234,6 +252,7 @@ let lineColors = {};       // line → color
 let viewMode = 'shape';    // 'shape' | 'image' | 'mixed'
 let displays = [];
 let nextDisplayId = 1;
+let collapsedInventories = new Set();
 let activeLineFilter = null;
 	let activeDimFilter = null;  // null = all, 'has' = has dimensions, 'est' = estimated
 	let activeSort = 'default';  // 'default' | 'revenue-desc' | 'revenue-asc' | 'qty-desc' | 'qty-asc' | 'price-desc' | 'price-asc'
@@ -444,6 +463,7 @@ function allPlacements(display) {
 //  RENDER ALL
 // ================================================================
 function renderAll() {
+  renderInventory();
   renderPlano();
   renderIndex();
   updateStats();
@@ -452,6 +472,179 @@ function renderAll() {
   renderLineFilter();
   renderDimFilter();
   reapplySearch();
+}
+
+// ================================================================
+//  INVENTORY SHELVES
+// ================================================================
+function renderInventory() {
+  const container = document.getElementById('inventory-container');
+  container.innerHTML = '';
+
+  for (const [cat, cfg] of Object.entries(INVENTORY_CATEGORIES)) {
+    const skus = [];
+    for (const [sku, p] of Object.entries(products)) {
+      if (cfg.lines.includes(p.line)) skus.push(sku);
+    }
+    skus.sort();
+
+    const isCollapsed = collapsedInventories.has(cat);
+
+    const section = document.createElement('div');
+    section.className = 'inv-section';
+
+    const header = document.createElement('div');
+    header.className = 'inv-header';
+    header.onclick = () => { toggleInventory(cat); };
+    header.innerHTML = `<span class="inv-caret">${isCollapsed ? '▸' : '▾'}</span>
+      <span>${cfg.label}</span>
+      <span class="inv-count">${skus.length} SKUs</span>`;
+    section.appendChild(header);
+
+    if (!isCollapsed) {
+      const rows = computeInvRows(skus);
+      const lastRow = rows[rows.length - 1];
+      const totalH = rows.length > 0 ? (lastRow.y + lastRow.h) : 0;
+
+      const shelf = document.createElement('div');
+      shelf.className = 'inv-shelf';
+      shelf.id = 'inv-' + cat;
+      shelf.style.height = (totalH * PX + 8) + 'px';
+
+      rows.forEach(row => {
+        row.items.forEach(item => {
+          shelf.appendChild(mkInventoryProduct(item.sku, item.dims, item.x, row.y, row.h, cat));
+        });
+      });
+
+      section.appendChild(shelf);
+    }
+
+    container.appendChild(section);
+  }
+}
+
+function computeInvRows(skus) {
+  const rows = [];
+  let x = 0;
+  let currentRow = { y: 0, h: 0, items: [] };
+
+  for (const sku of skus) {
+    const dims = getProductDims(sku);
+    const w = dims.w;
+    const h = dims.h;
+
+    if (x + w > SW && currentRow.items.length > 0) {
+      rows.push(currentRow);
+      const prevBottom = currentRow.y + currentRow.h;
+      currentRow = { y: prevBottom + 0.5, h: 0, items: [] };
+      x = 0;
+    }
+
+    currentRow.items.push({ sku, x, dims });
+    currentRow.h = Math.max(currentRow.h, h);
+    x += w;
+  }
+  if (currentRow.items.length > 0) rows.push(currentRow);
+
+  return rows;
+}
+
+function mkInventoryProduct(sku, dims, x, rowY, rowH, cat) {
+  const product = getProduct(sku);
+  const el = document.createElement('div');
+  const color = getProductColor(sku);
+  const isEstimated = dims.estimated;
+  const hasImage = product && product.images && product.images.length > 0;
+  const imgUrl = hasImage ? product.images[0] : null;
+
+  el.className = 'product is-single' + (isEstimated ? ' estimated' : '') + (!hasImage || viewMode === 'shape' ? ' no-image' : '');
+  el.style.left = (x * PX) + 'px';
+  el.style.top = (rowY * PX) + 'px';
+  el.style.bottom = 'auto';
+  el.style.width = (dims.w * PX) + 'px';
+  el.style.height = (dims.h * PX) + 'px';
+  el.style.borderColor = color;
+  el.style.backgroundColor = hexToRgba(color, isEstimated ? 0.15 : 0.25);
+  el.dataset.id = sku;
+  el.dataset.inventory = 'true';
+  el.dataset.inventoryCat = cat;
+
+  // Shape fill
+  const shapeFill = document.createElement('div');
+  shapeFill.className = 'shape-fill';
+  shapeFill.style.backgroundColor = hexToRgba(color, 0.25);
+  el.appendChild(shapeFill);
+
+  // Product name label
+  if (product) {
+    const pname = document.createElement('div');
+    pname.className = 'p-name';
+    pname.textContent = shortName(product.name);
+    el.appendChild(pname);
+  }
+
+  // Image overlay
+  if (imgUrl && viewMode !== 'shape') {
+    const img = document.createElement('img');
+    img.className = 'pimg';
+    img.src = imgUrl;
+    img.alt = product ? product.name : '';
+    img.draggable = false;
+    img.loading = 'lazy';
+    img.onerror = function() { this.style.display = 'none'; el.classList.add('no-image'); };
+    img.onload = function() { el.classList.remove('no-image'); };
+    el.appendChild(img);
+  }
+
+  // SKU label
+  const lbl = document.createElement('div');
+  lbl.className = 'p-id';
+  lbl.style.backgroundColor = color;
+  lbl.textContent = sku;
+  el.appendChild(lbl);
+
+  // Estimated indicator
+  if (isEstimated) {
+    const est = document.createElement('div');
+    est.style.cssText = 'position:absolute;top:2px;left:2px;font-size:7px;color:#FF8F00;z-index:21;background:rgba(0,0,0,.7);padding:1px 3px;border-radius:3px';
+    est.textContent = 'est';
+    el.appendChild(est);
+  }
+
+  // Tooltip
+  el.addEventListener('pointerenter', e => {
+    if (!product) return;
+    const pStr = isEstimated ? ' (estimated)' : '';
+    let info = `${dims.w}″W × ${dims.h}″H × ${dims.d}″D${pStr}`;
+    if (product.unitPrice) info += `\nPrice: $${product.unitPrice.toFixed(2)}`;
+    if (product.available !== null) info += ` · Stock: ${product.available}`;
+    if (product.brand) info += `\nBrand: ${product.brand}`;
+    document.getElementById('tt-n').textContent = product.name;
+    document.getElementById('tt-d').textContent = info;
+    document.getElementById('tooltip').classList.add('vis');
+    mvTip(e);
+  });
+  el.addEventListener('pointerleave', () => document.getElementById('tooltip').classList.remove('vis'));
+  el.addEventListener('pointermove', e => { if (!dragState) mvTip(e); });
+
+  // Drag start
+  el.addEventListener('pointerdown', e => {
+    if (e.button) return;
+    e.preventDefault();
+    startDrag(sku, dims, el, e);
+  });
+
+  return el;
+}
+
+function toggleInventory(cat) {
+  if (collapsedInventories.has(cat)) {
+    collapsedInventories.delete(cat);
+  } else {
+    collapsedInventories.add(cat);
+  }
+  renderInventory();
 }
 
 // ================================================================
@@ -772,7 +965,8 @@ function startDrag(id, dims, el, e) {
     srcShelf: el.dataset.shelf,
     srcCol: parseInt(el.dataset.col),
     srcPos: el.dataset.pos,
-    srcDisplayId: parseInt(el.dataset.displayId)
+    srcDisplayId: parseInt(el.dataset.displayId),
+    srcInventory: el.dataset.inventory === 'true'
   };
   posGhost(e);
 
@@ -808,9 +1002,13 @@ function onDragEnd(e) {
     const targetDisplayId = parseInt(target.dataset.displayId);
     const rect = target.getBoundingClientRect();
     const dropX = Math.max(0, (e.clientX - rect.left) / PX);
-    moveProduct(dragState.id, targetShelf, dropX,
-      dragState.srcShelf, dragState.srcCol, dragState.srcPos,
-      dragState.srcDisplayId, targetDisplayId);
+    if (dragState.srcInventory) {
+      insertIntoDisplay(dragState.id, targetShelf, dropX, targetDisplayId);
+    } else {
+      moveProduct(dragState.id, targetShelf, dropX,
+        dragState.srcShelf, dragState.srcCol, dragState.srcPos,
+        dragState.srcDisplayId, targetDisplayId);
+    }
   }
 
   dragState = null;
@@ -845,6 +1043,21 @@ function moveProduct(pid, targetShelf, dropX, srcShelf, srcCol, srcPos, srcDispl
   const targetDisplay = getDisplay(targetDisplayId);
   if (!targetDisplay) return;
 
+  const cols = targetDisplay.layout[targetShelf];
+  let x = 0, insertIdx = cols.length;
+  for (let i = 0; i < cols.length; i++) {
+    const bkDims = getProductDims(cols[i].b);
+    const frDims = cols[i].f ? getProductDims(cols[i].f) : null;
+    const cw = Math.max(bkDims.w, frDims ? frDims.w : 0);
+    if (dropX < x + cw / 2) { insertIdx = i; break; }
+    x += cw;
+  }
+  cols.splice(insertIdx, 0, {b: pid, f: null});
+}
+
+function insertIntoDisplay(pid, targetShelf, dropX, targetDisplayId) {
+  const targetDisplay = getDisplay(targetDisplayId);
+  if (!targetDisplay) return;
   const cols = targetDisplay.layout[targetShelf];
   let x = 0, insertIdx = cols.length;
   for (let i = 0; i < cols.length; i++) {
@@ -1291,6 +1504,7 @@ function resetAll() {
   activeLineFilter = null;
   activeDimFilter = null;
   activeSort = 'default';
+  collapsedInventories.clear();
   const inp = document.querySelector('.idx-filter');
   if (inp) inp.value = '';
   document.getElementById('sort-select').value = 'default';
