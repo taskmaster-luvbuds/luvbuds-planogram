@@ -1,0 +1,17 @@
+# Credentials — never commit
+.claude/settings.local.json
+
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# IDE
+.vscode/
+
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+
+# Build artifacts (catalog.json is tracked — runtime dependency of planogram-v2.html)
