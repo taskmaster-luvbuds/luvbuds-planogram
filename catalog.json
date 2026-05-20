@@ -18,10 +18,10 @@
         "https://cdn11.bigcommerce.com/s-ijm7dw7yvr/images/stencil/original/products/4430/12539/LUVBUDS-SirEEL-se-qbng-etchbckt-14m-bx-D__94159.1739391309.png?c=2",
         "https://cdn11.bigcommerce.com/s-ijm7dw7yvr/images/stencil/original/products/4430/21279/LUVBUDS-SIREEL-SE-QBNG-ETCHBCKT-14M-BX-A-Banger__16505.1769024795.jpg?c=2"
       ],
-      "width": null,
-      "height": null,
-      "depth": null,
-      "hasDimensions": false
+      "width": 7.5,
+      "height": 10.0,
+      "depth": 3.75,
+      "hasDimensions": true
     },
     "BIC-MAXI-HAZMAT": {
       "sku": "BIC-MAXI-HAZMAT",
@@ -124,9 +124,9 @@
         "https://cdn11.bigcommerce.com/s-ijm7dw7yvr/images/stencil/original/products/4554/15664/SE-HP-CHILL3-BX-A__64603.1741207069.png?c=2",
         "https://cdn11.bigcommerce.com/s-ijm7dw7yvr/images/stencil/original/products/4554/21260/LUVBUDS-SIREEL-SE-HP-CHILL3-BX-A-Chillums__27019.1768577893.png?c=2"
       ],
-      "width": 9.0,
-      "height": 10.6,
-      "depth": 9.0,
+      "width": 1.0,
+      "height": 3.0,
+      "depth": 1.0,
       "hasDimensions": true
     },
     "WP-DONUTMACSTAR7": {
@@ -147,10 +147,10 @@
         "https://cdn11.bigcommerce.com/s-ijm7dw7yvr/images/stencil/original/products/3479/21167/LUVBUDS-WP-DONUTMACSTAR7-A-Water_Pipe__39777.1768579285.jpg?c=2",
         "https://cdn11.bigcommerce.com/s-ijm7dw7yvr/images/stencil/original/products/3479/16053/WP-DONUTMACSTAR7-3__92491.1767819395.png?c=2"
       ],
-      "width": null,
-      "height": null,
-      "depth": null,
-      "hasDimensions": false
+      "width": 2.75,
+      "height": 6.5,
+      "depth": 3.5,
+      "hasDimensions": true
     },
     "SE-WP-CLEARETCH8": {
       "sku": "SE-WP-CLEARETCH8",
@@ -190,9 +190,9 @@
         "https://cdn11.bigcommerce.com/s-ijm7dw7yvr/images/stencil/original/products/4066/21336/LUVBUDS-SE-WP-CLEARHANG-A-Dab_Rig__91180.1769721816.jpg?c=2",
         "https://cdn11.bigcommerce.com/s-ijm7dw7yvr/images/stencil/original/products/4066/12916/SE-WP-CLEARHANG6-C__79267.1749164021.png?c=2"
       ],
-      "width": 2.5,
+      "width": 4.0,
       "height": 6.0,
-      "depth": 4.5,
+      "depth": 2.5,
       "hasDimensions": true
     },
     "SE-WP-MARBLEDRIG6-BX": {
@@ -296,9 +296,9 @@
         "https://cdn11.bigcommerce.com/s-ijm7dw7yvr/images/stencil/original/products/3939/9987/shopluvbuds-WP-ZONGSHOWER7-assorted-colors-waterpipe__99478.1747946963.png?c=2",
         "https://cdn11.bigcommerce.com/s-ijm7dw7yvr/images/stencil/original/products/3939/19794/LUVBUDS-WP-ZONGSHOWER7-E-Water_Pipe__69489.1767800645.png?c=2"
       ],
-      "width": 0.0,
-      "height": 7.0,
-      "depth": 0.0,
+      "width": 4.5,
+      "height": 7.5,
+      "depth": 2.0,
       "hasDimensions": true
     },
     "WP-SG8": {
@@ -319,9 +319,9 @@
         "https://cdn11.bigcommerce.com/s-ijm7dw7yvr/images/stencil/original/products/171/14115/WP-SG8-Assorted-B__85518.1745000606.jpg?c=2",
         "https://cdn11.bigcommerce.com/s-ijm7dw7yvr/images/stencil/original/products/171/14114/WP-SG8-Assorted-A__15597.1745000606.jpg?c=2"
       ],
-      "width": 0.0,
-      "height": 8.0,
-      "depth": 0.0,
+      "width": 4.5,
+      "height": 8.5,
+      "depth": 4.5,
       "hasDimensions": true
     },
     "WP-SG6": {
@@ -342,9 +342,9 @@
         "https://cdn11.bigcommerce.com/s-ijm7dw7yvr/images/stencil/original/products/494/14113/WP-SG6-Assorted-B__91475.1744136126.jpg?c=2",
         "https://cdn11.bigcommerce.com/s-ijm7dw7yvr/images/stencil/original/products/494/14111/WP-SG6-Assorted-A__28618.1744136126.jpg?c=2"
       ],
-      "width": 0.0,
+      "width": 3.75,
       "height": 6.0,
-      "depth": 0.0,
+      "depth": 3.75,
       "hasDimensions": true
     },
     "SE-NC-SHROOMCHAMB12PC-BX": {
@@ -365,9 +365,9 @@
         "https://cdn11.bigcommerce.com/s-ijm7dw7yvr/images/stencil/original/products/5545/22261/LUVBUDS-SirEEL-SE-NC-SHROOMCHAMB12PC-BX-A-NECTARCOLLECTOR__66403.1778166664.png?c=2",
         "https://cdn11.bigcommerce.com/s-ijm7dw7yvr/images/stencil/original/products/5545/22264/LUVBUDS-SirEEL-SE-NC-SHROOMCHAMB12PC-BX-H-NECTARCOLLECTOR__60584.1778167789.jpg?c=2"
       ],
-      "width": 0.0,
-      "height": 6.5,
-      "depth": 0.0,
+      "width": 7.0,
+      "height": 7.0,
+      "depth": 5.0,
       "hasDimensions": true
     },
     "SE-WP-BEAKUV": {
@@ -563,9 +563,9 @@
         "https://cdn11.bigcommerce.com/s-ijm7dw7yvr/images/stencil/original/products/4557/21258/LUVBUDS-SIREEL-SE-HP-4P85G-BX-A-Hand_Pipe__43359.1768519590.png?c=2",
         "https://cdn11.bigcommerce.com/s-ijm7dw7yvr/images/stencil/original/products/4557/15670/SE-HP-4P85G-BX-A__77514.1741206174.png?c=2"
       ],
-      "width": 9.0,
-      "height": 12.0,
-      "depth": 9.0,
+      "width": 1.75,
+      "height": 4.5,
+      "depth": 1.5,
       "hasDimensions": true
     },
     "SE-HP-2.5P40G-BX": {
@@ -672,10 +672,10 @@
       "brand": "SE",
       "url": "https://shopluvbuds.com/search.php?search_query=SE-HP-MELTFRIT12PC-BX",
       "images": [],
-      "width": null,
-      "height": null,
-      "depth": null,
-      "hasDimensions": false
+      "width": 9.0,
+      "height": 6.5,
+      "depth": 5.0,
+      "hasDimensions": true
     },
     "SE-DSTM-POP-36PC-BX": {
       "sku": "SE-DSTM-POP-36PC-BX",
@@ -807,10 +807,10 @@
         "https://cdn11.bigcommerce.com/s-ijm7dw7yvr/images/stencil/original/products/4992/17240/3__01609.1775511167.png?c=2",
         "https://cdn11.bigcommerce.com/s-ijm7dw7yvr/images/stencil/original/products/4992/21917/LUVBUDS-GND-ALLOY-50MM-12PK-A-Grinders__59509.1775511167.jpg?c=2"
       ],
-      "width": null,
-      "height": null,
-      "depth": null,
-      "hasDimensions": false
+      "width": 7.5,
+      "height": 3.25,
+      "depth": 5.0,
+      "hasDimensions": true
     },
     "ZAZA-GND-63-4PC-WNDW-GUNM": {
       "sku": "ZAZA-GND-63-4PC-WNDW-GUNM",
@@ -830,9 +830,9 @@
         "https://cdn11.bigcommerce.com/s-ijm7dw7yvr/images/stencil/original/products/5537/20825/LUVBUDS-ZAZA-GND-63-4PC-WNDW-GUNM-A-GRINDER__66648.1765310144.png?c=2",
         "https://cdn11.bigcommerce.com/s-ijm7dw7yvr/images/stencil/original/products/5537/20829/LUVBUDS-ZAZA-GND-63-4PC-WNDW-GUNM-B-GRINDER__08802.1765310144.png?c=2"
       ],
-      "width": 2.5,
-      "height": 2.1,
-      "depth": 2.5,
+      "width": 3.0,
+      "height": 3.0,
+      "depth": 3.0,
       "hasDimensions": true
     },
     "ZAZA-GND-63-4PC-WNDW-TURQ": {
@@ -853,9 +853,9 @@
         "https://cdn11.bigcommerce.com/s-ijm7dw7yvr/images/stencil/original/products/5533/20808/LUVBUDS-ZAZA-GND-63-4PC-WNDW-TURQ-B-GRINDER__80451.1765309594.png?c=2",
         "https://cdn11.bigcommerce.com/s-ijm7dw7yvr/images/stencil/original/products/5533/20809/LUVBUDS-ZAZA-GND-63-4PC-WNDW-TURQ-D__49092.1765309594.png?c=2"
       ],
-      "width": 2.5,
-      "height": 2.1,
-      "depth": 2.5,
+      "width": 3.0,
+      "height": 3.0,
+      "depth": 3.0,
       "hasDimensions": true
     },
     "ZAZA-GND-63-4PC-WNDW-GREE": {
@@ -873,10 +873,10 @@
       "brand": "ZAZA",
       "url": "https://shopluvbuds.com/search.php?search_query=ZAZA-GND-63-4PC-WNDW-GREE",
       "images": [],
-      "width": null,
-      "height": null,
-      "depth": null,
-      "hasDimensions": false
+      "width": 3.0,
+      "height": 3.0,
+      "depth": 3.0,
+      "hasDimensions": true
     },
     "ZAZA-GND-63-4PC-WNDW-LILA": {
       "sku": "ZAZA-GND-63-4PC-WNDW-LILA",
@@ -893,10 +893,10 @@
       "brand": "ZAZA",
       "url": "https://shopluvbuds.com/search.php?search_query=ZAZA-GND-63-4PC-WNDW-LILA",
       "images": [],
-      "width": null,
-      "height": null,
-      "depth": null,
-      "hasDimensions": false
+      "width": 3.0,
+      "height": 3.0,
+      "depth": 3.0,
+      "hasDimensions": true
     },
     "ZAZA-GND-63-4PC-WNDW-PINK": {
       "sku": "ZAZA-GND-63-4PC-WNDW-PINK",
@@ -915,9 +915,9 @@
       "images": [
         "https://cdn11.bigcommerce.com/s-ijm7dw7yvr/images/stencil/original/products/5535/20343/LUVBUDS-ZAZA-GND-50-4PC-WNDW-MTPNK-E-GRINDER__97004.1761756707.png?c=2"
       ],
-      "width": 2.5,
-      "height": 2.1,
-      "depth": 2.5,
+      "width": 3.0,
+      "height": 3.0,
+      "depth": 3.0,
       "hasDimensions": true
     },
     "ZAZA-GND-63-4PC-WNDW-BLAC": {
@@ -935,10 +935,10 @@
       "brand": "ZAZA",
       "url": "https://shopluvbuds.com/search.php?search_query=ZAZA-GND-63-4PC-WNDW-BLAC",
       "images": [],
-      "width": null,
-      "height": null,
-      "depth": null,
-      "hasDimensions": false
+      "width": 3.0,
+      "height": 3.0,
+      "depth": 3.0,
+      "hasDimensions": true
     },
     "ZAZA-GND-50-4PC-TURQ": {
       "sku": "ZAZA-GND-50-4PC-TURQ",
@@ -1022,10 +1022,10 @@
       "brand": "ZAZA",
       "url": "https://shopluvbuds.com/search.php?search_query=ZAZA-GND-50-4PC-WNDW-MTGR",
       "images": [],
-      "width": null,
-      "height": null,
-      "depth": null,
-      "hasDimensions": false
+      "width": 2.5,
+      "height": 2.1,
+      "depth": 2.5,
+      "hasDimensions": true
     },
     "ZAZA-GND-50-4PC-WNDW-MTPN": {
       "sku": "ZAZA-GND-50-4PC-WNDW-MTPN",
@@ -1042,10 +1042,10 @@
       "brand": "ZAZA",
       "url": "https://shopluvbuds.com/search.php?search_query=ZAZA-GND-50-4PC-WNDW-MTPN",
       "images": [],
-      "width": null,
-      "height": null,
-      "depth": null,
-      "hasDimensions": false
+      "width": 2.5,
+      "height": 2.1,
+      "depth": 2.5,
+      "hasDimensions": true
     },
     "ZAZA-GND-63-4PC-BLACK": {
       "sku": "ZAZA-GND-63-4PC-BLACK",
@@ -1065,9 +1065,9 @@
         "https://cdn11.bigcommerce.com/s-ijm7dw7yvr/images/stencil/original/products/5520/20761/LUVBUDS-ZAZA-GND-63-4PC-BLK-B-GRINDER__77154.1765305413.png?c=2",
         "https://cdn11.bigcommerce.com/s-ijm7dw7yvr/images/stencil/original/products/5520/20762/LUVBUDS-ZAZA-GND-63-4PC-BLK-A-GRINDER__26839.1765305413.png?c=2"
       ],
-      "width": 2.5,
-      "height": 2.1,
-      "depth": 2.5,
+      "width": 3.0,
+      "height": 3.0,
+      "depth": 3.0,
       "hasDimensions": true
     },
     "ZAZA-GND-50-4PC-PINK": {
@@ -1111,9 +1111,9 @@
         "https://cdn11.bigcommerce.com/s-ijm7dw7yvr/images/stencil/original/products/5522/20764/LUVBUDS-ZAZA-GND-63-4PC-PURP-A-GRINDER__70513.1765306471.png?c=2",
         "https://cdn11.bigcommerce.com/s-ijm7dw7yvr/images/stencil/original/products/5522/20781/LUVBUDS-ZAZA-GND-63-4PC-WNDW-LILAC-E-GRINDER__05202.1765308147.png?c=2"
       ],
-      "width": 2.5,
-      "height": 2.1,
-      "depth": 2.5,
+      "width": 3.0,
+      "height": 3.0,
+      "depth": 3.0,
       "hasDimensions": true
     },
     "ZAZA-GND-63-4PC-PINK": {
@@ -1134,9 +1134,9 @@
         "https://cdn11.bigcommerce.com/s-ijm7dw7yvr/images/stencil/original/products/5523/20786/LUVBUDS-ZAZA-GND-50-4PC-WNDW-MTPNK-A-GRINDER__52674.1765308332.png?c=2",
         "https://cdn11.bigcommerce.com/s-ijm7dw7yvr/images/stencil/original/products/5523/20769/LUVBUDS-ZAZA-GND-63-4PC-PINK-A-GRINDER__78826.1765306686.png?c=2"
       ],
-      "width": 2.5,
-      "height": 2.1,
-      "depth": 2.5,
+      "width": 3.0,
+      "height": 3.0,
+      "depth": 3.0,
       "hasDimensions": true
     },
     "ZAZA-GND-50-4PC-BLACK": {
@@ -1177,10 +1177,10 @@
       "brand": "ZAZA",
       "url": "https://shopluvbuds.com/search.php?search_query=ZAZA-GND-50-4PC-WNDW-MTTU",
       "images": [],
-      "width": null,
-      "height": null,
-      "depth": null,
-      "hasDimensions": false
+      "width": 2.5,
+      "height": 2.1,
+      "depth": 2.5,
+      "hasDimensions": true
     },
     "ZAZA-GND-50-4PC-GUNM": {
       "sku": "ZAZA-GND-50-4PC-GUNM",
@@ -1289,10 +1289,10 @@
         "https://cdn11.bigcommerce.com/s-ijm7dw7yvr/images/stencil/original/products/241/18385/LUVBUDS-ZIG-ZAG-ZZ114-A-Papers__43099.1743547160.png?c=2",
         "https://cdn11.bigcommerce.com/s-ijm7dw7yvr/images/stencil/original/products/241/725/zig-zag-rolling-papers-orange-1-1.4-pack_1__54853.1743547834.jpg?c=2"
       ],
-      "width": null,
-      "height": null,
-      "depth": null,
-      "hasDimensions": false
+      "width": 3.25,
+      "height": 6.0,
+      "depth": 1.25,
+      "hasDimensions": true
     },
     "ZZUB48": {
       "sku": "ZZUB48",
@@ -1378,9 +1378,9 @@
         "https://cdn11.bigcommerce.com/s-ijm7dw7yvr/images/stencil/original/products/587/22160/LUVBUDS-ONEHIT-3DISP-CIG-A-One_Hitter_Chillum__06308.1777067117.jpg?c=2",
         "https://cdn11.bigcommerce.com/s-ijm7dw7yvr/images/stencil/original/products/587/1402/1hitdisplay__01786.1777066354.jpg?c=2"
       ],
-      "width": 0.0,
+      "width": 5.5,
       "height": 3.0,
-      "depth": 0.0,
+      "depth": 5.5,
       "hasDimensions": true
     },
     "POP-114-VARIETY-UB2.0": {
@@ -1401,10 +1401,10 @@
         "https://cdn11.bigcommerce.com/s-ijm7dw7yvr/images/stencil/original/products/5463/19224/LUVBUDS-POP-114-VARIETY-UB2.0-B-Cones__93889.1752263715.png?c=2",
         "https://cdn11.bigcommerce.com/s-ijm7dw7yvr/images/stencil/original/products/5463/19221/LUVBUDS-POP-114-VARIETY-UB2.0-A-Cones__88895.1752263715.png?c=2"
       ],
-      "width": null,
-      "height": null,
-      "depth": null,
-      "hasDimensions": false
+      "width": 8.25,
+      "height": 5.0,
+      "depth": 4.0,
+      "hasDimensions": true
     },
     "ZZUB11436": {
       "sku": "ZZUB11436",
@@ -1447,10 +1447,10 @@
         "https://cdn11.bigcommerce.com/s-ijm7dw7yvr/images/stencil/original/products/5032/16734/LUVBUDS-ST-CROSSCONE13PK-84MM-E-Cones__36015.1761235244.jpg?c=2",
         "https://cdn11.bigcommerce.com/s-ijm7dw7yvr/images/stencil/original/products/5032/21830/LUVBUDS-ST-CROSSCONE13PK-84MM-E-PreRolled_CrossCones__54359.1774380856.jpg?c=2"
       ],
-      "width": null,
-      "height": null,
-      "depth": null,
-      "hasDimensions": false
+      "width": 3.5,
+      "height": 11.0,
+      "depth": 4.25,
+      "hasDimensions": true
     },
     "SE-DUG-METGRIND": {
       "sku": "SE-DUG-METGRIND",
@@ -1513,10 +1513,10 @@
         "https://cdn11.bigcommerce.com/s-ijm7dw7yvr/images/stencil/original/products/5609/21023/V846D-C__41673.1738802081.1280.1280__90827.1778100253.png?c=2",
         "https://cdn11.bigcommerce.com/s-ijm7dw7yvr/images/stencil/original/products/5609/21022/V846D-B__39663.1738802081.1280.1280__18988.1778100253.png?c=2"
       ],
-      "width": null,
-      "height": null,
-      "depth": null,
-      "hasDimensions": false
+      "width": 6.0,
+      "height": 6.25,
+      "depth": 3.5,
+      "hasDimensions": true
     },
     "BOV-MB62-04-OWC": {
       "sku": "BOV-MB62-04-OWC",
@@ -1559,10 +1559,10 @@
         "https://cdn11.bigcommerce.com/s-ijm7dw7yvr/images/stencil/original/products/1849/13928/TOKPOK-Bic-Lifestyle__62867.1751049634.png?c=2",
         "https://cdn11.bigcommerce.com/s-ijm7dw7yvr/images/stencil/original/products/1849/13927/TOKPOK-Bic__56699.1751049634.png?c=2"
       ],
-      "width": null,
-      "height": null,
-      "depth": null,
-      "hasDimensions": false
+      "width": 7.25,
+      "height": 4.5,
+      "depth": 7.25,
+      "hasDimensions": true
     },
     "F-420": {
       "sku": "F-420",
@@ -1582,10 +1582,10 @@
         "https://cdn11.bigcommerce.com/s-ijm7dw7yvr/images/stencil/original/products/1091/7933/F-420_2__95158.1749766795.png?c=2",
         "https://cdn11.bigcommerce.com/s-ijm7dw7yvr/images/stencil/original/products/1091/21718/LUVBUDS-F-420-D-Cleaner__16501.1773346945.jpg?c=2"
       ],
-      "width": null,
-      "height": null,
-      "depth": null,
-      "hasDimensions": false
+      "width": 3.0,
+      "height": 8.0,
+      "depth": 3.0,
+      "hasDimensions": true
     },
     "SE-LIGHTERLEASH-BX": {
       "sku": "SE-LIGHTERLEASH-BX",
@@ -1628,10 +1628,10 @@
         "https://cdn11.bigcommerce.com/s-ijm7dw7yvr/images/stencil/original/products/5519/20033/shopluvbuds-SHROOMCLIP-clip-assorted-colors__90507.1739388188.1280.1280__75878.1766508738.png?c=2",
         "https://cdn11.bigcommerce.com/s-ijm7dw7yvr/images/stencil/original/products/5519/21251/LUVBUDS-SHROOMCLIP25PK-BX-E-CLIP__22248.1768437018.jpg?c=2"
       ],
-      "width": null,
-      "height": null,
-      "depth": null,
-      "hasDimensions": false
+      "width": 4.0,
+      "height": 4.5,
+      "depth": 3.5,
+      "hasDimensions": true
     },
     "ZZ100RM": {
       "sku": "ZZ100RM",
@@ -1651,10 +1651,10 @@
         "https://cdn11.bigcommerce.com/s-ijm7dw7yvr/images/stencil/original/products/2547/5954/ZZ100RM__79679.1760038805.png?c=2",
         "https://cdn11.bigcommerce.com/s-ijm7dw7yvr/images/stencil/original/products/2547/16570/LUVBUDS-ZZ100RM-E-Rolling_Machine_Accessory__91101.1760038805.jpg?c=2"
       ],
-      "width": null,
-      "height": null,
-      "depth": null,
-      "hasDimensions": false
+      "width": 4.5,
+      "height": 6.0,
+      "depth": 2.0,
+      "hasDimensions": true
     },
     "SE-RT-2XCONETRAY-BX": {
       "sku": "SE-RT-2XCONETRAY-BX",
@@ -1875,10 +1875,10 @@
         "https://cdn11.bigcommerce.com/s-ijm7dw7yvr/images/stencil/original/products/5456/19462/LUVBUDS-FUTUROLA-FUT-FUROL0017-I-Blunt_Wraps__13607.1754931424.jpg?c=2",
         "https://cdn11.bigcommerce.com/s-ijm7dw7yvr/images/stencil/original/products/5456/19139/LUVBUDS-FUTUROLA-FUT-FUROL0017-A-Blunt_Wraps__09912.1752092543.jpg?c=2"
       ],
-      "width": null,
-      "height": null,
-      "depth": null,
-      "hasDimensions": false
+      "width": 3.5,
+      "height": 6.25,
+      "depth": 2.25,
+      "hasDimensions": true
     },
     "ZZHW-NAT": {
       "sku": "ZZHW-NAT",
@@ -1898,10 +1898,10 @@
         "https://cdn11.bigcommerce.com/s-ijm7dw7yvr/images/stencil/original/products/2702/15443/LUVBUDS-ZZHW-NAT-B-Hemp_Wraps__52832.1770395695.jpg?c=2",
         "https://cdn11.bigcommerce.com/s-ijm7dw7yvr/images/stencil/original/products/2702/6366/ZZHW-NAT__38291.1748450012.png?c=2"
       ],
-      "width": null,
-      "height": null,
-      "depth": null,
-      "hasDimensions": false
+      "width": 5.0,
+      "height": 7.25,
+      "depth": 2.0,
+      "hasDimensions": true
     },
     "ZZHW-OGP": {
       "sku": "ZZHW-OGP",
@@ -1921,10 +1921,10 @@
         "https://cdn11.bigcommerce.com/s-ijm7dw7yvr/images/stencil/original/products/2703/15438/LUVBUDS-ZZHW-OGP-B-Wraps__96667.1748449808.jpg?c=2",
         "https://cdn11.bigcommerce.com/s-ijm7dw7yvr/images/stencil/original/products/2703/6364/ZZHW-OGP__12752.1748449808.png?c=2"
       ],
-      "width": null,
-      "height": null,
-      "depth": null,
-      "hasDimensions": false
+      "width": 5.0,
+      "height": 7.25,
+      "depth": 2.0,
+      "hasDimensions": true
     },
     "ZZHW-SUMMER": {
       "sku": "ZZHW-SUMMER",
@@ -1944,10 +1944,10 @@
         "https://cdn11.bigcommerce.com/s-ijm7dw7yvr/images/stencil/original/products/4855/15374/LUVBUDS-ZZHW-SUMMER-B-Wraps__65911.1748450874.jpg?c=2",
         "https://cdn11.bigcommerce.com/s-ijm7dw7yvr/images/stencil/original/products/4855/15373/LUVBUDS-ZZHW-SUMMER-A-Wraps__24081.1748450874.jpg?c=2"
       ],
-      "width": null,
-      "height": null,
-      "depth": null,
-      "hasDimensions": false
+      "width": 5.0,
+      "height": 7.25,
+      "depth": 2.0,
+      "hasDimensions": true
     },
     "SE-GND-ZNC63-6PK": {
       "sku": "SE-GND-ZNC63-6PK",
@@ -1967,10 +1967,10 @@
         "https://cdn11.bigcommerce.com/s-ijm7dw7yvr/images/stencil/original/products/5569/21629/LUVBUDS-SIREEL-SE-GND-ZNC63-6PK-A-GRINDER__63937.1772571880.png?c=2",
         "https://cdn11.bigcommerce.com/s-ijm7dw7yvr/images/stencil/original/products/5569/21630/LUVBUDS-SIREEL-SE-GND-ZNC63-6PK-B-GRINDER__92339.1772571880.png?c=2"
       ],
-      "width": null,
-      "height": null,
-      "depth": null,
-      "hasDimensions": false
+      "width": 9.0,
+      "height": 2.5,
+      "depth": 6.0,
+      "hasDimensions": true
     },
     "SE-GND-ZNC50-6PK": {
       "sku": "SE-GND-ZNC50-6PK",
@@ -2312,10 +2312,10 @@
         "https://cdn11.bigcommerce.com/s-ijm7dw7yvr/images/stencil/original/products/3678/14449/LOOK-SH-COIL5-B__13508.1738879642.png?c=2",
         "https://cdn11.bigcommerce.com/s-ijm7dw7yvr/images/stencil/original/products/3678/14448/LOOK-SH-COIL5-A__71779.1738879642.png?c=2"
       ],
-      "width": null,
-      "height": null,
-      "depth": null,
-      "hasDimensions": false
+      "width": 2.0,
+      "height": 4.5,
+      "depth": 0.5,
+      "hasDimensions": true
     },
     "YOCAN-KODOPRO": {
       "sku": "YOCAN-KODOPRO",
@@ -2335,10 +2335,10 @@
         "https://cdn11.bigcommerce.com/s-ijm7dw7yvr/images/stencil/original/products/3342/8328/Yocan_Kodo_Pro_-_1_600x__20689.1760732715.jpg?c=2",
         "https://cdn11.bigcommerce.com/s-ijm7dw7yvr/images/stencil/original/products/3342/8327/youcankodoproall__77677.1760732715.jpg?c=2"
       ],
-      "width": null,
-      "height": null,
-      "depth": null,
-      "hasDimensions": false
+      "width": 3.75,
+      "height": 4.0,
+      "depth": 2.5,
+      "hasDimensions": true
     },
     "SE-BT-GASTANKDISP": {
       "sku": "SE-BT-GASTANKDISP",
@@ -2386,7 +2386,7 @@
     },
     "SE-BT-DOPPLEGANGER": {
       "sku": "SE-BT-DOPPLEGANGER",
-      "name": "SirEEL Dopplegänger DUAL Cartridge 650mAh w/ Preheat Variable Voltage Vape Battery | Assorted Colors | 10 Units",
+      "name": "SirEEL Doppleg\u00e4nger DUAL Cartridge 650mAh w/ Preheat Variable Voltage Vape Battery | Assorted Colors | 10 Units",
       "category": "Cart Batteries",
       "subcategory": "",
       "line": "vape-green",
@@ -2424,10 +2424,10 @@
         "https://cdn11.bigcommerce.com/s-ijm7dw7yvr/images/stencil/original/products/5429/20517/LUVBUDS-OOZ-1453-C-Battery__15626.1768344343.jpg?c=2",
         "https://cdn11.bigcommerce.com/s-ijm7dw7yvr/images/stencil/original/products/5429/19259/LUVBUDS-OOZE-OOZ-1453-B-Battery__60636.1768344343.jpg?c=2"
       ],
-      "width": null,
-      "height": null,
-      "depth": null,
-      "hasDimensions": false
+      "width": 1.5,
+      "height": 6.0,
+      "depth": 1.0,
+      "hasDimensions": true
     },
     "YOCAN-FLATPLUS": {
       "sku": "YOCAN-FLATPLUS",
@@ -2447,10 +2447,10 @@
         "https://cdn11.bigcommerce.com/s-ijm7dw7yvr/images/stencil/original/products/4585/13797/YOCAN-FLATPLUS-A__54200.1739921617.png?c=2",
         "https://cdn11.bigcommerce.com/s-ijm7dw7yvr/images/stencil/original/products/4585/13798/YOCAN-FLATPLUS-B__97946.1739921617.png?c=2"
       ],
-      "width": null,
-      "height": null,
-      "depth": null,
-      "hasDimensions": false
+      "width": 5.0,
+      "height": 4.0,
+      "depth": 4.25,
+      "hasDimensions": true
     },
     "YOCAN-ZIVAPRO-ASST-10PK": {
       "sku": "YOCAN-ZIVAPRO-ASST-10PK",
@@ -2470,10 +2470,10 @@
         "https://cdn11.bigcommerce.com/s-ijm7dw7yvr/images/stencil/original/products/5556/20154/LUVBUDS-YOCAN-ZIVAPRO-ASST-10PK-B-Battery__70944.1760461296.jpg?c=2",
         "https://cdn11.bigcommerce.com/s-ijm7dw7yvr/images/stencil/original/products/5556/20152/LUVBUDS-YOCAN-ZIVAPRO-ASST-10PK-A-Battery__15931.1760461296.jpg?c=2"
       ],
-      "width": null,
-      "height": null,
-      "depth": null,
-      "hasDimensions": false
+      "width": 4.5,
+      "height": 3.75,
+      "depth": 3.5,
+      "hasDimensions": true
     },
     "SE-BT-380VV-BX-24PK": {
       "sku": "SE-BT-380VV-BX-24PK",
@@ -2516,10 +2516,10 @@
         "https://cdn11.bigcommerce.com/s-ijm7dw7yvr/images/stencil/original/products/5452/19103/LOOK-SNAIL2.0__53961.1751920967.1280.1280__19594.1777667239.jpg?c=2",
         "https://cdn11.bigcommerce.com/s-ijm7dw7yvr/images/stencil/original/products/5452/19104/LOOK-SNAIL2.02__71844.1751920967.1280.1280__38706.1777667239.jpg?c=2"
       ],
-      "width": null,
-      "height": null,
-      "depth": null,
-      "hasDimensions": false
+      "width": 7.0,
+      "height": 3.5,
+      "depth": 2.5,
+      "hasDimensions": true
     },
     "SE-BT-IRONLUNG5P-SOLID": {
       "sku": "SE-BT-IRONLUNG5P-SOLID",
@@ -2606,10 +2606,10 @@
         "https://cdn11.bigcommerce.com/s-ijm7dw7yvr/images/stencil/original/products/4909/16146/LUVBUDS-PFC-PIVOTONYX-A-Battery__48749.1778607680.jpg?c=2",
         "https://cdn11.bigcommerce.com/s-ijm7dw7yvr/images/stencil/original/products/4909/22286/LUVBUDS-PUFFCO-PFC-PIVOTONYX-A-Battery__19358.1778607680.png?c=2"
       ],
-      "width": null,
-      "height": null,
-      "depth": null,
-      "hasDimensions": false
+      "width": 2.5,
+      "height": 6.5,
+      "depth": 2.5,
+      "hasDimensions": true
     },
     "BT-GROOVE-CARA": {
       "sku": "BT-GROOVE-CARA",
@@ -2675,10 +2675,10 @@
         "https://cdn11.bigcommerce.com/s-ijm7dw7yvr/images/stencil/original/products/5485/19430/LUVBUDS-YOCAN-POCKET-A-Battery__52746.1776893166.jpg?c=2",
         "https://cdn11.bigcommerce.com/s-ijm7dw7yvr/images/stencil/original/products/5485/19432/LUVBUDS-YOCAN-POCKET-B-Battery__83014.1776893166.jpg?c=2"
       ],
-      "width": null,
-      "height": null,
-      "depth": null,
-      "hasDimensions": false
+      "width": 2.75,
+      "height": 4.5,
+      "depth": 2.5,
+      "hasDimensions": true
     },
     "PFC-PROXY2-ONYX": {
       "sku": "PFC-PROXY2-ONYX",
@@ -2720,10 +2720,10 @@
       "images": [
         "https://cdn11.bigcommerce.com/s-ijm7dw7yvr/images/stencil/original/products/5645/21319/LUVBUDS-PULSAR-BT-V1220BK-A-Battery__36941.1778187607.jpg?c=2"
       ],
-      "width": null,
-      "height": null,
-      "depth": null,
-      "hasDimensions": false
+      "width": 5.75,
+      "height": 7.5,
+      "depth": 2.5,
+      "hasDimensions": true
     },
     "BT-GROOVE-CARAPLUS": {
       "sku": "BT-GROOVE-CARAPLUS",
@@ -2766,10 +2766,10 @@
         "https://cdn11.bigcommerce.com/s-ijm7dw7yvr/images/stencil/original/products/5453/19106/LuvBuds-LOOK-SEAHORSE-ProPlus-BK__64546.1737596329.1280.1280__51592.1751923306.png?c=2",
         "https://cdn11.bigcommerce.com/s-ijm7dw7yvr/images/stencil/original/products/5453/19105/LUVBUDS-LOOKAH-LOOK-SHPROPLUS-ASST-6PK-A-Battery__31133.1751923306.jpg?c=2"
       ],
-      "width": null,
-      "height": null,
-      "depth": null,
-      "hasDimensions": false
+      "width": 5.5,
+      "height": 7.0,
+      "depth": 5.5,
+      "hasDimensions": true
     },
     "VP-TRPPEN2-BLACK": {
       "sku": "VP-TRPPEN2-BLACK",
@@ -2789,10 +2789,10 @@
         "https://cdn11.bigcommerce.com/s-ijm7dw7yvr/images/stencil/original/products/4969/22000/LUVBUDS-VP-TRPPEN2-BLACK-D-Battery__96552.1776185294.jpg?c=2",
         "https://cdn11.bigcommerce.com/s-ijm7dw7yvr/images/stencil/original/products/4969/16384/LUVBUDS-VP-TRPPEN2-BLACK-B-Battery__24609.1776185294.jpg?c=2"
       ],
-      "width": null,
-      "height": null,
-      "depth": null,
-      "hasDimensions": false
+      "width": 2.0,
+      "height": 6.25,
+      "depth": 1.25,
+      "hasDimensions": true
     },
     "BT-V985D": {
       "sku": "BT-V985D",
@@ -2977,27 +2977,27 @@
   },
   "lines": {
     "glass-green": {
-      "label": "Glass — Green",
+      "label": "Glass \u2014 Green",
       "color": "#01579B"
     },
     "glass-yellow": {
-      "label": "Glass — Yellow",
+      "label": "Glass \u2014 Yellow",
       "color": "#FF8F00"
     },
     "herb-green": {
-      "label": "Herb — Green",
+      "label": "Herb \u2014 Green",
       "color": "#004D40"
     },
     "herb-yellow": {
-      "label": "Herb — Yellow",
+      "label": "Herb \u2014 Yellow",
       "color": "#F57F17"
     },
     "vape-green": {
-      "label": "Vape — Green",
+      "label": "Vape \u2014 Green",
       "color": "#1B5E20"
     },
     "vape-yellow": {
-      "label": "Vape — Yellow",
+      "label": "Vape \u2014 Yellow",
       "color": "#F9A825"
     }
   },
