@@ -183,8 +183,53 @@ async def search_sku(client: httpx.AsyncClient, sku: str) -> tuple[str | None, l
     return product_url, image_urls
 
 
+GARBAGE_PATTERNS = [
+    "loading.svg", "loading.", "1x1", "spacer", "pixel",
+    "tracking", "badge", "icon", "banner", "logo", "sprite",
+    "rating", "placeholder", "no-image", "noimage",
+]
+
+
+def sku_parts(sku: str) -> list[str]:
+    """Split SKU into meaningful parts for matching (≥3 chars)."""
+    return [p.lower() for p in re.split(r'[-_]', sku) if len(p) >= 3]
+
+
+def is_garbage_url(url: str) -> bool:
+    """Check if a URL is a known non-product image."""
+    url_lower = url.lower()
+    return any(g in url_lower for g in GARBAGE_PATTERNS)
+
+
+def sku_match_quality(sku: str, url: str) -> tuple:
+    """Verify image URL matches the SKU. Returns (is_match, score, reason)."""
+    if is_garbage_url(url):
+        return False, -1, "garbage"
+
+    url_lower = url.lower()
+    sku_lower = sku.lower()
+
+    # Direct SKU match (dash-insensitive)
+    if sku_lower.replace('-', '') in url_lower.replace('-', ''):
+        return True, 3, "full SKU match"
+
+    parts = sku_parts(sku)
+    if not parts:
+        return False, 0, "no matchable parts"
+
+    matched = [p for p in parts if p in url_lower]
+    if len(matched) >= 3:
+        return True, 2, f"multi-part ({len(matched)})"
+    elif len(matched) >= 2:
+        return True, 1, f"partial ({len(matched)})"
+    elif len(matched) == 1:
+        return False, 0, f"weak ({len(matched)})"
+    else:
+        return False, -1, "no match"
+
+
 def pick_best_images(image_urls: list[str], sku: str) -> list[str]:
-    """Select the best image URLs for this SKU, preferring largest/most relevant."""
+    """Select best verified images for this SKU — must pass SKU match check."""
     if not image_urls:
         return []
 
@@ -196,21 +241,23 @@ def pick_best_images(image_urls: list[str], sku: str) -> list[str]:
             seen.add(url)
             unique.append(url)
 
-    # Prefer BigCommerce CDN images with larger sizes
-    def score(url):
-        s = 0
-        if "bigcommerce.com" in url:
-            s += 2
-        # Penalize tiny/thumbnail versions
-        if "thumb" in url.lower() or "-tiny" in url.lower():
-            s -= 1
-        # Bonus for "product" in path
-        if "/product/" in url.lower():
-            s += 1
+    # Verify SKU match
+    verified = []
+    for url in unique:
+        is_match, quality, reason = sku_match_quality(sku, url)
+        if is_match:
+            verified.append((url, quality))
+
+    # Sort by quality (higher first), prefer BigCommerce CDN
+    def sort_key(item):
+        url, quality = item
+        s = -quality
+        if "bigcommerce.com" not in url:
+            s += 0.5
         return s
 
-    unique.sort(key=score, reverse=True)
-    return unique[:3]  # Max 3 images
+    verified.sort(key=sort_key)
+    return [url for url, _ in verified[:3]]
 
 
 async def main():

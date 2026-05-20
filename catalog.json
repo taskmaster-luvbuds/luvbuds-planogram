@@ -38,7 +38,6 @@
 			"brand": "BIC",
 			"url": "https://shopluvbuds.com/bic-lighter-maxi-50-pk-retail-display/",
 			"images": [
-				"https://cdn11.bigcommerce.com/s-ijm7dw7yvr/images/stencil/original/products/565/14213/488_pocket_lighter_red_lifestyle__71256.1777931757.jpg?c=2",
 				"https://cdn11.bigcommerce.com/s-ijm7dw7yvr/images/stencil/original/products/565/14212/BIC-MAXI-HAZMAT__87164.1777931757.png?c=2"
 			],
 			"width": 5.5,
@@ -61,9 +60,9 @@
 			"brand": "SirEEL",
 			"url": "https://shopluvbuds.com/search.php?search_query=SE-GOG-FULLYWIG-14MM-BX",
 			"images": [
-				"https://cdn11.bigcommerce.com/s-ijm7dw7yvr/images/stencil/500x659/products/600/14835/GOG-CLR-14M-A__09951.1737634455.png?c=2",
-				"https://cdn11.bigcommerce.com/s-ijm7dw7yvr/images/stencil/500x659/products/600/20583/LUVBUDS-GOG-CLR-14M-A-AccessoriesGIF__16678.1763073357.gif?c=2",
-				"https://cdn11.bigcommerce.com/s-ijm7dw7yvr/stencil/111b70c0-a1c5-013c-36fd-5e6da364b335/e/91991480-3054-013f-c064-6ea79076ec13/img/loading.svg"
+				"https://cdn11.bigcommerce.com/s-ijm7dw7yvr/images/stencil/500x659/products/4795/19719/LUVBUDS-SIREEL-SE-GOG-IRI-14MM-D-Martini_Bowl__41881.1768437463.png?c=2",
+				"https://cdn11.bigcommerce.com/s-ijm7dw7yvr/images/stencil/500x659/products/442/22362/LUVBUDS-GOG-COL-14M-A-Replacement_14mm_Male_Glass_On_Glass_Bowls__55019.1779209614.jpg?c=2",
+				"https://cdn11.bigcommerce.com/s-ijm7dw7yvr/images/stencil/500x659/products/5292/21888/LUVBUDS-SIREEL-SE-GOG-IRI-14MM-D-Martini_Bowl__30372.1775164096.png?c=2"
 			],
 			"width": null,
 			"height": null,
@@ -84,11 +83,7 @@
 			"unitCost": 20.2,
 			"brand": "SirEEL",
 			"url": "https://shopluvbuds.com/search.php?search_query=SE-CC-SPINSHROOM-BX-12PK",
-			"images": [
-				"https://cdn11.bigcommerce.com/s-ijm7dw7yvr/images/stencil/500x659/products/5293/21700/LUVBUDS-SIREEL-SE-5PCJOINTRELIEFCASE-12PK-B-ACCESSORIES__58808.1773176603.png?c=2",
-				"https://cdn11.bigcommerce.com/s-ijm7dw7yvr/images/stencil/500x659/products/5293/18401/3__57586.1773176493.png?c=2",
-				"https://cdn11.bigcommerce.com/s-ijm7dw7yvr/stencil/111b70c0-a1c5-013c-36fd-5e6da364b335/e/91991480-3054-013f-c064-6ea79076ec13/img/loading.svg"
-			],
+			"images": [],
 			"width": null,
 			"height": null,
 			"depth": null,
@@ -108,11 +103,7 @@
 			"unitCost": 21.3,
 			"brand": "SirEEL",
 			"url": "https://shopluvbuds.com/search.php?search_query=SE-TP-SHROOM50",
-			"images": [
-				"https://cdn11.bigcommerce.com/s-ijm7dw7yvr/images/stencil/500x659/products/3433/12584/LUVBUDS-SirEEL-SE-HP-STACKGEO-BX-2-Spoon__55834.1706415387.png?c=2",
-				"https://cdn11.bigcommerce.com/s-ijm7dw7yvr/images/stencil/500x659/products/3433/12628/LUVBUDS-SirEEL-SE-HP-STACKGEO-BX-C-Spoon__50909.1706635009.png?c=2",
-				"https://cdn11.bigcommerce.com/s-ijm7dw7yvr/stencil/111b70c0-a1c5-013c-36fd-5e6da364b335/e/91991480-3054-013f-c064-6ea79076ec13/img/loading.svg"
-			],
+			"images": [],
 			"width": null,
 			"height": null,
 			"depth": null,
@@ -131,10 +122,10 @@
 			"unitPrice": 43.39,
 			"unitCost": 17.29,
 			"brand": "SE",
-			"url": "https://shopluvbuds.com/sireel-36pc-3-assorted-bulk-chillums-assorted-colors-may-vary-retail-packaging/",
+			"url": "https://shopluvbuds.com/search.php?search_query=SE-HP-CHILL3-BX",
 			"images": [
-				"https://cdn11.bigcommerce.com/s-ijm7dw7yvr/images/stencil/original/products/4554/15664/SE-HP-CHILL3-BX-A__64603.1741207069.png?c=2",
-				"https://cdn11.bigcommerce.com/s-ijm7dw7yvr/images/stencil/original/products/4554/21260/LUVBUDS-SIREEL-SE-HP-CHILL3-BX-A-Chillums__27019.1768577893.png?c=2"
+				"https://cdn11.bigcommerce.com/s-ijm7dw7yvr/images/stencil/500x659/products/4554/15664/SE-HP-CHILL3-BX-A__64603.1741207069.png?c=2",
+				"https://cdn11.bigcommerce.com/s-ijm7dw7yvr/images/stencil/500x659/products/4554/21260/LUVBUDS-SIREEL-SE-HP-CHILL3-BX-A-Chillums__27019.1768577893.png?c=2"
 			],
 			"width": 1.0,
 			"height": 3.0,
@@ -154,10 +145,10 @@
 			"unitPrice": 14.45,
 			"unitCost": 2.85,
 			"brand": "WP",
-			"url": "https://shopluvbuds.com/luvbuds-7-slime-donut-macaroni-star-hanger-bong-rig-assorted-colors-may-vary/",
+			"url": "https://shopluvbuds.com/search.php?search_query=WP-DONUTMACSTAR7",
 			"images": [
-				"https://cdn11.bigcommerce.com/s-ijm7dw7yvr/images/stencil/original/products/3479/21167/LUVBUDS-WP-DONUTMACSTAR7-A-Water_Pipe__39777.1768579285.jpg?c=2",
-				"https://cdn11.bigcommerce.com/s-ijm7dw7yvr/images/stencil/original/products/3479/16053/WP-DONUTMACSTAR7-3__92491.1767819395.png?c=2"
+				"https://cdn11.bigcommerce.com/s-ijm7dw7yvr/images/stencil/500x659/products/3479/16053/WP-DONUTMACSTAR7-3__92491.1767819395.png?c=2",
+				"https://cdn11.bigcommerce.com/s-ijm7dw7yvr/images/stencil/500x659/products/3479/21167/LUVBUDS-WP-DONUTMACSTAR7-A-Water_Pipe__39777.1768579285.jpg?c=2"
 			],
 			"width": 2.75,
 			"height": 6.5,
@@ -178,11 +169,7 @@
 			"unitCost": 19.1,
 			"brand": "SE",
 			"url": "https://shopluvbuds.com/search.php?search_query=SE-WP-CLEARETCH8",
-			"images": [
-				"https://cdn11.bigcommerce.com/s-ijm7dw7yvr/images/stencil/500x659/products/5671/21839/LUVBUDS-SIREEL-SE-WP-UNICORN-A-WATERPIPE__68876.1777057855.png?c=2",
-				"https://cdn11.bigcommerce.com/s-ijm7dw7yvr/images/stencil/500x659/products/5671/21712/LUVBUDS-SIREEL-SE-WP-UNICORN-B-Water_Pipe__75766.1777057855.jpg?c=2",
-				"https://cdn11.bigcommerce.com/s-ijm7dw7yvr/stencil/111b70c0-a1c5-013c-36fd-5e6da364b335/e/91991480-3054-013f-c064-6ea79076ec13/img/loading.svg"
-			],
+			"images": [],
 			"width": 3.0,
 			"height": 8.0,
 			"depth": 3.0,
@@ -201,10 +188,9 @@
 			"unitPrice": 11.64,
 			"unitCost": 3.8,
 			"brand": "SE",
-			"url": "https://shopluvbuds.com/sireel-6-bent-neck-clear-hanger-rig-with-banger/",
+			"url": "https://shopluvbuds.com/search.php?search_query=SE-WP-CLEARHANG6",
 			"images": [
-				"https://cdn11.bigcommerce.com/s-ijm7dw7yvr/images/stencil/original/products/4066/21336/LUVBUDS-SE-WP-CLEARHANG-A-Dab_Rig__91180.1769721816.jpg?c=2",
-				"https://cdn11.bigcommerce.com/s-ijm7dw7yvr/images/stencil/original/products/4066/12916/SE-WP-CLEARHANG6-C__79267.1749164021.png?c=2"
+				"https://cdn11.bigcommerce.com/s-ijm7dw7yvr/images/stencil/500x659/products/4066/12916/SE-WP-CLEARHANG6-C__79267.1749164021.png?c=2"
 			],
 			"width": 4.0,
 			"height": 6.0,
@@ -225,11 +211,7 @@
 			"unitCost": 9.65,
 			"brand": "SE",
 			"url": "https://shopluvbuds.com/search.php?search_query=SE-WP-MARBLEDRIG6-BX",
-			"images": [
-				"https://cdn11.bigcommerce.com/s-ijm7dw7yvr/images/stencil/500x659/products/4953/18848/LUVBUDS-SE-ORACLEORB-BX-C-PIPE__87786.1759247417.png?c=2",
-				"https://cdn11.bigcommerce.com/s-ijm7dw7yvr/images/stencil/500x659/products/4953/18850/LUVBUDS-SE-ORACLEORB-BX-A-PIPE__94744.1759247417.png?c=2",
-				"https://cdn11.bigcommerce.com/s-ijm7dw7yvr/stencil/111b70c0-a1c5-013c-36fd-5e6da364b335/e/91991480-3054-013f-c064-6ea79076ec13/img/loading.svg"
-			],
+			"images": [],
 			"width": 2.0,
 			"height": 5.5,
 			"depth": 2.0,
@@ -249,10 +231,7 @@
 			"unitCost": 12.29,
 			"brand": "SirEEL",
 			"url": "https://shopluvbuds.com/sireel-7-klein-stein-wrap-arm-recycler-with-banger-retail-display/",
-			"images": [
-				"https://cdn11.bigcommerce.com/s-ijm7dw7yvr/images/stencil/original/products/4452/12577/LUVBUDS-SirEEL-SE-wp-ursarecyc7-bx-a-Dab_Rig__40857.1774277746.jpg?c=2",
-				"https://cdn11.bigcommerce.com/s-ijm7dw7yvr/images/stencil/original/products/4452/21806/LUVBUDS-SIREEL-SE-WP-URSARECYC7-A-DABRIG__32933.1774277746.png?c=2"
-			],
+			"images": [],
 			"width": 3.0,
 			"height": 7.0,
 			"depth": 2.0,
@@ -272,11 +251,7 @@
 			"unitCost": 4.85,
 			"brand": "SirEEL",
 			"url": "https://shopluvbuds.com/search.php?search_query=SE-WP-UVGEM5-BX",
-			"images": [
-				"https://cdn11.bigcommerce.com/s-ijm7dw7yvr/images/stencil/500x659/products/4953/18848/LUVBUDS-SE-ORACLEORB-BX-C-PIPE__87786.1759247417.png?c=2",
-				"https://cdn11.bigcommerce.com/s-ijm7dw7yvr/images/stencil/500x659/products/4953/18850/LUVBUDS-SE-ORACLEORB-BX-A-PIPE__94744.1759247417.png?c=2",
-				"https://cdn11.bigcommerce.com/s-ijm7dw7yvr/stencil/111b70c0-a1c5-013c-36fd-5e6da364b335/e/91991480-3054-013f-c064-6ea79076ec13/img/loading.svg"
-			],
+			"images": [],
 			"width": 2.0,
 			"height": 5.5,
 			"depth": 2.0,
@@ -296,11 +271,7 @@
 			"unitCost": 5.25,
 			"brand": "SirEEL",
 			"url": "https://shopluvbuds.com/search.php?search_query=SE-WP-DONUTIRI5-BX",
-			"images": [
-				"https://cdn11.bigcommerce.com/s-ijm7dw7yvr/images/stencil/500x659/products/4953/18848/LUVBUDS-SE-ORACLEORB-BX-C-PIPE__87786.1759247417.png?c=2",
-				"https://cdn11.bigcommerce.com/s-ijm7dw7yvr/images/stencil/500x659/products/4953/18850/LUVBUDS-SE-ORACLEORB-BX-A-PIPE__94744.1759247417.png?c=2",
-				"https://cdn11.bigcommerce.com/s-ijm7dw7yvr/stencil/111b70c0-a1c5-013c-36fd-5e6da364b335/e/91991480-3054-013f-c064-6ea79076ec13/img/loading.svg"
-			],
+			"images": [],
 			"width": null,
 			"height": null,
 			"depth": null,
@@ -319,10 +290,10 @@
 			"unitPrice": 14.05,
 			"unitCost": 2.44,
 			"brand": "WP",
-			"url": "https://shopluvbuds.com/luvbuds-7-zong-style-beaker-bong-with-flower-bowl-assorted-colors-may-vary/",
+			"url": "https://shopluvbuds.com/search.php?search_query=WP-ZONGSHOWER7",
 			"images": [
-				"https://cdn11.bigcommerce.com/s-ijm7dw7yvr/images/stencil/original/products/3939/9987/shopluvbuds-WP-ZONGSHOWER7-assorted-colors-waterpipe__99478.1747946963.png?c=2",
-				"https://cdn11.bigcommerce.com/s-ijm7dw7yvr/images/stencil/original/products/3939/19794/LUVBUDS-WP-ZONGSHOWER7-E-Water_Pipe__69489.1767800645.png?c=2"
+				"https://cdn11.bigcommerce.com/s-ijm7dw7yvr/images/stencil/500x659/products/3939/9987/shopluvbuds-WP-ZONGSHOWER7-assorted-colors-waterpipe__99478.1747946963.png?c=2",
+				"https://cdn11.bigcommerce.com/s-ijm7dw7yvr/images/stencil/500x659/products/3939/19794/LUVBUDS-WP-ZONGSHOWER7-E-Water_Pipe__69489.1767800645.png?c=2"
 			],
 			"width": 4.5,
 			"height": 7.5,
@@ -342,10 +313,10 @@
 			"unitPrice": 13.15,
 			"unitCost": 4.4,
 			"brand": "WP",
-			"url": "https://shopluvbuds.com/8-soft-glass-water-pipe/",
+			"url": "https://shopluvbuds.com/search.php?search_query=WP-SG8",
 			"images": [
-				"https://cdn11.bigcommerce.com/s-ijm7dw7yvr/images/stencil/original/products/171/14115/WP-SG8-Assorted-B__85518.1745000606.jpg?c=2",
-				"https://cdn11.bigcommerce.com/s-ijm7dw7yvr/images/stencil/original/products/171/14114/WP-SG8-Assorted-A__15597.1745000606.jpg?c=2"
+				"https://cdn11.bigcommerce.com/s-ijm7dw7yvr/images/stencil/500x659/products/171/14114/WP-SG8-Assorted-A__15597.1745000606.jpg?c=2",
+				"https://cdn11.bigcommerce.com/s-ijm7dw7yvr/images/stencil/500x659/products/171/14115/WP-SG8-Assorted-B__85518.1745000606.jpg?c=2"
 			],
 			"width": 4.5,
 			"height": 8.5,
@@ -365,10 +336,10 @@
 			"unitPrice": 9.79,
 			"unitCost": 3.88,
 			"brand": "WP",
-			"url": "https://shopluvbuds.com/luvbuds-6-soft-glass-water-pipe-assorted-colors-may-vary/",
+			"url": "https://shopluvbuds.com/search.php?search_query=WP-SG6",
 			"images": [
-				"https://cdn11.bigcommerce.com/s-ijm7dw7yvr/images/stencil/original/products/494/14113/WP-SG6-Assorted-B__91475.1744136126.jpg?c=2",
-				"https://cdn11.bigcommerce.com/s-ijm7dw7yvr/images/stencil/original/products/494/14111/WP-SG6-Assorted-A__28618.1744136126.jpg?c=2"
+				"https://cdn11.bigcommerce.com/s-ijm7dw7yvr/images/stencil/500x659/products/494/14111/WP-SG6-Assorted-A__28618.1744136126.jpg?c=2",
+				"https://cdn11.bigcommerce.com/s-ijm7dw7yvr/images/stencil/500x659/products/494/14113/WP-SG6-Assorted-B__91475.1744136126.jpg?c=2"
 			],
 			"width": 3.75,
 			"height": 6.0,
@@ -388,10 +359,10 @@
 			"unitPrice": null,
 			"unitCost": null,
 			"brand": "SE",
-			"url": "https://shopluvbuds.com/sireel-12pk-6-5-mind-melding-mushroom-dream-straw-assorted-colors-may-vary-retail-display/",
+			"url": "https://shopluvbuds.com/search.php?search_query=SE-NC-SHROOMCHAMB12PC-BX",
 			"images": [
-				"https://cdn11.bigcommerce.com/s-ijm7dw7yvr/images/stencil/original/products/5545/22261/LUVBUDS-SirEEL-SE-NC-SHROOMCHAMB12PC-BX-A-NECTARCOLLECTOR__66403.1778166664.png?c=2",
-				"https://cdn11.bigcommerce.com/s-ijm7dw7yvr/images/stencil/original/products/5545/22264/LUVBUDS-SirEEL-SE-NC-SHROOMCHAMB12PC-BX-H-NECTARCOLLECTOR__60584.1778167789.jpg?c=2"
+				"https://cdn11.bigcommerce.com/s-ijm7dw7yvr/images/stencil/500x659/products/5545/22261/LUVBUDS-SirEEL-SE-NC-SHROOMCHAMB12PC-BX-A-NECTARCOLLECTOR__66403.1778166664.png?c=2",
+				"https://cdn11.bigcommerce.com/s-ijm7dw7yvr/images/stencil/500x659/products/5545/22264/LUVBUDS-SirEEL-SE-NC-SHROOMCHAMB12PC-BX-H-NECTARCOLLECTOR__60584.1778167789.jpg?c=2"
 			],
 			"width": 7.0,
 			"height": 7.0,
@@ -412,10 +383,7 @@
 			"unitCost": 3.95,
 			"brand": "SE",
 			"url": "https://shopluvbuds.com/sireel-10-uv-beaker-bong-with-flower-bowl-assorted-colors-may-vary/",
-			"images": [
-				"https://cdn11.bigcommerce.com/s-ijm7dw7yvr/images/stencil/original/products/4820/17570/2__24868.1746031311.png?c=2",
-				"https://cdn11.bigcommerce.com/s-ijm7dw7yvr/images/stencil/original/products/4820/17569/1__86987.1746031311.png?c=2"
-			],
+			"images": [],
 			"width": 4.0,
 			"height": 10.0,
 			"depth": 3.0,
@@ -435,11 +403,7 @@
 			"unitCost": 3.5,
 			"brand": "SirEEL",
 			"url": "https://shopluvbuds.com/search.php?search_query=SE-WP-COLORLIPBKR8",
-			"images": [
-				"https://cdn11.bigcommerce.com/s-ijm7dw7yvr/images/stencil/500x659/products/5331/19185/LUVBUDS-SE-WP-VINTAGEDMD-B__83994.1777058672.png?c=2",
-				"https://cdn11.bigcommerce.com/s-ijm7dw7yvr/images/stencil/500x659/products/5331/22158/LUVBUDS-SirEEL-SE-WP-VINTAGEDMD-E-Water_Pipe__84788.1777058672.jpg?c=2",
-				"https://cdn11.bigcommerce.com/s-ijm7dw7yvr/stencil/111b70c0-a1c5-013c-36fd-5e6da364b335/e/91991480-3054-013f-c064-6ea79076ec13/img/loading.svg"
-			],
+			"images": [],
 			"width": 3.0,
 			"height": 8.0,
 			"depth": 3.0,
@@ -458,10 +422,9 @@
 			"unitPrice": 14.54,
 			"unitCost": 5.0,
 			"brand": "SirEEL",
-			"url": "https://shopluvbuds.com/sireel-8-twisted-neck-beaker-bong-with-flower-bowl-clear/",
+			"url": "https://shopluvbuds.com/search.php?search_query=SE-WP-TWISTBKR8",
 			"images": [
-				"https://cdn11.bigcommerce.com/s-ijm7dw7yvr/images/stencil/original/products/5308/21283/LUVBUDS-SIREEL-SE-WP-TWISTBKR8-A-Water_Pipe__63233.1769031133.jpg?c=2",
-				"https://cdn11.bigcommerce.com/s-ijm7dw7yvr/images/stencil/original/products/5308/18440/1__37816.1757535552.png?c=2"
+				"https://cdn11.bigcommerce.com/s-ijm7dw7yvr/images/stencil/500x659/products/5308/21283/LUVBUDS-SIREEL-SE-WP-TWISTBKR8-A-Water_Pipe__63233.1769031133.jpg?c=2"
 			],
 			"width": 3.0,
 			"height": 8.0,
@@ -482,11 +445,7 @@
 			"unitCost": 5.5,
 			"brand": "SirEEL",
 			"url": "https://shopluvbuds.com/search.php?search_query=SE-WP-GEOMETRICBASE",
-			"images": [
-				"https://cdn11.bigcommerce.com/s-ijm7dw7yvr/images/stencil/500x659/products/5671/21839/LUVBUDS-SIREEL-SE-WP-UNICORN-A-WATERPIPE__68876.1777057855.png?c=2",
-				"https://cdn11.bigcommerce.com/s-ijm7dw7yvr/images/stencil/500x659/products/5671/21712/LUVBUDS-SIREEL-SE-WP-UNICORN-B-Water_Pipe__75766.1777057855.jpg?c=2",
-				"https://cdn11.bigcommerce.com/s-ijm7dw7yvr/stencil/111b70c0-a1c5-013c-36fd-5e6da364b335/e/91991480-3054-013f-c064-6ea79076ec13/img/loading.svg"
-			],
+			"images": [],
 			"width": 0.0,
 			"height": 10.0,
 			"depth": 0.0,
@@ -505,10 +464,10 @@
 			"unitPrice": 14.45,
 			"unitCost": 2.74,
 			"brand": "WP",
-			"url": "https://shopluvbuds.com/luvbuds-8-slime-zong-shaped-bong-with-flower-bowl-assorted-colors-may-vary/",
+			"url": "https://shopluvbuds.com/search.php?search_query=WP-ZNG8",
 			"images": [
-				"https://cdn11.bigcommerce.com/s-ijm7dw7yvr/images/stencil/original/products/4782/21834/LUVBUDS-WP-ZNG8-A-Water_Pipe__79832.1774390562.jpg?c=2",
-				"https://cdn11.bigcommerce.com/s-ijm7dw7yvr/images/stencil/original/products/4782/14801/WP-ZNG8-A__71361.1747342204.png?c=2"
+				"https://cdn11.bigcommerce.com/s-ijm7dw7yvr/images/stencil/500x659/products/4782/14801/WP-ZNG8-A__71361.1747342204.png?c=2",
+				"https://cdn11.bigcommerce.com/s-ijm7dw7yvr/images/stencil/500x659/products/4782/21834/LUVBUDS-WP-ZNG8-A-Water_Pipe__79832.1774390562.jpg?c=2"
 			],
 			"width": 3.5,
 			"height": 8.0,
@@ -529,11 +488,7 @@
 			"unitCost": 4.65,
 			"brand": "SirEEL",
 			"url": "https://shopluvbuds.com/search.php?search_query=SE-WP-LEAFNECKBASE",
-			"images": [
-				"https://cdn11.bigcommerce.com/s-ijm7dw7yvr/images/stencil/500x659/products/5671/21839/LUVBUDS-SIREEL-SE-WP-UNICORN-A-WATERPIPE__68876.1777057855.png?c=2",
-				"https://cdn11.bigcommerce.com/s-ijm7dw7yvr/images/stencil/500x659/products/5671/21712/LUVBUDS-SIREEL-SE-WP-UNICORN-B-Water_Pipe__75766.1777057855.jpg?c=2",
-				"https://cdn11.bigcommerce.com/s-ijm7dw7yvr/stencil/111b70c0-a1c5-013c-36fd-5e6da364b335/e/91991480-3054-013f-c064-6ea79076ec13/img/loading.svg"
-			],
+			"images": [],
 			"width": 4.0,
 			"height": 9.75,
 			"depth": 1.5,
@@ -552,10 +507,10 @@
 			"unitPrice": 9.92,
 			"unitCost": 4.0,
 			"brand": "SirEEL",
-			"url": "https://shopluvbuds.com/sireel-5-5-vintage-diamond-glassware-beaker-bong-and-flower-bowl-assorted-colors-may-vary/",
+			"url": "https://shopluvbuds.com/search.php?search_query=SE-WP-VINTAGEDMD",
 			"images": [
-				"https://cdn11.bigcommerce.com/s-ijm7dw7yvr/images/stencil/original/products/5331/22158/LUVBUDS-SirEEL-SE-WP-VINTAGEDMD-E-Water_Pipe__84788.1777058672.jpg?c=2",
-				"https://cdn11.bigcommerce.com/s-ijm7dw7yvr/images/stencil/original/products/5331/19185/LUVBUDS-SE-WP-VINTAGEDMD-B__83994.1777058672.png?c=2"
+				"https://cdn11.bigcommerce.com/s-ijm7dw7yvr/images/stencil/500x659/products/5331/19185/LUVBUDS-SE-WP-VINTAGEDMD-B__83994.1777058672.png?c=2",
+				"https://cdn11.bigcommerce.com/s-ijm7dw7yvr/images/stencil/500x659/products/5331/22158/LUVBUDS-SirEEL-SE-WP-VINTAGEDMD-E-Water_Pipe__84788.1777058672.jpg?c=2"
 			],
 			"width": 2.5,
 			"height": 5.5,
@@ -575,10 +530,10 @@
 			"unitPrice": 48.36,
 			"unitCost": 20.89,
 			"brand": "SE",
-			"url": "https://shopluvbuds.com/sireel-25pc-3-5-bulk-glass-hand-pipes-assorted-colors-may-vary-retail-packaging/",
+			"url": "https://shopluvbuds.com/search.php?search_query=SE-HP-3P55G-BX",
 			"images": [
-				"https://cdn11.bigcommerce.com/s-ijm7dw7yvr/images/stencil/original/products/4556/16058/SE-HP-3P55G-BX-7__95621.1741206480.png?c=2",
-				"https://cdn11.bigcommerce.com/s-ijm7dw7yvr/images/stencil/original/products/4556/21259/LUVBUDS-SIREEL-SE-HP-3P55G-BX-A-Hand_Pipes__73409.1768520140.png?c=2"
+				"https://cdn11.bigcommerce.com/s-ijm7dw7yvr/images/stencil/500x659/products/4556/16058/SE-HP-3P55G-BX-7__95621.1741206480.png?c=2",
+				"https://cdn11.bigcommerce.com/s-ijm7dw7yvr/images/stencil/500x659/products/4556/21259/LUVBUDS-SIREEL-SE-HP-3P55G-BX-A-Hand_Pipes__73409.1768520140.png?c=2"
 			],
 			"width": 1.5,
 			"height": 3.5,
@@ -598,10 +553,10 @@
 			"unitPrice": 65.3,
 			"unitCost": 28.74,
 			"brand": "SE",
-			"url": "https://shopluvbuds.com/sireel-25pc-4-5-bulk-pipes-assorted-colors-may-vary-retail-packaging/",
+			"url": "https://shopluvbuds.com/search.php?search_query=SE-HP-4P85G-BX",
 			"images": [
-				"https://cdn11.bigcommerce.com/s-ijm7dw7yvr/images/stencil/original/products/4557/21258/LUVBUDS-SIREEL-SE-HP-4P85G-BX-A-Hand_Pipe__43359.1768519590.png?c=2",
-				"https://cdn11.bigcommerce.com/s-ijm7dw7yvr/images/stencil/original/products/4557/15670/SE-HP-4P85G-BX-A__77514.1741206174.png?c=2"
+				"https://cdn11.bigcommerce.com/s-ijm7dw7yvr/images/stencil/500x659/products/4557/15670/SE-HP-4P85G-BX-A__77514.1741206174.png?c=2",
+				"https://cdn11.bigcommerce.com/s-ijm7dw7yvr/images/stencil/500x659/products/4557/21258/LUVBUDS-SIREEL-SE-HP-4P85G-BX-A-Hand_Pipe__43359.1768519590.png?c=2"
 			],
 			"width": 1.75,
 			"height": 4.5,
@@ -621,10 +576,10 @@
 			"unitPrice": 36.33,
 			"unitCost": 16.7,
 			"brand": "SE",
-			"url": "https://shopluvbuds.com/sireel-25pc-2-5-bulk-glass-hand-pipes-assorted-colors-may-vary-retail-packaging/",
+			"url": "https://shopluvbuds.com/search.php?search_query=SE-HP-2.5P40G-BX",
 			"images": [
-				"https://cdn11.bigcommerce.com/s-ijm7dw7yvr/images/stencil/original/products/4555/15677/SE-HP-2.5P40G-BX-B__70832.1741206781.png?c=2",
-				"https://cdn11.bigcommerce.com/s-ijm7dw7yvr/images/stencil/original/products/4555/15676/SE-HP-2.5P40G-BX-A__38552.1741206781.png?c=2"
+				"https://cdn11.bigcommerce.com/s-ijm7dw7yvr/images/stencil/500x659/products/4555/15676/SE-HP-2.5P40G-BX-A__38552.1741206781.png?c=2",
+				"https://cdn11.bigcommerce.com/s-ijm7dw7yvr/images/stencil/500x659/products/4555/15677/SE-HP-2.5P40G-BX-B__70832.1741206781.png?c=2"
 			],
 			"width": 1.25,
 			"height": 2.5,
@@ -668,11 +623,7 @@
 			"unitCost": 18.1,
 			"brand": "SirEEL",
 			"url": "https://shopluvbuds.com/search.php?search_query=SE-HP-SPOON45-BX",
-			"images": [
-				"https://cdn11.bigcommerce.com/s-ijm7dw7yvr/images/stencil/500x659/products/3433/12584/LUVBUDS-SirEEL-SE-HP-STACKGEO-BX-2-Spoon__55834.1706415387.png?c=2",
-				"https://cdn11.bigcommerce.com/s-ijm7dw7yvr/images/stencil/500x659/products/3433/12628/LUVBUDS-SirEEL-SE-HP-STACKGEO-BX-C-Spoon__50909.1706635009.png?c=2",
-				"https://cdn11.bigcommerce.com/s-ijm7dw7yvr/stencil/111b70c0-a1c5-013c-36fd-5e6da364b335/e/91991480-3054-013f-c064-6ea79076ec13/img/loading.svg"
-			],
+			"images": [],
 			"width": 1.0,
 			"height": 4.5,
 			"depth": 1.0,
@@ -691,10 +642,10 @@
 			"unitPrice": 96.67,
 			"unitCost": 33.46,
 			"brand": "SE",
-			"url": "https://shopluvbuds.com/sireel-25pc-4-frit-multi-marbles-glass-hand-pipe-assorted-colors-may-vary-retail-packaging/",
+			"url": "https://shopluvbuds.com/search.php?search_query=SE-HP-4FRMM-BX",
 			"images": [
-				"https://cdn11.bigcommerce.com/s-ijm7dw7yvr/images/stencil/original/products/4558/16427/SE-HP-4FRMM-BX-5__81012.1757025822.png?c=2",
-				"https://cdn11.bigcommerce.com/s-ijm7dw7yvr/images/stencil/original/products/4558/16425/SE-HP-4FRMM-BX-2__83794.1760557048.png?c=2"
+				"https://cdn11.bigcommerce.com/s-ijm7dw7yvr/images/stencil/500x659/products/4558/16425/SE-HP-4FRMM-BX-2__83794.1760557048.png?c=2",
+				"https://cdn11.bigcommerce.com/s-ijm7dw7yvr/images/stencil/500x659/products/4558/16427/SE-HP-4FRMM-BX-5__81012.1757025822.png?c=2"
 			],
 			"width": 1.0,
 			"height": 4.0,
@@ -716,9 +667,8 @@
 			"brand": "SE",
 			"url": "https://shopluvbuds.com/search.php?search_query=SE-HP-MELTFRIT12PC-BX",
 			"images": [
-				"https://cdn11.bigcommerce.com/s-ijm7dw7yvr/images/stencil/500x659/products/3433/12584/LUVBUDS-SirEEL-SE-HP-STACKGEO-BX-2-Spoon__55834.1706415387.png?c=2",
-				"https://cdn11.bigcommerce.com/s-ijm7dw7yvr/images/stencil/500x659/products/3433/12628/LUVBUDS-SirEEL-SE-HP-STACKGEO-BX-C-Spoon__50909.1706635009.png?c=2",
-				"https://cdn11.bigcommerce.com/s-ijm7dw7yvr/stencil/111b70c0-a1c5-013c-36fd-5e6da364b335/e/91991480-3054-013f-c064-6ea79076ec13/img/loading.svg"
+				"https://cdn11.bigcommerce.com/s-ijm7dw7yvr/images/stencil/500x659/products/5548/22364/LUVBUDS-SirEEL-SE-HP-MELTFRIT12PC-BX-C-Hand_PIPE__80106.1779211117.png?c=2",
+				"https://cdn11.bigcommerce.com/s-ijm7dw7yvr/images/stencil/500x659/products/5548/22368/LUVBUDS-SirEEL-SE-HP-MELTFRIT12PC-BX-F-Hand_PIPE__42179.1779212273.jpg?c=2"
 			],
 			"width": 9.0,
 			"height": 6.5,
@@ -740,8 +690,7 @@
 			"brand": "SirEEL",
 			"url": "https://shopluvbuds.com/sireel-36pc-assorted-19-14-glass-on-glass-downstem-retail-pop-display/",
 			"images": [
-				"https://cdn11.bigcommerce.com/s-ijm7dw7yvr/images/stencil/original/products/4971/21066/LUVBUDS-SIREEL-SE-DSTM-POP-36PC-BX-A-Accessories__61824.1766077359.jpg?c=2",
-				"https://cdn11.bigcommerce.com/s-ijm7dw7yvr/images/stencil/original/products/4971/18266/3__77640.1741888336.png?c=2"
+				"https://cdn11.bigcommerce.com/s-ijm7dw7yvr/images/stencil/original/products/4971/21066/LUVBUDS-SIREEL-SE-DSTM-POP-36PC-BX-A-Accessories__61824.1766077359.jpg?c=2"
 			],
 			"width": null,
 			"height": null,
@@ -762,9 +711,7 @@
 			"unitCost": 13.15,
 			"brand": "SirEEL",
 			"url": "https://shopluvbuds.com/sireel-7-5-halo-flow-bong-with-bowl-whiteout-smoke-ring-effect/",
-			"images": [
-				"https://cdn11.bigcommerce.com/s-ijm7dw7yvr/images/stencil/original/products/5605/21009/1__89986.1742247415.1280.1280__25591.1765837426.png?c=2"
-			],
+			"images": [],
 			"width": 3.0,
 			"height": 7.5,
 			"depth": 3.0,
@@ -784,10 +731,7 @@
 			"unitCost": 20.48,
 			"brand": "SirEEL",
 			"url": "https://shopluvbuds.com/sireel-7-5-oracle-orb-mini-rig-with-flower-bowl-assorted-colors/",
-			"images": [
-				"https://cdn11.bigcommerce.com/s-ijm7dw7yvr/images/stencil/original/products/4953/18848/LUVBUDS-SE-ORACLEORB-BX-C-PIPE__87786.1759247417.png?c=2",
-				"https://cdn11.bigcommerce.com/s-ijm7dw7yvr/images/stencil/original/products/4953/18850/LUVBUDS-SE-ORACLEORB-BX-A-PIPE__94744.1759247417.png?c=2"
-			],
+			"images": [],
 			"width": 5.0,
 			"height": 7.5,
 			"depth": 5.0,
@@ -852,7 +796,6 @@
 			"brand": "GND",
 			"url": "https://shopluvbuds.com/luvbuds-4pc-alloy-grinder-2-12pk-assorted-retail-display/",
 			"images": [
-				"https://cdn11.bigcommerce.com/s-ijm7dw7yvr/images/stencil/original/products/4992/17240/3__01609.1775511167.png?c=2",
 				"https://cdn11.bigcommerce.com/s-ijm7dw7yvr/images/stencil/original/products/4992/21917/LUVBUDS-GND-ALLOY-50MM-12PK-A-Grinders__59509.1775511167.jpg?c=2"
 			],
 			"width": 7.5,
@@ -922,8 +865,7 @@
 			"url": "https://shopluvbuds.com/search.php?search_query=ZAZA-GND-63-4PC-WNDW-GREE",
 			"images": [
 				"https://cdn11.bigcommerce.com/s-ijm7dw7yvr/images/stencil/500x659/products/5536/20822/LUVBUDS-ZAZA-GND-63-4PC-WNDW-GREEN-A__38780.1765309925.png?c=2",
-				"https://cdn11.bigcommerce.com/s-ijm7dw7yvr/images/stencil/500x659/products/5536/20821/LUVBUDS-ZAZA-GND-63-4PC-WNDW-GREEN-C-GRINDER__06405.1765309925.png?c=2",
-				"https://cdn11.bigcommerce.com/s-ijm7dw7yvr/stencil/111b70c0-a1c5-013c-36fd-5e6da364b335/e/91991480-3054-013f-c064-6ea79076ec13/img/loading.svg"
+				"https://cdn11.bigcommerce.com/s-ijm7dw7yvr/images/stencil/500x659/products/5536/20821/LUVBUDS-ZAZA-GND-63-4PC-WNDW-GREEN-C-GRINDER__06405.1765309925.png?c=2"
 			],
 			"width": 3.0,
 			"height": 3.0,
@@ -946,8 +888,7 @@
 			"url": "https://shopluvbuds.com/search.php?search_query=ZAZA-GND-63-4PC-WNDW-LILA",
 			"images": [
 				"https://cdn11.bigcommerce.com/s-ijm7dw7yvr/images/stencil/500x659/products/5534/20332/LUVBUDS-ZAZA-GND-63-4PC-WNDW-LILAC-B-GRINDER__11586.1761752169.png?c=2",
-				"https://cdn11.bigcommerce.com/s-ijm7dw7yvr/images/stencil/500x659/products/5534/20333/LUVBUDS-ZAZA-GND-63-4PC-WNDW-LILAC-A-GRINDER__59890.1761752972.gif?c=2",
-				"https://cdn11.bigcommerce.com/s-ijm7dw7yvr/stencil/111b70c0-a1c5-013c-36fd-5e6da364b335/e/91991480-3054-013f-c064-6ea79076ec13/img/loading.svg"
+				"https://cdn11.bigcommerce.com/s-ijm7dw7yvr/images/stencil/500x659/products/5534/20333/LUVBUDS-ZAZA-GND-63-4PC-WNDW-LILAC-A-GRINDER__59890.1761752972.gif?c=2"
 			],
 			"width": 3.0,
 			"height": 3.0,
@@ -992,8 +933,7 @@
 			"url": "https://shopluvbuds.com/search.php?search_query=ZAZA-GND-63-4PC-WNDW-BLAC",
 			"images": [
 				"https://cdn11.bigcommerce.com/s-ijm7dw7yvr/images/stencil/500x659/products/5532/20804/LUVBUDS-ZAZA-GND-63-4PC-WNDW-GUNM-A-GRINDER__88660.1765309422.png?c=2",
-				"https://cdn11.bigcommerce.com/s-ijm7dw7yvr/images/stencil/500x659/products/5532/20802/LUVBUDS-ZAZA-GND-63-4PC-WNDW-BLK-D-GRINDER__01770.1765309422.png?c=2",
-				"https://cdn11.bigcommerce.com/s-ijm7dw7yvr/stencil/111b70c0-a1c5-013c-36fd-5e6da364b335/e/91991480-3054-013f-c064-6ea79076ec13/img/loading.svg"
+				"https://cdn11.bigcommerce.com/s-ijm7dw7yvr/images/stencil/500x659/products/5532/20802/LUVBUDS-ZAZA-GND-63-4PC-WNDW-BLK-D-GRINDER__01770.1765309422.png?c=2"
 			],
 			"width": 3.0,
 			"height": 3.0,
@@ -1083,8 +1023,7 @@
 			"url": "https://shopluvbuds.com/search.php?search_query=ZAZA-GND-50-4PC-WNDW-MTGR",
 			"images": [
 				"https://cdn11.bigcommerce.com/s-ijm7dw7yvr/images/stencil/500x659/products/5542/20973/LUVBUDS-GND-50-4PC-WNDW-GREEN-B-GRINDER__84007.1765578352.png?c=2",
-				"https://cdn11.bigcommerce.com/s-ijm7dw7yvr/images/stencil/500x659/products/5542/20972/LUVBUDS-ZAZA-GND-50-4PC-WNDW-GREEN-GRINDER__95101.1765578352.png?c=2",
-				"https://cdn11.bigcommerce.com/s-ijm7dw7yvr/stencil/111b70c0-a1c5-013c-36fd-5e6da364b335/e/91991480-3054-013f-c064-6ea79076ec13/img/loading.svg"
+				"https://cdn11.bigcommerce.com/s-ijm7dw7yvr/images/stencil/500x659/products/5542/20972/LUVBUDS-ZAZA-GND-50-4PC-WNDW-GREEN-GRINDER__95101.1765578352.png?c=2"
 			],
 			"width": 2.5,
 			"height": 2.1,
@@ -1107,8 +1046,7 @@
 			"url": "https://shopluvbuds.com/search.php?search_query=ZAZA-GND-50-4PC-WNDW-MTPN",
 			"images": [
 				"https://cdn11.bigcommerce.com/s-ijm7dw7yvr/images/stencil/500x659/products/5541/20348/LUVBUDS-ZAZA-GND-50-4PC-WNDW-MTPNK-E-GRINDER__19159.1761756753.png?c=2",
-				"https://cdn11.bigcommerce.com/s-ijm7dw7yvr/images/stencil/500x659/products/5541/20364/LUVBUDS-ZAZA-GND-50-4PC-WNDW-MTPNK-A-GRINDER__43592.1761758490.gif?c=2",
-				"https://cdn11.bigcommerce.com/s-ijm7dw7yvr/stencil/111b70c0-a1c5-013c-36fd-5e6da364b335/e/91991480-3054-013f-c064-6ea79076ec13/img/loading.svg"
+				"https://cdn11.bigcommerce.com/s-ijm7dw7yvr/images/stencil/500x659/products/5541/20364/LUVBUDS-ZAZA-GND-50-4PC-WNDW-MTPNK-A-GRINDER__43592.1761758490.gif?c=2"
 			],
 			"width": 2.5,
 			"height": 2.1,
@@ -1246,8 +1184,7 @@
 			"url": "https://shopluvbuds.com/search.php?search_query=ZAZA-GND-50-4PC-WNDW-MTTU",
 			"images": [
 				"https://cdn11.bigcommerce.com/s-ijm7dw7yvr/images/stencil/500x659/products/5539/20985/LUVBUDS-ZAZA-GND-50-4PC-WNDW-TURQ-B-GRINDER__34548.1765407611.png?c=2",
-				"https://cdn11.bigcommerce.com/s-ijm7dw7yvr/images/stencil/500x659/products/5539/20982/LUVBUDS-ZAZA-GND-50-4PC-WNDW-TURQ-D-GRINDER__86431.1765407611.png?c=2",
-				"https://cdn11.bigcommerce.com/s-ijm7dw7yvr/stencil/111b70c0-a1c5-013c-36fd-5e6da364b335/e/91991480-3054-013f-c064-6ea79076ec13/img/loading.svg"
+				"https://cdn11.bigcommerce.com/s-ijm7dw7yvr/images/stencil/500x659/products/5539/20982/LUVBUDS-ZAZA-GND-50-4PC-WNDW-TURQ-D-GRINDER__86431.1765407611.png?c=2"
 			],
 			"width": 2.5,
 			"height": 2.1,
@@ -1291,11 +1228,7 @@
 			"unitCost": 3.48,
 			"brand": "ASH",
 			"url": "https://shopluvbuds.com/search.php?search_query=ASH-FACET4",
-			"images": [
-				"https://cdn11.bigcommerce.com/s-ijm7dw7yvr/images/stencil/500x659/products/5318/20049/LUVBUDS-AC-STONECATCHER-A-ASHCATCHER__61553.1758921501.png?c=2",
-				"https://cdn11.bigcommerce.com/s-ijm7dw7yvr/images/stencil/500x659/products/5318/20048/LUVBUDS-AC-STONECATCHER-B-ASHCATCHER__65522.1758921501.png?c=2",
-				"https://cdn11.bigcommerce.com/s-ijm7dw7yvr/stencil/111b70c0-a1c5-013c-36fd-5e6da364b335/e/91991480-3054-013f-c064-6ea79076ec13/img/loading.svg"
-			],
+			"images": [],
 			"width": 3.5,
 			"height": 3.5,
 			"depth": 1.25,
@@ -1314,10 +1247,9 @@
 			"unitPrice": 52.1,
 			"unitCost": 39.36,
 			"brand": "ZZ114",
-			"url": "https://shopluvbuds.com/zig-zag-48pk-orange-papers-1-1-4-32ct-retail-display/",
+			"url": "https://shopluvbuds.com/search.php?search_query=ZZ114-48",
 			"images": [
-				"https://cdn11.bigcommerce.com/s-ijm7dw7yvr/images/stencil/original/products/1538/14758/LUVBUDS-ZZ114-48-B-Rolling_Papers__90084.1778273512.jpg?c=2",
-				"https://cdn11.bigcommerce.com/s-ijm7dw7yvr/images/stencil/original/products/1538/3652/ZZOR48__28917.1778273512.png?c=2"
+				"https://cdn11.bigcommerce.com/s-ijm7dw7yvr/images/stencil/500x659/products/1538/14758/LUVBUDS-ZZ114-48-B-Rolling_Papers__90084.1778273512.jpg?c=2"
 			],
 			"width": 6.0,
 			"height": 8.0,
@@ -1339,7 +1271,6 @@
 			"brand": null,
 			"url": "https://shopluvbuds.com/zig-zag-ultra-thin-papers-1-1-4-48ct-promotional-pack/",
 			"images": [
-				"https://cdn11.bigcommerce.com/s-ijm7dw7yvr/images/stencil/original/products/1539/3654/ZZUL38__36362.1778273735.png?c=2",
 				"https://cdn11.bigcommerce.com/s-ijm7dw7yvr/images/stencil/original/products/1539/14781/LUVBUDS-ZZUT48-B-Rolling_Papers__86991.1778273735.jpg?c=2"
 			],
 			"width": 6.0,
@@ -1362,8 +1293,7 @@
 			"brand": null,
 			"url": "https://shopluvbuds.com/zig-zag-orange-papers-1-1-4-24pk/",
 			"images": [
-				"https://cdn11.bigcommerce.com/s-ijm7dw7yvr/images/stencil/original/products/241/18385/LUVBUDS-ZIG-ZAG-ZZ114-A-Papers__43099.1743547160.png?c=2",
-				"https://cdn11.bigcommerce.com/s-ijm7dw7yvr/images/stencil/original/products/241/725/zig-zag-rolling-papers-orange-1-1.4-pack_1__54853.1743547834.jpg?c=2"
+				"https://cdn11.bigcommerce.com/s-ijm7dw7yvr/images/stencil/original/products/241/18385/LUVBUDS-ZIG-ZAG-ZZ114-A-Papers__43099.1743547160.png?c=2"
 			],
 			"width": 3.25,
 			"height": 6.0,
@@ -1430,11 +1360,7 @@
 			"unitCost": 50.64,
 			"brand": "HP",
 			"url": "https://shopluvbuds.com/search.php?search_query=HP-OGCHILL",
-			"images": [
-				"https://cdn11.bigcommerce.com/s-ijm7dw7yvr/images/stencil/500x659/products/3063/7785/IMG-4224__57811.1778276546.png?c=2",
-				"https://cdn11.bigcommerce.com/s-ijm7dw7yvr/images/stencil/500x659/products/3063/21808/LUVBUDS-HP-SIL-OGCHILL-A-Chillum__08050.1778276546.jpg?c=2",
-				"https://cdn11.bigcommerce.com/s-ijm7dw7yvr/stencil/111b70c0-a1c5-013c-36fd-5e6da364b335/e/91991480-3054-013f-c064-6ea79076ec13/img/loading.svg"
-			],
+			"images": [],
 			"width": 9.5,
 			"height": 12.0,
 			"depth": 8.0,
@@ -1455,8 +1381,7 @@
 			"brand": "ONEHIT",
 			"url": "https://shopluvbuds.com/cigarette-style-3-one-hitter-100-pk-retail-display/",
 			"images": [
-				"https://cdn11.bigcommerce.com/s-ijm7dw7yvr/images/stencil/original/products/587/22160/LUVBUDS-ONEHIT-3DISP-CIG-A-One_Hitter_Chillum__06308.1777067117.jpg?c=2",
-				"https://cdn11.bigcommerce.com/s-ijm7dw7yvr/images/stencil/original/products/587/1402/1hitdisplay__01786.1777066354.jpg?c=2"
+				"https://cdn11.bigcommerce.com/s-ijm7dw7yvr/images/stencil/original/products/587/22160/LUVBUDS-ONEHIT-3DISP-CIG-A-One_Hitter_Chillum__06308.1777067117.jpg?c=2"
 			],
 			"width": 5.5,
 			"height": 3.0,
@@ -1501,8 +1426,7 @@
 			"brand": null,
 			"url": "https://shopluvbuds.com/zig-zag-36pk-unbleached-pre-rolled-cones-1-1-4-6ct-retail-display/",
 			"images": [
-				"https://cdn11.bigcommerce.com/s-ijm7dw7yvr/images/stencil/original/products/1766/4169/ZZUB11436__31894.1751047989.png?c=2",
-				"https://cdn11.bigcommerce.com/s-ijm7dw7yvr/images/stencil/original/products/1766/15442/LUVBUDS-ZZUB11424-B-Retail_Cones__67695.1751047989.jpg?c=2"
+				"https://cdn11.bigcommerce.com/s-ijm7dw7yvr/images/stencil/original/products/1766/4169/ZZUB11436__31894.1751047989.png?c=2"
 			],
 			"width": 7.75,
 			"height": 8.0,
@@ -1569,11 +1493,7 @@
 			"unitCost": 1.95,
 			"brand": "SE",
 			"url": "https://shopluvbuds.com/search.php?search_query=SE-DUG-STATICTRIP",
-			"images": [
-				"https://cdn11.bigcommerce.com/s-ijm7dw7yvr/images/stencil/500x659/products/5457/19270/SE-DUG-METGRIND-C-DUGOUT__11677.1753218989.png?c=2",
-				"https://cdn11.bigcommerce.com/s-ijm7dw7yvr/images/stencil/500x659/products/5457/19145/LUVBUDS-SIREEL-SE-DUG-METGRIND-A-Dugout_Grinder__25589.1753218989.jpg?c=2",
-				"https://cdn11.bigcommerce.com/s-ijm7dw7yvr/stencil/111b70c0-a1c5-013c-36fd-5e6da364b335/e/91991480-3054-013f-c064-6ea79076ec13/img/loading.svg"
-			],
+			"images": [],
 			"width": 2.0,
 			"height": 4.0,
 			"depth": 0.75,
@@ -1593,10 +1513,7 @@
 			"unitCost": 58.0,
 			"brand": "Pulsar",
 			"url": "https://shopluvbuds.com/pulsar-4pk-syndr-dry-herb-variable-voltage-battery-880mah-pop-display/",
-			"images": [
-				"https://cdn11.bigcommerce.com/s-ijm7dw7yvr/images/stencil/original/products/5609/21023/V846D-C__41673.1738802081.1280.1280__90827.1778100253.png?c=2",
-				"https://cdn11.bigcommerce.com/s-ijm7dw7yvr/images/stencil/original/products/5609/21022/V846D-B__39663.1738802081.1280.1280__18988.1778100253.png?c=2"
-			],
+			"images": [],
 			"width": 6.0,
 			"height": 6.25,
 			"depth": 3.5,
@@ -1617,8 +1534,7 @@
 			"brand": "BOV",
 			"url": "https://shopluvbuds.com/boveda-4-gram-62-125-count-retail-display/",
 			"images": [
-				"https://cdn11.bigcommerce.com/s-ijm7dw7yvr/images/stencil/original/products/1283/19747/LUVBUDS-BOV-MB62-04-OWC-C-Humidity_Control__60856.1756328731.png?c=2",
-				"https://cdn11.bigcommerce.com/s-ijm7dw7yvr/images/stencil/original/products/1283/3128/boveda_box_1__81852.1738185763.jpg?c=2"
+				"https://cdn11.bigcommerce.com/s-ijm7dw7yvr/images/stencil/original/products/1283/19747/LUVBUDS-BOV-MB62-04-OWC-C-Humidity_Control__60856.1756328731.png?c=2"
 			],
 			"width": 6.5,
 			"height": 9.0,
@@ -1661,10 +1577,10 @@
 			"unitPrice": 5.18,
 			"unitCost": 3.7,
 			"brand": "F",
-			"url": "https://shopluvbuds.com/formula-420-original-12-oz-bottle/",
+			"url": "https://shopluvbuds.com/search.php?search_query=F-420",
 			"images": [
-				"https://cdn11.bigcommerce.com/s-ijm7dw7yvr/images/stencil/original/products/1091/7933/F-420_2__95158.1749766795.png?c=2",
-				"https://cdn11.bigcommerce.com/s-ijm7dw7yvr/images/stencil/original/products/1091/21718/LUVBUDS-F-420-D-Cleaner__16501.1773346945.jpg?c=2"
+				"https://cdn11.bigcommerce.com/s-ijm7dw7yvr/images/stencil/500x659/products/1091/7933/F-420_2__95158.1749766795.png?c=2",
+				"https://cdn11.bigcommerce.com/s-ijm7dw7yvr/images/stencil/500x659/products/1091/21718/LUVBUDS-F-420-D-Cleaner__16501.1773346945.jpg?c=2"
 			],
 			"width": 3.0,
 			"height": 8.0,
@@ -1684,10 +1600,10 @@
 			"unitPrice": 29.51,
 			"unitCost": 12.2,
 			"brand": "SirEEL",
-			"url": "https://shopluvbuds.com/sireel-30pk-lighter-leash-retail-pop-display-assorted-colors-may-vary/",
+			"url": "https://shopluvbuds.com/search.php?search_query=SE-LIGHTERLEASH-BX",
 			"images": [
-				"https://cdn11.bigcommerce.com/s-ijm7dw7yvr/images/stencil/original/products/4670/21363/LUVBUDS-SIREEL-SE-LIGHTERLEASH-BX-A-Accessory__11578.1770161824.jpg?c=2",
-				"https://cdn11.bigcommerce.com/s-ijm7dw7yvr/images/stencil/original/products/4670/15073/SE-LIGHTERLEASH-BX-A__38145.1770161824.png?c=2"
+				"https://cdn11.bigcommerce.com/s-ijm7dw7yvr/images/stencil/500x659/products/4670/15073/SE-LIGHTERLEASH-BX-A__38145.1770161824.png?c=2",
+				"https://cdn11.bigcommerce.com/s-ijm7dw7yvr/images/stencil/500x659/products/4670/21363/LUVBUDS-SIREEL-SE-LIGHTERLEASH-BX-A-Accessory__11578.1770161824.jpg?c=2"
 			],
 			"width": 0.25,
 			"height": 0.5,
@@ -1707,10 +1623,9 @@
 			"unitPrice": 24.81,
 			"unitCost": 6.1,
 			"brand": "SirEEL",
-			"url": "https://shopluvbuds.com/sireel-25pk-mushroom-1up-roach-clip-assorted-colors-may-vary-retail-display/",
+			"url": "https://shopluvbuds.com/search.php?search_query=SHROOMCLIP25PK-BX",
 			"images": [
-				"https://cdn11.bigcommerce.com/s-ijm7dw7yvr/images/stencil/original/products/5519/20033/shopluvbuds-SHROOMCLIP-clip-assorted-colors__90507.1739388188.1280.1280__75878.1766508738.png?c=2",
-				"https://cdn11.bigcommerce.com/s-ijm7dw7yvr/images/stencil/original/products/5519/21251/LUVBUDS-SHROOMCLIP25PK-BX-E-CLIP__22248.1768437018.jpg?c=2"
+				"https://cdn11.bigcommerce.com/s-ijm7dw7yvr/images/stencil/500x659/products/5519/21251/LUVBUDS-SHROOMCLIP25PK-BX-E-CLIP__22248.1768437018.jpg?c=2"
 			],
 			"width": 4.0,
 			"height": 4.5,
@@ -1754,10 +1669,7 @@
 			"unitCost": 2.62,
 			"brand": "SirEEL",
 			"url": "https://shopluvbuds.com/sireel-cone-oisseur-hover-cone-rolling-tray-9-3-x-4-4-assorted-styles-retail-packaging/",
-			"images": [
-				"https://cdn11.bigcommerce.com/s-ijm7dw7yvr/images/stencil/original/products/4883/18564/3__78280.1754325324.png?c=2",
-				"https://cdn11.bigcommerce.com/s-ijm7dw7yvr/images/stencil/original/products/4883/18563/2__22882.1747759560.png?c=2"
-			],
+			"images": [],
 			"width": 4.4,
 			"height": 9.3,
 			"depth": 3.8,
@@ -1776,10 +1688,9 @@
 			"unitPrice": 3.41,
 			"unitCost": 0.85,
 			"brand": "SirEEL",
-			"url": "https://shopluvbuds.com/sireel-10-6-x-6-3-neon-mushrooms-rolling-tray-assorted-colors-may-vary/",
+			"url": "https://shopluvbuds.com/search.php?search_query=SE-RT-NEONSHROOMS",
 			"images": [
-				"https://cdn11.bigcommerce.com/s-ijm7dw7yvr/images/stencil/original/products/5316/19179/1_FRONT__91234.1752183725.png?c=2",
-				"https://cdn11.bigcommerce.com/s-ijm7dw7yvr/images/stencil/original/products/5316/21659/LUVBUDS-SIREEL-SE-RT-NEONSHROOMS-A-Rolling_Tray__04607.1772662054.jpg?c=2"
+				"https://cdn11.bigcommerce.com/s-ijm7dw7yvr/images/stencil/500x659/products/5316/21659/LUVBUDS-SIREEL-SE-RT-NEONSHROOMS-A-Rolling_Tray__04607.1772662054.jpg?c=2"
 			],
 			"width": 6.3,
 			"height": 10.6,
@@ -1799,10 +1710,10 @@
 			"unitPrice": 2.45,
 			"unitCost": 0.65,
 			"brand": "SirEEL",
-			"url": "https://shopluvbuds.com/sireel-5-5-x-7-creation-of-joint-rolling-tray/",
+			"url": "https://shopluvbuds.com/search.php?search_query=SE-RT-GODADAMPASS",
 			"images": [
-				"https://cdn11.bigcommerce.com/s-ijm7dw7yvr/images/stencil/original/products/5562/20390/LUVBUDS-SIREEL-SE-RT-GODADAMPASS-A-ROLLINGTRAY__41227.1761764894.png?c=2",
-				"https://cdn11.bigcommerce.com/s-ijm7dw7yvr/images/stencil/original/products/5562/21901/LUVBUDS-SE-RT-GODADAMPASS-A-Rolling_Tray__77231.1775235783.jpg?c=2"
+				"https://cdn11.bigcommerce.com/s-ijm7dw7yvr/images/stencil/500x659/products/5562/20390/LUVBUDS-SIREEL-SE-RT-GODADAMPASS-A-ROLLINGTRAY__41227.1761764894.png?c=2",
+				"https://cdn11.bigcommerce.com/s-ijm7dw7yvr/images/stencil/500x659/products/5562/21901/LUVBUDS-SE-RT-GODADAMPASS-A-Rolling_Tray__77231.1775235783.jpg?c=2"
 			],
 			"width": 5.5,
 			"height": 7.0,
@@ -1823,11 +1734,7 @@
 			"unitCost": 4.1,
 			"brand": "SE",
 			"url": "https://shopluvbuds.com/search.php?search_query=SE-WP-COLORLIPBKR10",
-			"images": [
-				"https://cdn11.bigcommerce.com/s-ijm7dw7yvr/images/stencil/500x659/products/5331/19185/LUVBUDS-SE-WP-VINTAGEDMD-B__83994.1777058672.png?c=2",
-				"https://cdn11.bigcommerce.com/s-ijm7dw7yvr/images/stencil/500x659/products/5331/22158/LUVBUDS-SirEEL-SE-WP-VINTAGEDMD-E-Water_Pipe__84788.1777058672.jpg?c=2",
-				"https://cdn11.bigcommerce.com/s-ijm7dw7yvr/stencil/111b70c0-a1c5-013c-36fd-5e6da364b335/e/91991480-3054-013f-c064-6ea79076ec13/img/loading.svg"
-			],
+			"images": [],
 			"width": 0.0,
 			"height": 10.0,
 			"depth": 0.0,
@@ -1846,10 +1753,9 @@
 			"unitPrice": 14.83,
 			"unitCost": 4.75,
 			"brand": "SirEEL",
-			"url": "https://shopluvbuds.com/sireel-10-420-rasta-leaf-beaker-bong-with-matching-downstem/",
+			"url": "https://shopluvbuds.com/search.php?search_query=SE-WP-RASTALEAF",
 			"images": [
-				"https://cdn11.bigcommerce.com/s-ijm7dw7yvr/images/stencil/original/products/5245/21653/LUVBUDS-SIREEL-SE-WP-RASTALEAF-A-Water_Pipe__05717.1772649130.jpg?c=2",
-				"https://cdn11.bigcommerce.com/s-ijm7dw7yvr/images/stencil/original/products/5245/18069/2__37846.1741785852.png?c=2"
+				"https://cdn11.bigcommerce.com/s-ijm7dw7yvr/images/stencil/500x659/products/5245/21653/LUVBUDS-SIREEL-SE-WP-RASTALEAF-A-Water_Pipe__05717.1772649130.jpg?c=2"
 			],
 			"width": 4.0,
 			"height": 9.75,
@@ -1869,10 +1775,9 @@
 			"unitPrice": 5.97,
 			"unitCost": 2.61,
 			"brand": "PS",
-			"url": "https://shopluvbuds.com/luvbuds-stainless-steel-pipe-screens-100-pk-of-5-screens-retail-packaging/",
+			"url": "https://shopluvbuds.com/search.php?search_query=PS-MET100",
 			"images": [
-				"https://cdn11.bigcommerce.com/s-ijm7dw7yvr/images/stencil/original/products/202/1449/metal_screens__78160.1778275649.jpg?c=2",
-				"https://cdn11.bigcommerce.com/s-ijm7dw7yvr/images/stencil/original/products/202/21953/LUVBUDS-PS-MET100-A-Accessories__87337.1778275649.jpg?c=2"
+				"https://cdn11.bigcommerce.com/s-ijm7dw7yvr/images/stencil/500x659/products/202/21953/LUVBUDS-PS-MET100-A-Accessories__87337.1778275649.jpg?c=2"
 			],
 			"width": 4.5,
 			"height": 6.5,
@@ -1893,11 +1798,7 @@
 			"unitCost": 10.0,
 			"brand": "SirEEL",
 			"url": "https://shopluvbuds.com/search.php?search_query=SE-HP-SIL-LTL-BX-25PK",
-			"images": [
-				"https://cdn11.bigcommerce.com/s-ijm7dw7yvr/images/stencil/500x659/products/5519/20033/shopluvbuds-SHROOMCLIP-clip-assorted-colors__90507.1739388188.1280.1280__75878.1766508738.png?c=2",
-				"https://cdn11.bigcommerce.com/s-ijm7dw7yvr/images/stencil/500x659/products/5519/21251/LUVBUDS-SHROOMCLIP25PK-BX-E-CLIP__22248.1768437018.jpg?c=2",
-				"https://cdn11.bigcommerce.com/s-ijm7dw7yvr/stencil/111b70c0-a1c5-013c-36fd-5e6da364b335/e/91991480-3054-013f-c064-6ea79076ec13/img/loading.svg"
-			],
+			"images": [],
 			"width": 1.5,
 			"height": 3.5,
 			"depth": 1.0,
@@ -1918,7 +1819,6 @@
 			"brand": "RAW",
 			"url": "https://shopluvbuds.com/raw-50pk-original-tips-regular-50ct/",
 			"images": [
-				"https://cdn11.bigcommerce.com/s-ijm7dw7yvr/images/stencil/original/products/1026/2561/RAW-TIPS_REGULAR__91057.1741890920.png?c=2",
 				"https://cdn11.bigcommerce.com/s-ijm7dw7yvr/images/stencil/original/products/1026/15431/LUVBUDS-RAW-REGTIP-B-Paper_Tips__01268.1755817470.jpg?c=2"
 			],
 			"width": 3.75,
@@ -2101,10 +2001,7 @@
 			"unitCost": 29.23,
 			"brand": "RAW",
 			"url": "https://shopluvbuds.com/raw-classic-cones-1-1-4-32ct-6pk/",
-			"images": [
-				"https://cdn11.bigcommerce.com/s-ijm7dw7yvr/images/stencil/original/products/238/714/raw-pre-rolled-cones-1-1-4inch-box_1_1__75233.1755629092.jpg?c=2",
-				"https://cdn11.bigcommerce.com/s-ijm7dw7yvr/images/stencil/original/products/238/948/RAW-CLASSIC_KSS-CONE-BOX__96249.1607452102.jpg?c=2"
-			],
+			"images": [],
 			"width": 5.25,
 			"height": 10.25,
 			"depth": 5.25,
@@ -2148,8 +2045,7 @@
 			"brand": "RAW",
 			"url": "https://shopluvbuds.com/raw-classic-cones-king-size-32ct-3pk/",
 			"images": [
-				"https://cdn11.bigcommerce.com/s-ijm7dw7yvr/images/stencil/original/products/240/15600/LUVBUDS-RAW-CONE3PK-B-Cones__58195.1737599668.jpg?c=2",
-				"https://cdn11.bigcommerce.com/s-ijm7dw7yvr/images/stencil/original/products/240/715/raw-pre-rolled-cones-king-size-box_1_2__66937.1607969518.jpg?c=2"
+				"https://cdn11.bigcommerce.com/s-ijm7dw7yvr/images/stencil/original/products/240/15600/LUVBUDS-RAW-CONE3PK-B-Cones__58195.1737599668.jpg?c=2"
 			],
 			"width": 5.25,
 			"height": 10.0,
@@ -2216,10 +2112,7 @@
 			"unitCost": 17.76,
 			"brand": "Wulf",
 			"url": "https://shopluvbuds.com/wulf-flora-1000mah-dry-herb-device-by-yocan-assorted-colors-may-vary/",
-			"images": [
-				"https://cdn11.bigcommerce.com/s-ijm7dw7yvr/images/stencil/original/products/3196/7879/wulf-flora-key-features__79338.1752185737.jpg?c=2",
-				"https://cdn11.bigcommerce.com/s-ijm7dw7yvr/images/stencil/original/products/3196/7885/WULF-FLORA-VAPORIZERS-800x800__95407.1752185737.jpg?c=2"
-			],
+			"images": [],
 			"width": null,
 			"height": null,
 			"depth": null,
@@ -2238,10 +2131,9 @@
 			"unitPrice": 30.54,
 			"unitCost": 20.11,
 			"brand": "Lookah",
-			"url": "https://shopluvbuds.com/lookah-ice-cream-950mah-dry-herb-device-black/",
+			"url": "https://shopluvbuds.com/search.php?search_query=LOOK-IC-BK",
 			"images": [
-				"https://cdn11.bigcommerce.com/s-ijm7dw7yvr/images/stencil/original/products/3662/13351/LuvBuds-LOOK-IC-BK__21287.1777666304.png?c=2",
-				"https://cdn11.bigcommerce.com/s-ijm7dw7yvr/images/stencil/original/products/3662/19569/LUVBUDS-LOOK-IC-PU-D-Dry_Herb_Vaporizer_Battery__01534.1777666304.jpg?c=2"
+				"https://cdn11.bigcommerce.com/s-ijm7dw7yvr/images/stencil/500x659/products/3662/13351/LuvBuds-LOOK-IC-BK__21287.1777666304.png?c=2"
 			],
 			"width": null,
 			"height": null,
@@ -2332,7 +2224,6 @@
 			"brand": "RAW",
 			"url": "https://shopluvbuds.com/raw-20pk-pre-rolled-tips-21pc-retail-display/",
 			"images": [
-				"https://cdn11.bigcommerce.com/s-ijm7dw7yvr/images/stencil/original/products/218/733/raw-pre-rolled-tips-box_2_1__86735.1747692195.jpg?c=2",
 				"https://cdn11.bigcommerce.com/s-ijm7dw7yvr/images/stencil/original/products/218/13442/LUVBUDS-RAW-TIPSPREROLLED-B-Paper_Tips__79597.1755707471.jpg?c=2"
 			],
 			"width": 4.0,
@@ -2355,7 +2246,6 @@
 			"brand": "Eyce",
 			"url": "https://shopluvbuds.com/eyce-mini-beaker-6-unit-pop-display-assorted-colors/",
 			"images": [
-				"https://cdn11.bigcommerce.com/s-ijm7dw7yvr/images/stencil/original/products/2028/4716/eyce_mini__02721.1725461484.png?c=2",
 				"https://cdn11.bigcommerce.com/s-ijm7dw7yvr/images/stencil/original/products/2028/15585/LUVBUDS-EYCE-MINIBKR-POP-A-Silicone__52343.1725462212.jpg?c=2"
 			],
 			"width": null,
@@ -2423,10 +2313,7 @@
 			"unitCost": 63.54,
 			"brand": "Yocan",
 			"url": "https://shopluvbuds.com/yocan-20pk-kodo-pro-display-400mah-assorted-colors-may-vary/",
-			"images": [
-				"https://cdn11.bigcommerce.com/s-ijm7dw7yvr/images/stencil/original/products/3342/8328/Yocan_Kodo_Pro_-_1_600x__20689.1760732715.jpg?c=2",
-				"https://cdn11.bigcommerce.com/s-ijm7dw7yvr/images/stencil/original/products/3342/8327/youcankodoproall__77677.1760732715.jpg?c=2"
-			],
+			"images": [],
 			"width": 3.75,
 			"height": 4.0,
 			"depth": 2.5,
@@ -2445,9 +2332,10 @@
 			"unitPrice": 108.35,
 			"unitCost": 27.22,
 			"brand": "SirEEL",
-			"url": "https://shopluvbuds.com/sireel-10pk-gas-tank-510-unit-650mah-w-preheat-variable-voltage-battery-assorted-colors/",
+			"url": "https://shopluvbuds.com/search.php?search_query=SE-BT-GASTANKDISP",
 			"images": [
-				"https://cdn11.bigcommerce.com/s-ijm7dw7yvr/images/stencil/original/products/4711/15280/SE-BT-GASTANKDISP-6__45443.1738623237.png?c=2"
+				"https://cdn11.bigcommerce.com/s-ijm7dw7yvr/images/stencil/500x659/products/4711/15280/SE-BT-GASTANKDISP-6__45443.1738623237.png?c=2",
+				"https://cdn11.bigcommerce.com/s-ijm7dw7yvr/images/stencil/500x659/products/4711/20454/LUVBUDS-SIREEL-SE-BT-GASTANKDISP-A-BatteryGIF__30302.1761943316.gif?c=2"
 			],
 			"width": 0.91,
 			"height": 3.75,
@@ -2489,9 +2377,10 @@
 			"unitPrice": 140.9,
 			"unitCost": 47.86,
 			"brand": "SirEEL",
-			"url": "https://shopluvbuds.com/sireel-10pk-doppleganger-dual-pod-preheat-variable-voltage-battery-650mah-assorted-colors-may-vary/",
+			"url": "https://shopluvbuds.com/search.php?search_query=SE-BT-DOPPLEGANGER",
 			"images": [
-				"https://cdn11.bigcommerce.com/s-ijm7dw7yvr/images/stencil/original/products/4490/14130/SE-BT-DOPPLEGANGER-D__72539.1745176978.png?c=2"
+				"https://cdn11.bigcommerce.com/s-ijm7dw7yvr/images/stencil/500x659/products/4490/14130/SE-BT-DOPPLEGANGER-D__72539.1745176978.png?c=2",
+				"https://cdn11.bigcommerce.com/s-ijm7dw7yvr/images/stencil/500x659/products/4490/20678/LUVBUDS-SE-BT-DOPPLEGANGER-A-BatteryGIF__97914.1763751315.gif?c=2"
 			],
 			"width": 1.0,
 			"height": 4.0,
@@ -2627,9 +2516,7 @@
 			"unitCost": 39.75,
 			"brand": "SirEEL",
 			"url": "https://shopluvbuds.com/sireel-5pk-iron-lung-dual-mode-forced-air-dab-cartridge-510-battery-650mah-variable-voltage-solid-color-series-retail-display/",
-			"images": [
-				"https://cdn11.bigcommerce.com/s-ijm7dw7yvr/images/stencil/original/products/4946/18809/LUVBUDS-BT-IRONGLUNGS5P-SOLID-C-BATT__08012.1776446912.png?c=2"
-			],
+			"images": [],
 			"width": 0.91,
 			"height": 3.75,
 			"depth": 1.69,
@@ -2649,9 +2536,7 @@
 			"unitCost": 42.0,
 			"brand": "SirEEL",
 			"url": "https://shopluvbuds.com/sireel-5pk-iron-lung-dual-mode-forced-air-dab-cartridge-510-battery-650mah-variable-voltage-thermo-color-series-retail-display/",
-			"images": [
-				"https://cdn11.bigcommerce.com/s-ijm7dw7yvr/images/stencil/original/products/4945/18805/LUVBUDS-BT-IRONGLUNGS5P-THERMO-C-BATT__46783.1776447469.png?c=2"
-			],
+			"images": [],
 			"width": 0.91,
 			"height": 3.75,
 			"depth": 1.69,
@@ -2671,10 +2556,7 @@
 			"unitCost": 10.5,
 			"brand": "SMYLE Labs",
 			"url": "https://shopluvbuds.com/smyle-labs-inhaler-variable-voltage-510-thread-battery-grey/",
-			"images": [
-				"https://cdn11.bigcommerce.com/s-ijm7dw7yvr/images/stencil/original/products/5664/21559/LUVBUDS-BT-SMYLEINHALER-J-Battery__04976.1772055710.1280.1280__70164.1777065513.jpg?c=2",
-				"https://cdn11.bigcommerce.com/s-ijm7dw7yvr/images/stencil/original/products/5664/21558/LUVBUDS-BT-SMYLEINHALER-A-Battery__20113.1772056766.1280.1280__96568.1777065513.jpg?c=2"
-			],
+			"images": [],
 			"width": 6.0,
 			"height": 1.5,
 			"depth": 0.5,
@@ -2808,9 +2690,9 @@
 			"unitPrice": 74.61,
 			"unitCost": 47.5,
 			"brand": "Pulsar",
-			"url": "https://shopluvbuds.com/pulsar-chorus-concentrate-device-w-mini-hot-knife-2000mah-black/",
+			"url": "https://shopluvbuds.com/search.php?search_query=BT-V1220BK",
 			"images": [
-				"https://cdn11.bigcommerce.com/s-ijm7dw7yvr/images/stencil/original/products/5645/21319/LUVBUDS-PULSAR-BT-V1220BK-A-Battery__36941.1778187607.jpg?c=2"
+				"https://cdn11.bigcommerce.com/s-ijm7dw7yvr/images/stencil/500x659/products/5645/21319/LUVBUDS-PULSAR-BT-V1220BK-A-Battery__36941.1778187607.jpg?c=2"
 			],
 			"width": 5.75,
 			"height": 7.5,
@@ -2855,7 +2737,6 @@
 			"brand": "Lookah",
 			"url": "https://shopluvbuds.com/lookah-6pk-seahorse-pro-plus-650mah-2-in-1-electric-nectar-collector-battery-assorted-colors-may-vary/",
 			"images": [
-				"https://cdn11.bigcommerce.com/s-ijm7dw7yvr/images/stencil/original/products/5453/19106/LuvBuds-LOOK-SEAHORSE-ProPlus-BK__64546.1737596329.1280.1280__51592.1751923306.png?c=2",
 				"https://cdn11.bigcommerce.com/s-ijm7dw7yvr/images/stencil/original/products/5453/19105/LUVBUDS-LOOKAH-LOOK-SHPROPLUS-ASST-6PK-A-Battery__31133.1751923306.jpg?c=2"
 			],
 			"width": 5.5,
@@ -2899,10 +2780,10 @@
 			"unitPrice": null,
 			"unitCost": null,
 			"brand": "Pulsar",
-			"url": "https://shopluvbuds.com/pulsar-8pk-510-dl-5-0-auto-draw-1000mah-variable-voltage-battery-retail-display-assorted-colors/",
+			"url": "https://shopluvbuds.com/search.php?search_query=BT-V985D",
 			"images": [
-				"https://cdn11.bigcommerce.com/s-ijm7dw7yvr/images/stencil/original/products/5274/18258/LUVBUDS-PULSAR-BT-V985D-B-Battery__33296.1778099065.png?c=2",
-				"https://cdn11.bigcommerce.com/s-ijm7dw7yvr/images/stencil/original/products/5274/18260/LUVBUDS-PULSAR-BT-V985D-A-Battery__36583.1778099065.png?c=2"
+				"https://cdn11.bigcommerce.com/s-ijm7dw7yvr/images/stencil/500x659/products/5274/18260/LUVBUDS-PULSAR-BT-V985D-A-Battery__36583.1778099065.png?c=2",
+				"https://cdn11.bigcommerce.com/s-ijm7dw7yvr/images/stencil/500x659/products/5274/18258/LUVBUDS-PULSAR-BT-V985D-B-Battery__33296.1778099065.png?c=2"
 			],
 			"width": 1.53,
 			"height": 3.22,
@@ -2922,10 +2803,10 @@
 			"unitPrice": null,
 			"unitCost": null,
 			"brand": "Pulsar",
-			"url": "https://shopluvbuds.com/pulsar-6pk-510-dl-wizard-pipe-auto-draw-variable-voltage-battery-650mah-pop-retail-display-natural-wood-colors-may-vary/",
+			"url": "https://shopluvbuds.com/search.php?search_query=BT-V1166D",
 			"images": [
-				"https://cdn11.bigcommerce.com/s-ijm7dw7yvr/images/stencil/original/products/5422/18780/LUVBUDS-PULSAR-BT-V1166D-A-Battery__37972.1778186399.jpg?c=2",
-				"https://cdn11.bigcommerce.com/s-ijm7dw7yvr/images/stencil/original/products/5422/18773/LUVBUDS-PULSAR-BT-V1166D-E-Battery__29213.1778186399.jpg?c=2"
+				"https://cdn11.bigcommerce.com/s-ijm7dw7yvr/images/stencil/500x659/products/5422/18780/LUVBUDS-PULSAR-BT-V1166D-A-Battery__37972.1778186399.jpg?c=2",
+				"https://cdn11.bigcommerce.com/s-ijm7dw7yvr/images/stencil/500x659/products/5422/18773/LUVBUDS-PULSAR-BT-V1166D-E-Battery__29213.1778186399.jpg?c=2"
 			],
 			"width": 1.53,
 			"height": 3.22,
@@ -2947,8 +2828,7 @@
 			"brand": "SMYLE Labs",
 			"url": "https://shopluvbuds.com/smyle-labs-wandjamin-variable-voltage-510-thread-battery-brown/",
 			"images": [
-				"https://cdn11.bigcommerce.com/s-ijm7dw7yvr/images/stencil/original/products/5215/17766/LUVBUDS-BT-WANDJAMIN-BROWN-A-Battery__72684.1738777730.png?c=2",
-				"https://cdn11.bigcommerce.com/s-ijm7dw7yvr/images/stencil/original/products/5215/17769/LUVBUDS-BT-WANDJAMIN-BLACK-C-Battery__96828.1738777565.1280.1280__44236.1738777730.png?c=2"
+				"https://cdn11.bigcommerce.com/s-ijm7dw7yvr/images/stencil/original/products/5215/17766/LUVBUDS-BT-WANDJAMIN-BROWN-A-Battery__72684.1738777730.png?c=2"
 			],
 			"width": 6.0,
 			"height": 1.5,
@@ -2992,9 +2872,7 @@
 			"unitCost": null,
 			"brand": "SirEEL",
 			"url": "https://shopluvbuds.com/sireel-10pk-hover-ev-650mah-variable-voltage-battery-assorted-electro-colors-may-vary/",
-			"images": [
-				"https://cdn11.bigcommerce.com/s-ijm7dw7yvr/images/stencil/original/products/5357/20253/LUVBUDS-SE-HOVER-Z__74316.1761081589.png?c=2"
-			],
+			"images": [],
 			"width": 1.1,
 			"height": 3.57,
 			"depth": 1.77,
@@ -3016,8 +2894,7 @@
 			"url": "https://shopluvbuds.com/search.php?search_query=PFC-PEAKPRO2-ONYX",
 			"images": [
 				"https://cdn11.bigcommerce.com/s-ijm7dw7yvr/images/stencil/500x659/products/4113/18065/LUVBUDS-PFC-PEAKPRO2-ONYX-A-Electronic_Vape__73198.1740089615.jpg?c=2",
-				"https://cdn11.bigcommerce.com/s-ijm7dw7yvr/images/stencil/500x659/products/4113/18863/LUVBUDS-PUFFCO-PFC-PEAKPRO2-ONYX-G-Electronic_Vape__99297.1751044532.jpg?c=2",
-				"https://cdn11.bigcommerce.com/s-ijm7dw7yvr/stencil/111b70c0-a1c5-013c-36fd-5e6da364b335/e/91991480-3054-013f-c064-6ea79076ec13/img/loading.svg"
+				"https://cdn11.bigcommerce.com/s-ijm7dw7yvr/images/stencil/500x659/products/4113/18863/LUVBUDS-PUFFCO-PFC-PEAKPRO2-ONYX-G-Electronic_Vape__99297.1751044532.jpg?c=2"
 			],
 			"width": null,
 			"height": null,
@@ -3203,7 +3080,7 @@
 			"vape-green": 22,
 			"vape-yellow": 8
 		},
-		"products_with_images": 133,
-		"products_without_images": 0
+		"products_with_images": 105,
+		"products_without_images": 28
 	}
 }
