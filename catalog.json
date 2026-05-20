@@ -21,7 +21,8 @@
       "width": 7.5,
       "height": 10.0,
       "depth": 3.75,
-      "hasDimensions": true
+      "hasDimensions": true,
+      "dimensionSource": "Jon Rice product data CSV"
     },
     "BIC-MAXI-HAZMAT": {
       "sku": "BIC-MAXI-HAZMAT",
@@ -150,7 +151,8 @@
       "width": 2.75,
       "height": 6.5,
       "depth": 3.5,
-      "hasDimensions": true
+      "hasDimensions": true,
+      "dimensionSource": "Jon Rice product data CSV"
     },
     "SE-WP-CLEARETCH8": {
       "sku": "SE-WP-CLEARETCH8",
@@ -675,7 +677,8 @@
       "width": 9.0,
       "height": 6.5,
       "depth": 5.0,
-      "hasDimensions": true
+      "hasDimensions": true,
+      "dimensionSource": "Jon Rice product data CSV"
     },
     "SE-DSTM-POP-36PC-BX": {
       "sku": "SE-DSTM-POP-36PC-BX",
@@ -810,7 +813,8 @@
       "width": 7.5,
       "height": 3.25,
       "depth": 5.0,
-      "hasDimensions": true
+      "hasDimensions": true,
+      "dimensionSource": "Jon Rice product data CSV"
     },
     "ZAZA-GND-63-4PC-WNDW-GUNM": {
       "sku": "ZAZA-GND-63-4PC-WNDW-GUNM",
@@ -876,7 +880,8 @@
       "width": 3.0,
       "height": 3.0,
       "depth": 3.0,
-      "hasDimensions": true
+      "hasDimensions": true,
+      "dimensionSource": "Jon Rice product data CSV"
     },
     "ZAZA-GND-63-4PC-WNDW-LILA": {
       "sku": "ZAZA-GND-63-4PC-WNDW-LILA",
@@ -896,7 +901,8 @@
       "width": 3.0,
       "height": 3.0,
       "depth": 3.0,
-      "hasDimensions": true
+      "hasDimensions": true,
+      "dimensionSource": "Jon Rice product data CSV"
     },
     "ZAZA-GND-63-4PC-WNDW-PINK": {
       "sku": "ZAZA-GND-63-4PC-WNDW-PINK",
@@ -938,7 +944,8 @@
       "width": 3.0,
       "height": 3.0,
       "depth": 3.0,
-      "hasDimensions": true
+      "hasDimensions": true,
+      "dimensionSource": "Jon Rice product data CSV"
     },
     "ZAZA-GND-50-4PC-TURQ": {
       "sku": "ZAZA-GND-50-4PC-TURQ",
@@ -1025,7 +1032,8 @@
       "width": 2.5,
       "height": 2.1,
       "depth": 2.5,
-      "hasDimensions": true
+      "hasDimensions": true,
+      "dimensionSource": "Jon Rice product data CSV"
     },
     "ZAZA-GND-50-4PC-WNDW-MTPN": {
       "sku": "ZAZA-GND-50-4PC-WNDW-MTPN",
@@ -1045,7 +1053,8 @@
       "width": 2.5,
       "height": 2.1,
       "depth": 2.5,
-      "hasDimensions": true
+      "hasDimensions": true,
+      "dimensionSource": "Jon Rice product data CSV"
     },
     "ZAZA-GND-63-4PC-BLACK": {
       "sku": "ZAZA-GND-63-4PC-BLACK",
@@ -1180,7 +1189,8 @@
       "width": 2.5,
       "height": 2.1,
       "depth": 2.5,
-      "hasDimensions": true
+      "hasDimensions": true,
+      "dimensionSource": "Jon Rice product data CSV"
     },
     "ZAZA-GND-50-4PC-GUNM": {
       "sku": "ZAZA-GND-50-4PC-GUNM",
@@ -1292,7 +1302,8 @@
       "width": 3.25,
       "height": 6.0,
       "depth": 1.25,
-      "hasDimensions": true
+      "hasDimensions": true,
+      "dimensionSource": "Jon Rice product data CSV"
     },
     "ZZUB48": {
       "sku": "ZZUB48",
@@ -1404,7 +1415,8 @@
       "width": 8.25,
       "height": 5.0,
       "depth": 4.0,
-      "hasDimensions": true
+      "hasDimensions": true,
+      "dimensionSource": "Jon Rice product data CSV"
     },
     "ZZUB11436": {
       "sku": "ZZUB11436",
@@ -1450,7 +1462,8 @@
       "width": 3.5,
       "height": 11.0,
       "depth": 4.25,
-      "hasDimensions": true
+      "hasDimensions": true,
+      "dimensionSource": "Jon Rice product data CSV"
     },
     "SE-DUG-METGRIND": {
       "sku": "SE-DUG-METGRIND",
@@ -1516,7 +1529,8 @@
       "width": 6.0,
       "height": 6.25,
       "depth": 3.5,
-      "hasDimensions": true
+      "hasDimensions": true,
+      "dimensionSource": "Jon Rice product data CSV"
     },
     "BOV-MB62-04-OWC": {
       "sku": "BOV-MB62-04-OWC",
@@ -1562,7 +1576,8 @@
       "width": 7.25,
       "height": 4.5,
       "depth": 7.25,
-      "hasDimensions": true
+      "hasDimensions": true,
+      "dimensionSource": "Jon Rice product data CSV"
     },
     "F-420": {
       "sku": "F-420",
@@ -1585,7 +1600,8 @@
       "width": 3.0,
       "height": 8.0,
       "depth": 3.0,
-      "hasDimensions": true
+      "hasDimensions": true,
+      "dimensionSource": "Jon Rice product data CSV"
     },
     "SE-LIGHTERLEASH-BX": {
       "sku": "SE-LIGHTERLEASH-BX",
@@ -1631,7 +1647,8 @@
       "width": 4.0,
       "height": 4.5,
       "depth": 3.5,
-      "hasDimensions": true
+      "hasDimensions": true,
+      "dimensionSource": "Jon Rice product data CSV"
     },
     "ZZ100RM": {
       "sku": "ZZ100RM",
@@ -1654,7 +1671,8 @@
       "width": 4.5,
       "height": 6.0,
       "depth": 2.0,
-      "hasDimensions": true
+      "hasDimensions": true,
+      "dimensionSource": "Jon Rice product data CSV"
     },
     "SE-RT-2XCONETRAY-BX": {
       "sku": "SE-RT-2XCONETRAY-BX",
@@ -1878,7 +1896,8 @@
       "width": 3.5,
       "height": 6.25,
       "depth": 2.25,
-      "hasDimensions": true
+      "hasDimensions": true,
+      "dimensionSource": "Jon Rice product data CSV"
     },
     "ZZHW-NAT": {
       "sku": "ZZHW-NAT",
@@ -1901,7 +1920,8 @@
       "width": 5.0,
       "height": 7.25,
       "depth": 2.0,
-      "hasDimensions": true
+      "hasDimensions": true,
+      "dimensionSource": "Jon Rice product data CSV"
     },
     "ZZHW-OGP": {
       "sku": "ZZHW-OGP",
@@ -1924,7 +1944,8 @@
       "width": 5.0,
       "height": 7.25,
       "depth": 2.0,
-      "hasDimensions": true
+      "hasDimensions": true,
+      "dimensionSource": "Jon Rice product data CSV"
     },
     "ZZHW-SUMMER": {
       "sku": "ZZHW-SUMMER",
@@ -1947,7 +1968,8 @@
       "width": 5.0,
       "height": 7.25,
       "depth": 2.0,
-      "hasDimensions": true
+      "hasDimensions": true,
+      "dimensionSource": "Jon Rice product data CSV"
     },
     "SE-GND-ZNC63-6PK": {
       "sku": "SE-GND-ZNC63-6PK",
@@ -1970,7 +1992,8 @@
       "width": 9.0,
       "height": 2.5,
       "depth": 6.0,
-      "hasDimensions": true
+      "hasDimensions": true,
+      "dimensionSource": "Jon Rice product data CSV"
     },
     "SE-GND-ZNC50-6PK": {
       "sku": "SE-GND-ZNC50-6PK",
@@ -2036,10 +2059,11 @@
         "https://cdn11.bigcommerce.com/s-ijm7dw7yvr/images/stencil/original/products/3076/7419/RAWCONEDISP20PK114__71202.1755637767.jpg?c=2",
         "https://cdn11.bigcommerce.com/s-ijm7dw7yvr/images/stencil/original/products/3076/13818/RAWCONEDISP20PK114-A__48687.1738705936.png?c=2"
       ],
-      "width": null,
-      "height": null,
-      "depth": null,
-      "hasDimensions": false
+      "width": 5.25,
+      "height": 10.25,
+      "depth": 5.25,
+      "hasDimensions": true,
+      "dimensionSource": "Inferred from RAW-CONE6PK (same 1 1/4 cone display format)"
     },
     "RAW-CONE3PK": {
       "sku": "RAW-CONE3PK",
@@ -2082,10 +2106,11 @@
         "https://cdn11.bigcommerce.com/s-ijm7dw7yvr/images/stencil/original/products/4396/12119/SHOPLUVBUDS-POP-SJ-114__29071.1686933262.1280.1280__59209.1741813366.png?c=2",
         "https://cdn11.bigcommerce.com/s-ijm7dw7yvr/images/stencil/original/products/4396/12118/LUVBUDS-POP-114-VARIETY-UB-Prerolled_Cones__87670.1741813366.png?c=2"
       ],
-      "width": null,
-      "height": null,
-      "depth": null,
-      "hasDimensions": false
+      "width": 8.25,
+      "height": 5.0,
+      "depth": 4.0,
+      "hasDimensions": true,
+      "dimensionSource": "Inferred from POP-114-VARIETY-UB2.0 (same product, newer variety version)"
     },
     "DUG-RISSUN4": {
       "sku": "DUG-RISSUN4",
@@ -2220,10 +2245,11 @@
         "https://cdn11.bigcommerce.com/s-ijm7dw7yvr/images/stencil/original/products/2572/13202/EYCE-OF-SPOONSPRL-POP-B__92269.1750105837.png?c=2",
         "https://cdn11.bigcommerce.com/s-ijm7dw7yvr/images/stencil/original/products/2572/13201/EYCE-OF-SPOONSPRL-POP-A__11740.1750105837.png?c=2"
       ],
-      "width": null,
-      "height": null,
-      "depth": null,
-      "hasDimensions": false
+      "width": 2.0,
+      "height": 4.25,
+      "depth": 1.75,
+      "hasDimensions": true,
+      "dimensionSource": "Confirmed from sister SKUs EYCE-OF-SPOON-FLORAL-POP / EYCE-OF-SPOON-SWTCHBK-POP (identical product, different color)"
     },
     "RAW-TIPSPREROLLED": {
       "sku": "RAW-TIPSPREROLLED",
@@ -2267,9 +2293,11 @@
         "https://cdn11.bigcommerce.com/s-ijm7dw7yvr/images/stencil/original/products/2028/15585/LUVBUDS-EYCE-MINIBKR-POP-A-Silicone__52343.1725462212.jpg?c=2"
       ],
       "width": null,
-      "height": null,
+      "height": 7.25,
       "depth": null,
-      "hasDimensions": false
+      "hasDimensions": false,
+      "dimensionSource": "Height confirmed from eyce.com; width/depth not found",
+      "dimensionNotes": "Partial: height only (7.25\"). Width and depth still needed. 6-unit POP display box."
     },
     "FUT-TYS2BLNTWRAP": {
       "sku": "FUT-TYS2BLNTWRAP",
@@ -2289,10 +2317,11 @@
         "https://cdn11.bigcommerce.com/s-ijm7dw7yvr/images/stencil/original/products/3577/9469/LuvBuds-FUT-TYS2BLNTWRAP-Tyson_2.0_x_FUTUROLA_-_Terpene-Infused_Blunt_Wraps__13634.1738622930.jpg?c=2",
         "https://cdn11.bigcommerce.com/s-ijm7dw7yvr/images/stencil/original/products/3577/9468/LuvBuds-FUT-TYS2BLNTWRAP-Tyson_2.0_x_FUTUROLA_-_Terpene-Infused_Blunt_Wraps.__32745.1723832276.jpg?c=2"
       ],
-      "width": null,
-      "height": null,
-      "depth": null,
-      "hasDimensions": false
+      "width": 3.5,
+      "height": 6.25,
+      "depth": 2.25,
+      "hasDimensions": true,
+      "dimensionSource": "Inferred from FUT-FUROL0017 (same 25pk blunt wrap display format)"
     },
     "LOOK-SH-COIL5": {
       "sku": "LOOK-SH-COIL5",
@@ -2315,7 +2344,8 @@
       "width": 2.0,
       "height": 4.5,
       "depth": 0.5,
-      "hasDimensions": true
+      "hasDimensions": true,
+      "dimensionSource": "Jon Rice product data CSV"
     },
     "YOCAN-KODOPRO": {
       "sku": "YOCAN-KODOPRO",
@@ -2338,7 +2368,8 @@
       "width": 3.75,
       "height": 4.0,
       "depth": 2.5,
-      "hasDimensions": true
+      "hasDimensions": true,
+      "dimensionSource": "Jon Rice product data CSV"
     },
     "SE-BT-GASTANKDISP": {
       "sku": "SE-BT-GASTANKDISP",
@@ -2427,7 +2458,8 @@
       "width": 1.5,
       "height": 6.0,
       "depth": 1.0,
-      "hasDimensions": true
+      "hasDimensions": true,
+      "dimensionSource": "Jon Rice product data CSV"
     },
     "YOCAN-FLATPLUS": {
       "sku": "YOCAN-FLATPLUS",
@@ -2450,7 +2482,8 @@
       "width": 5.0,
       "height": 4.0,
       "depth": 4.25,
-      "hasDimensions": true
+      "hasDimensions": true,
+      "dimensionSource": "Jon Rice product data CSV"
     },
     "YOCAN-ZIVAPRO-ASST-10PK": {
       "sku": "YOCAN-ZIVAPRO-ASST-10PK",
@@ -2473,7 +2506,8 @@
       "width": 4.5,
       "height": 3.75,
       "depth": 3.5,
-      "hasDimensions": true
+      "hasDimensions": true,
+      "dimensionSource": "Jon Rice product data CSV"
     },
     "SE-BT-380VV-BX-24PK": {
       "sku": "SE-BT-380VV-BX-24PK",
@@ -2519,7 +2553,8 @@
       "width": 7.0,
       "height": 3.5,
       "depth": 2.5,
-      "hasDimensions": true
+      "hasDimensions": true,
+      "dimensionSource": "Jon Rice product data CSV"
     },
     "SE-BT-IRONLUNG5P-SOLID": {
       "sku": "SE-BT-IRONLUNG5P-SOLID",
@@ -2609,7 +2644,8 @@
       "width": 2.5,
       "height": 6.5,
       "depth": 2.5,
-      "hasDimensions": true
+      "hasDimensions": true,
+      "dimensionSource": "Jon Rice product data CSV"
     },
     "BT-GROOVE-CARA": {
       "sku": "BT-GROOVE-CARA",
@@ -2678,7 +2714,8 @@
       "width": 2.75,
       "height": 4.5,
       "depth": 2.5,
-      "hasDimensions": true
+      "hasDimensions": true,
+      "dimensionSource": "Jon Rice product data CSV"
     },
     "PFC-PROXY2-ONYX": {
       "sku": "PFC-PROXY2-ONYX",
@@ -2723,7 +2760,8 @@
       "width": 5.75,
       "height": 7.5,
       "depth": 2.5,
-      "hasDimensions": true
+      "hasDimensions": true,
+      "dimensionSource": "Jon Rice product data CSV"
     },
     "BT-GROOVE-CARAPLUS": {
       "sku": "BT-GROOVE-CARAPLUS",
@@ -2769,7 +2807,8 @@
       "width": 5.5,
       "height": 7.0,
       "depth": 5.5,
-      "hasDimensions": true
+      "hasDimensions": true,
+      "dimensionSource": "Jon Rice product data CSV"
     },
     "VP-TRPPEN2-BLACK": {
       "sku": "VP-TRPPEN2-BLACK",
@@ -2792,7 +2831,8 @@
       "width": 2.0,
       "height": 6.25,
       "depth": 1.25,
-      "hasDimensions": true
+      "hasDimensions": true,
+      "dimensionSource": "Jon Rice product data CSV"
     },
     "BT-V985D": {
       "sku": "BT-V985D",
@@ -2923,10 +2963,11 @@
       "brand": "PFC",
       "url": "https://shopluvbuds.com/search.php?search_query=PFC-PEAKPRO2-ONYX",
       "images": [],
-      "width": null,
-      "height": null,
-      "depth": null,
-      "hasDimensions": false
+      "width": 4.75,
+      "height": 9.75,
+      "depth": 3.5,
+      "hasDimensions": true,
+      "dimensionSource": "Inferred from PFC-PEAKNEWBLK (same Puffco Peak form factor)"
     },
     "ZEN-DUO-WOOD": {
       "sku": "ZEN-DUO-WOOD",
@@ -3047,57 +3088,22 @@
   },
   "stats": {
     "totalSKUs": 133,
-    "missingDimensions": 49,
+    "missingDimensions": 14,
     "missingDimensionSKUs": [
-      "BT-V1220BK",
-      "BT-V846D2",
       "EYCE-MINIBKR-POP",
-      "EYCE-OF-SPOONSPRL-POP",
-      "F-420",
-      "FUT-FUROL0017",
       "FUT-TYS2BLNTWRAP",
-      "GND-ALLOY-50MM-12PK",
       "LOOK-BEAR-ASST-5PK",
       "LOOK-IC-BK",
-      "LOOK-SH-COIL5",
-      "LOOK-SHPROPLUS-ASST-6PK",
-      "LOOK-SNAIL2.0-ASST-6PK",
       "LOOK-UNICORNMINI-BK",
-      "OOZ-1453",
       "PFC-PEAKPRO2-ONYX",
-      "PFC-PIVOTONYX",
       "POP-114-VARIETY-UB",
-      "POP-114-VARIETY-UB2.0",
       "RAWCONEDISP20PK114",
       "SE-CC-SPINSHROOM-BX-12PK",
       "SE-DSTM-POP-36PC-BX",
-      "SE-GND-ZNC63-6PK",
       "SE-GOG-FULLYWIG-14MM-BX",
-      "SE-HP-MELTFRIT12PC-BX",
-      "SE-QBNG-ETCHBCKT-14M-BX",
       "SE-TP-SHROOM50",
       "SE-WP-DONUTIRI5-BX",
-      "SHROOMCLIP25PK-BX",
-      "ST-CROSSCONE13PK-84MM",
-      "TOKPOK",
-      "VP-TRPPEN2-BLACK",
-      "WF-FLRA",
-      "WP-DONUTMACSTAR7",
-      "YOCAN-BLK-POCKET",
-      "YOCAN-FLATPLUS",
-      "YOCAN-KODOPRO",
-      "YOCAN-ZIVAPRO-ASST-10PK",
-      "ZAZA-GND-50-4PC-WNDW-MTGR",
-      "ZAZA-GND-50-4PC-WNDW-MTPN",
-      "ZAZA-GND-50-4PC-WNDW-MTTU",
-      "ZAZA-GND-63-4PC-WNDW-BLAC",
-      "ZAZA-GND-63-4PC-WNDW-GREE",
-      "ZAZA-GND-63-4PC-WNDW-LILA",
-      "ZZ100RM",
-      "ZZ114",
-      "ZZHW-NAT",
-      "ZZHW-OGP",
-      "ZZHW-SUMMER"
+      "WF-FLRA"
     ],
     "lines": {
       "glass-green": 31,
@@ -3106,6 +3112,9 @@
       "herb-yellow": 13,
       "vape-green": 22,
       "vape-yellow": 8
-    }
+    },
+    "partialDimensionSKUs": [
+      "EYCE-MINIBKR-POP"
+    ]
   }
 }
