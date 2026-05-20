@@ -55,6 +55,9 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;b
 .depth-badge.single{display:none}
 .prod-remove{position:absolute;top:1px;left:1px;width:14px;height:14px;border-radius:50%;background:rgba(229,57,69,.9);color:#fff;border:none;font-size:10px;line-height:1;cursor:pointer;z-index:25;display:none;align-items:center;justify-content:center;padding:0}
 .product:hover .prod-remove{display:flex}
+.prod-rotate{position:absolute;top:1px;right:22px;width:14px;height:14px;border-radius:50%;background:rgba(0,0,0,.7);color:#fff;border:none;font-size:9px;line-height:1;cursor:pointer;z-index:25;display:none;align-items:center;justify-content:center;padding:0}
+.product:hover .prod-rotate{display:flex}
+.prod-rotate.on{background:rgba(233,69,96,.9)}
 
 .drag-ghost{position:fixed;pointer-events:none;z-index:9000;opacity:.85;border:2px solid #e94560;border-radius:3px;overflow:hidden;display:flex;align-items:center;justify-content:center}
 
@@ -303,6 +306,14 @@ function getProductDims(id) {
   return {w:2, h:3, d:1, estimated: true};
 }
 
+function getEffectiveDims(sku, rotated) {
+  const dims = getProductDims(sku);
+  if (rotated) {
+    return {w: dims.h, h: dims.w, d: dims.d, estimated: dims.estimated};
+  }
+  return dims;
+}
+
 function getProductColor(id) {
   const p = products[id];
   if (!p) return '#888';
@@ -360,7 +371,7 @@ function autoPlaceProducts(display, skus) {
       if (rowWidths[sid] + w <= SW) {
         const key = currentRow === 1 ? sid : sid + currentRow;
         if (!display.layout[key]) display.layout[key] = [];
-        display.layout[key].push({b: sku, f: null});
+        display.layout[key].push({b: sku, f: null, br: false, fr: false});
         rowWidths[sid] += w;
         placed = true;
         break;
@@ -380,7 +391,7 @@ function autoPlaceProducts(display, skus) {
 
       // Place on top shelf of new row
       const newKey = 'top' + currentRow;
-      display.layout[newKey].push({b: sku, f: null});
+      display.layout[newKey].push({b: sku, f: null, br: false, fr: false});
       rowWidths.top = w;
     }
   }
@@ -445,7 +456,7 @@ function cloneDisplay(displayId) {
     hidden: new Set(src.hidden)
   };
   for (const sid of getRowShelfIds(src)) {
-    dup.layout[sid] = (src.layout[sid] || []).map(col => ({b: col.b, f: col.f || null}));
+    dup.layout[sid] = (src.layout[sid] || []).map(col => ({b: col.b, f: col.f || null, br: col.br || false, fr: col.fr || false}));
   }
   displays.push(dup);
   return dup;
@@ -460,8 +471,8 @@ function allPlacements(display) {
   const out = [];
   for (const sid of getRowShelfIds(display)) {
     (display.layout[sid] || []).forEach((col, ci) => {
-      out.push({id: col.b, shelf: sid, col: ci, pos: 'back', displayId: display.id});
-      if (col.f) out.push({id: col.f, shelf: sid, col: ci, pos: 'front', displayId: display.id});
+      out.push({id: col.b, shelf: sid, col: ci, pos: 'back', displayId: display.id, rotated: col.br || false});
+      if (col.f) out.push({id: col.f, shelf: sid, col: ci, pos: 'front', displayId: display.id, rotated: col.fr || false});
     });
   }
   return out;
@@ -769,8 +780,8 @@ function renderDisplayUnit(display, root) {
       let usedW = 0;
       cols.forEach(c => {
         const bkHidden = display.hidden.has(c.b), frHidden = c.f && display.hidden.has(c.f);
-        const bkDims = bkHidden ? null : getProductDims(c.b);
-        const frDims = (frHidden || !c.f) ? null : getProductDims(c.f);
+        const bkDims = bkHidden ? null : getEffectiveDims(c.b, c.br || false);
+        const frDims = (frHidden || !c.f) ? null : getEffectiveDims(c.f, c.fr || false);
         if (bkDims || frDims) {
           usedW += Math.max(bkDims ? bkDims.w : 0, frDims ? frDims.w : 0);
         }
@@ -797,8 +808,10 @@ function renderDisplayUnit(display, root) {
       cols.forEach((col, ci) => {
         const bkHidden = display.hidden.has(col.b);
         const frHidden = col.f && display.hidden.has(col.f);
-        const bkDims = bkHidden ? null : getProductDims(col.b);
-        const frDims = (frHidden || !col.f) ? null : getProductDims(col.f);
+        const bkRotated = col.br || false;
+        const frRotated = col.fr || false;
+        const bkDims = bkHidden ? null : getEffectiveDims(col.b, bkRotated);
+        const frDims = (frHidden || !col.f) ? null : getEffectiveDims(col.f, frRotated);
         if (!bkDims && !frDims) return;
         let colW = 0;
         if (bkDims) colW = Math.max(colW, bkDims.w);
@@ -807,11 +820,11 @@ function renderDisplayUnit(display, root) {
         const bkDepth = (hasFront && frDims) ? 1 : Math.floor(SD / (bkDims ? bkDims.d : 1));
         if (bkDims && !bkHidden) {
           area.appendChild(mkProduct(col.b, bkDims, x,
-            hasFront ? 'is-back' : 'is-single', bkDepth, shelfKey, ci, 'back', display.id));
+            hasFront ? 'is-back' : 'is-single', bkDepth, shelfKey, ci, 'back', display.id, bkRotated));
         }
         if (frDims && !frHidden) {
           area.appendChild(mkProduct(col.f, frDims, x,
-            bkDims && !bkHidden ? 'is-front' : 'is-single', 1, shelfKey, ci, 'front', display.id));
+            bkDims && !bkHidden ? 'is-front' : 'is-single', 1, shelfKey, ci, 'front', display.id, frRotated));
         }
         x += colW;
       });
@@ -832,7 +845,7 @@ function renderDisplayUnit(display, root) {
   root.appendChild(ftr);
 }
 
-function mkProduct(id, dims, x, cls, deep, shelfId, colIdx, pos, displayId) {
+function mkProduct(id, dims, x, cls, deep, shelfId, colIdx, pos, displayId, rotated) {
   const product = getProduct(id);
   const el = document.createElement('div');
   const color = getProductColor(id);
@@ -851,6 +864,7 @@ function mkProduct(id, dims, x, cls, deep, shelfId, colIdx, pos, displayId) {
   el.dataset.col = colIdx;
   el.dataset.pos = pos;
   el.dataset.displayId = displayId;
+  el.dataset.rotated = rotated ? '1' : '0';
 
   // Shape fill (always present)
   const shapeFill = document.createElement('div');
@@ -905,6 +919,17 @@ function mkProduct(id, dims, x, cls, deep, shelfId, colIdx, pos, displayId) {
     el.appendChild(est);
   }
 
+  // Rotate button
+  const rotBtn = document.createElement('button');
+  rotBtn.className = 'prod-rotate' + (rotated ? ' on' : '');
+  rotBtn.textContent = '↻';
+  rotBtn.title = rotated ? 'Rotated — click to unrotate' : 'Click to rotate 90°';
+  rotBtn.addEventListener('pointerdown', e => {
+    e.stopPropagation(); e.preventDefault();
+    rotateProduct(displayId, shelfId, colIdx, pos);
+  });
+  el.appendChild(rotBtn);
+
   // Remove button
   const rmBtn = document.createElement('button');
   rmBtn.className = 'prod-remove';
@@ -919,7 +944,8 @@ function mkProduct(id, dims, x, cls, deep, shelfId, colIdx, pos, displayId) {
   el.addEventListener('pointerenter', e => {
     if (!product) return;
     const pStr = isEstimated ? ' (estimated)' : '';
-    let info = `${dims.w}″W × ${dims.h}″H × ${dims.d}″D${pStr}\nDepth: ×${deep}`;
+    const rStr = rotated ? ' [Rotated 90°]' : '';
+    let info = `${dims.w}″W × ${dims.h}″H × ${dims.d}″D${pStr}${rStr}\nDepth: ×${deep}`;
     if (product.unitPrice) info += `\nPrice: $${product.unitPrice.toFixed(2)}`;
     if (product.available !== null) info += ` · Stock: ${product.available}`;
     if (product.brand) info += `\nBrand: ${product.brand}`;
@@ -975,6 +1001,7 @@ function startDrag(id, dims, el, e) {
     srcPos: el.dataset.pos,
     srcDisplayId: parseInt(el.dataset.displayId),
     srcInventory: el.dataset.inventory === 'true',
+    srcRotated: el.dataset.rotated === '1',
     startX: e.clientX, startY: e.clientY
   };
   posGhost(e);
@@ -1012,13 +1039,13 @@ function clickToAddToDisplay(sku) {
       const cols = display.layout[key] || [];
       let used = 0;
       for (const col of cols) {
-        const bd = getProductDims(col.b);
-        const fd = col.f ? getProductDims(col.f) : null;
+        const bd = getEffectiveDims(col.b, col.br || false);
+        const fd = col.f ? getEffectiveDims(col.f, col.fr || false) : null;
         used += Math.max(bd.w, fd ? fd.w : 0);
       }
       if (used + w <= SW) {
         if (!display.layout[key]) display.layout[key] = [];
-        display.layout[key].push({b: sku, f: null});
+        display.layout[key].push({b: sku, f: null, br: false, fr: false});
         toast(`Added ${sku} to ${display.label} → ${getShelfName(key)}`);
         return true;
       }
@@ -1030,7 +1057,7 @@ function clickToAddToDisplay(sku) {
   for (const sid of shelfOrder) {
     display.layout[sid + newRow] = [];
   }
-  display.layout['top' + newRow].push({b: sku, f: null});
+  display.layout['top' + newRow].push({b: sku, f: null, br: false, fr: false});
   toast(`Added ${sku} to ${display.label} → ${getShelfName('top' + newRow)} (new row)`);
   return true;
 }
@@ -1085,9 +1112,9 @@ function moveProduct(pid, targetShelf, dropX, srcShelf, srcCol, srcPos, srcDispl
     if (srcCol < srcCols.length) {
       const c = srcCols[srcCol];
       if (srcPos === 'front' && c.f === pid) {
-        c.f = null;
+        c.f = null; c.fr = false;
       } else if (c.b === pid) {
-        if (c.f) { c.b = c.f; c.f = null; }
+        if (c.f) { c.b = c.f; c.f = null; c.br = c.fr || false; c.fr = false; }
         else { srcCols.splice(srcCol, 1); }
       }
     }
@@ -1100,13 +1127,13 @@ function moveProduct(pid, targetShelf, dropX, srcShelf, srcCol, srcPos, srcDispl
   const cols = targetDisplay.layout[targetShelf];
   let x = 0, insertIdx = cols.length;
   for (let i = 0; i < cols.length; i++) {
-    const bkDims = getProductDims(cols[i].b);
-    const frDims = cols[i].f ? getProductDims(cols[i].f) : null;
+    const bkDims = getEffectiveDims(cols[i].b, cols[i].br || false);
+    const frDims = cols[i].f ? getEffectiveDims(cols[i].f, cols[i].fr || false) : null;
     const cw = Math.max(bkDims.w, frDims ? frDims.w : 0);
     if (dropX < x + cw / 2) { insertIdx = i; break; }
     x += cw;
   }
-  cols.splice(insertIdx, 0, {b: pid, f: null});
+  cols.splice(insertIdx, 0, {b: pid, f: null, br: dragState.srcRotated || false, fr: false});
 }
 
 function insertIntoDisplay(pid, targetShelf, dropX, targetDisplayId) {
@@ -1115,13 +1142,13 @@ function insertIntoDisplay(pid, targetShelf, dropX, targetDisplayId) {
   const cols = targetDisplay.layout[targetShelf];
   let x = 0, insertIdx = cols.length;
   for (let i = 0; i < cols.length; i++) {
-    const bkDims = getProductDims(cols[i].b);
-    const frDims = cols[i].f ? getProductDims(cols[i].f) : null;
+    const bkDims = getEffectiveDims(cols[i].b, cols[i].br || false);
+    const frDims = cols[i].f ? getEffectiveDims(cols[i].f, cols[i].fr || false) : null;
     const cw = Math.max(bkDims.w, frDims ? frDims.w : 0);
     if (dropX < x + cw / 2) { insertIdx = i; break; }
     x += cw;
   }
-  cols.splice(insertIdx, 0, {b: pid, f: null});
+  cols.splice(insertIdx, 0, {b: pid, f: null, br: false, fr: false});
 }
 
 // ================================================================
@@ -1189,7 +1216,7 @@ function renderIndex() {
     all.forEach(pl => {
       const product = getProduct(pl.id);
       if (!product) return;
-      const dims = getProductDims(pl.id);
+      const dims = getEffectiveDims(pl.id, pl.rotated || false);
       const isHidden = display.hidden.has(pl.id);
       const shelfName = getShelfName(pl.shelf);
 
@@ -1229,8 +1256,9 @@ function renderIndex() {
       const metaParts = [`${dims.w}″w × ${dims.h}″h`];
       if (dims.estimated) metaParts.push('<span class="idx-est">est</span>');
       if (product.unitPrice) metaParts.push(`$${product.unitPrice.toFixed(2)}`);
+      const posLabel = pl.pos + (pl.rotated ? ' ↻' : '');
       info.innerHTML = `<div class="idx-sku">${pl.id}</div>
-        <div class="idx-meta">${metaParts.join(' · ')} &bull; ${pl.pos}</div>`;
+        <div class="idx-meta">${metaParts.join(' · ')} &bull; ${posLabel}</div>`;
       row.appendChild(info);
 
       const eye = document.createElement('button');
@@ -1431,7 +1459,7 @@ function duplicateProduct(pid, shelfId, displayId) {
   const display = getDisplay(displayId);
   if (!display) return;
   display.hidden.delete(pid);
-  display.layout[shelfId].push({b: pid, f: null});
+  display.layout[shelfId].push({b: pid, f: null, br: false, fr: false});
   renderAll();
   toast('Added duplicate: ' + pid);
 }
@@ -1443,13 +1471,27 @@ function removeInstance(pid, shelfId, colIdx, pos, displayId) {
   if (colIdx >= cols.length) return;
   const col = cols[colIdx];
   if (pos === 'front' && col.f === pid) {
-    col.f = null;
+    col.f = null; col.fr = false;
   } else if (col.b === pid) {
-    if (col.f) { col.b = col.f; col.f = null; }
+    if (col.f) { col.b = col.f; col.f = null; col.br = col.fr || false; col.fr = false; }
     else { cols.splice(colIdx, 1); }
   }
   renderAll();
   toast('Removed: ' + pid);
+}
+
+function rotateProduct(displayId, shelfKey, colIdx, pos) {
+  const display = getDisplay(displayId);
+  if (!display) return;
+  const cols = display.layout[shelfKey];
+  if (colIdx >= cols.length) return;
+  const col = cols[colIdx];
+  if (pos === 'front' && col.f) {
+    col.fr = !col.fr;
+  } else if (pos === 'back') {
+    col.br = !col.br;
+  }
+  renderAll();
 }
 
 // ================================================================
@@ -1467,8 +1509,8 @@ function updateStats() {
       cols.forEach(c => {
         const bkHidden = display.hidden.has(c.b);
         const frHidden = c.f && display.hidden.has(c.f);
-        const bkDims = bkHidden ? null : getProductDims(c.b);
-        const frDims = (frHidden || !c.f) ? null : getProductDims(c.f);
+        const bkDims = bkHidden ? null : getEffectiveDims(c.b, c.br || false);
+        const frDims = (frHidden || !c.f) ? null : getEffectiveDims(c.f, c.fr || false);
         if (bkDims || frDims) {
           w += Math.max(bkDims ? bkDims.w : 0, frDims ? frDims.w : 0);
         }
@@ -1591,11 +1633,11 @@ function dlJSON() {
         return {
           name: getShelfName(sid), clearance: clearance,
           columns: (display.layout[sid] || []).map(c => {
-            const bkDims = getProductDims(c.b);
-            const frDims = c.f ? getProductDims(c.f) : null;
+            const bkDims = getEffectiveDims(c.b, c.br || false);
+            const frDims = c.f ? getEffectiveDims(c.f, c.fr || false) : null;
             return {
-              back: {id: c.b, ...bkDims},
-              front: frDims ? {id: c.f, ...frDims} : null,
+              back: {id: c.b, rotated: c.br || false, ...bkDims},
+              front: frDims ? {id: c.f, rotated: c.fr || false, ...frDims} : null,
               columnWidth: Math.max(bkDims.w, frDims ? frDims.w : 0)
             };
           })
