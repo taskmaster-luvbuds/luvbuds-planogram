@@ -2985,7 +2985,11 @@
       "unitCost": null,
       "brand": "PFC",
       "url": "https://shopluvbuds.com/search.php?search_query=PFC-PEAKPRO2-ONYX",
-      "images": [],
+      "images": [
+        "images/PFC-PEAKPRO2-ONYX.png",
+        "https://cdn11.bigcommerce.com/s-ijm7dw7yvr/products/4113/images/10799/SHOPLUVBUDS-PFC-PEAKPRO2-ONYX-The_Puffco_Peak_PRO_2_Onyx3__22510.1751044532.500.750.png?c=2",
+        "https://cdn11.bigcommerce.com/s-ijm7dw7yvr/products/4113/images/18065/LUVBUDS-PFC-PEAKPRO2-ONYX-A-Electronic_Vape__73198.1740089615.500.750.jpg?c=2"
+      ],
       "width": 4.75,
       "height": 9.75,
       "depth": 3.5,
