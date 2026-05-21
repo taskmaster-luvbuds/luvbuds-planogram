@@ -2754,10 +2754,11 @@
         "https://cdn11.bigcommerce.com/s-ijm7dw7yvr/images/stencil/original/products/5513/19961/LUVBUDS-PUFFCO-PFC-PROXY2-HAZE-I-Concentrate_Vape__98521.1758044215.1280.1280__69296.1758123206.jpg?c=2",
         "https://cdn11.bigcommerce.com/s-ijm7dw7yvr/images/stencil/original/products/5513/19955/LUVBUDS-PUFFCO-PFC-PROXY2-BLACK-B-Concentrate_Vape__28320.1758123206.png?c=2"
       ],
-      "width": 1.65,
+      "width": 2.5,
       "height": 5.0,
-      "depth": 1.65,
-      "hasDimensions": true
+      "depth": 2.5,
+      "hasDimensions": true,
+      "dimensionSource": "Corrected via image-ratio analysis (1553×3061px, aspect 0.507) — CSV 1.65″ was likely glass-only measurement"
     },
     "BT-V1220BK": {
       "sku": "BT-V1220BK",
@@ -3009,10 +3010,11 @@
         "https://cdn11.bigcommerce.com/s-ijm7dw7yvr/images/stencil/original/products/4049/14020/LUVBUDS-ZENCO-ZEN-DUO-WOOD-C-Electronic_Vape__19927.1767202131.jpg?c=2",
         "https://cdn11.bigcommerce.com/s-ijm7dw7yvr/images/stencil/original/products/4049/14241/ZEN-DUO-WOOD-A__26659.1738625366.png?c=2"
       ],
-      "width": 4.75,
-      "height": 9.75,
-      "depth": 3.5,
-      "hasDimensions": true
+      "width": 8.66,
+      "height": 5.51,
+      "depth": 7.48,
+      "hasDimensions": true,
+      "dimensionSource": "Verified — actual product dimensions from operator"
     },
     "LOOK-UNICORNMINI-BK": {
       "sku": "LOOK-UNICORNMINI-BK",
