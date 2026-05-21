@@ -1781,10 +1781,11 @@
         "https://cdn11.bigcommerce.com/s-ijm7dw7yvr/images/stencil/original/products/5245/21653/LUVBUDS-SIREEL-SE-WP-RASTALEAF-A-Water_Pipe__05717.1772649130.jpg?c=2",
         "https://cdn11.bigcommerce.com/s-ijm7dw7yvr/images/stencil/original/products/5245/18069/2__37846.1741785852.png?c=2"
       ],
-      "width": 4.0,
-      "height": 9.75,
-      "depth": 1.5,
-      "hasDimensions": true
+      "width": 5.0,
+      "height": 10.5,
+      "depth": 2.5,
+      "hasDimensions": true,
+      "dimensionSource": "Jon Rice product data CSV"
     },
     "PS-MET100": {
       "sku": "PS-MET100",
@@ -3014,6 +3015,27 @@
       "height": null,
       "depth": null,
       "hasDimensions": false
+    },
+    "SE-WP-FABEGGSHWR6-BX": {
+      "sku": "SE-WP-FABEGGSHWR6-BX",
+      "name": "SirEEL - 7\" Fab Egg Showerhead Mini Rig, 14mm Quartz Banger Included, Retail Packaging, Assorted Colors May Vary",
+      "category": "Water Pipe",
+      "subcategory": "Dab Rig",
+      "line": "glass-green",
+      "qtySold": 0,
+      "revenue": 0,
+      "available": 0,
+      "profit": 0,
+      "unitPrice": 14.58,
+      "unitCost": 5.25,
+      "brand": "SirEEL",
+      "url": "https://shopluvbuds.com/search.php?search_query=SE-WP-FABEGGSHWR6-BX",
+      "images": [],
+      "width": 4.25,
+      "height": 7.0,
+      "depth": 2.5,
+      "hasDimensions": true,
+      "dimensionSource": "Jon Rice product data CSV"
     }
   },
   "lines": {
