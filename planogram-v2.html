@@ -122,6 +122,23 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;b
 .cfg-btn{padding:6px 10px;border:2px solid #ddd;border-radius:5px;background:#fff;cursor:pointer;font-size:10px;text-align:left;transition:all .15s;color:#555;font-weight:600}
 .cfg-btn:hover{border-color:#e94560;color:#333}
 .cfg-btn.active{border-color:#d32f2f;background:#fff5f5;color:#d32f2f}
+.config-wrap{position:relative;display:inline-block}
+.config-dropdown{position:absolute;top:100%;right:0;background:#1a1a2e;border:1px solid #e94560;border-radius:6px;padding:6px;z-index:2000;min-width:260px;max-height:340px;overflow-y:auto;display:none;margin-top:4px}
+.config-dropdown.show{display:block}
+.config-item{display:flex;justify-content:space-between;align-items:center;padding:5px 6px;border-bottom:1px solid #333;font-size:11px;color:#ccc;gap:6px}
+.config-item:last-child{border-bottom:none}
+.config-item .cfg-name{flex:1;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;font-weight:600}
+.config-item .cfg-date{font-size:8px;color:#888}
+.config-item .cfg-act-btn{padding:2px 8px;border-radius:3px;border:1px solid #555;background:#2a2a4a;color:#ccc;cursor:pointer;font-size:9px}
+.config-item .cfg-act-btn:hover{background:#e94560;border-color:#e94560;color:#fff}
+.config-item .cfg-del-btn{padding:2px 8px;border-radius:3px;border:1px solid #555;background:#2a2a4a;color:#ccc;cursor:pointer;font-size:9px}
+.config-item .cfg-del-btn:hover{background:#c62828;border-color:#c62828;color:#fff}
+.config-autosave-row{padding:5px 6px;border-bottom:1px solid #555;font-size:10px;color:#888;display:flex;justify-content:space-between;align-items:center;gap:6px}
+.config-autosave-row .cfg-act-btn{background:#1B5E20;border-color:#43A047;color:#fff}
+.display-name-wrap{display:flex;align-items:center;gap:6px}
+.display-name-edit{cursor:pointer;opacity:.4;font-size:10px;color:#ccc;transition:opacity .15s;user-select:none}
+.display-name-edit:hover{opacity:1;color:#e94560}
+.display-name-input{background:#2a2a4a;color:#fff;border:1px solid #e94560;border-radius:3px;padding:2px 6px;font-size:13px;font-weight:700;width:200px;outline:none}
 .toast{position:fixed;bottom:20px;right:20px;background:#1a1a2e;border:1px solid #e94560;color:#fff;padding:8px 16px;border-radius:6px;font-size:12px;z-index:10000;opacity:0;transition:opacity .3s;pointer-events:none}
 .toast.show{opacity:1}
 .idx-display-hdr{padding:5px 4px 2px;font-size:10px;font-weight:800;color:#1a1a2e;border-bottom:2px solid #d32f2f;background:#f5f0e8;border-radius:3px}
@@ -164,6 +181,11 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;b
     </div>
     <button class="btn" onclick="resetAll()">Reset</button>
     <button class="btn" onclick="dlJSON()">Export JSON</button>
+    <div class="config-wrap">
+      <button class="btn" onclick="saveCurrentConfig()" title="Save current layout to browser storage">💾 Save</button>
+      <button class="btn" onclick="toggleConfigDropdown(event)" title="Load a saved layout">📂 Load</button>
+      <div class="config-dropdown" id="config-dropdown"></div>
+    </div>
     <button class="btn" onclick="generateOrderJSON()" style="background:#1B5E20;border-color:#43A047;color:#fff">Order JSON</button>
     <button class="btn pri" onclick="window.print()">Print</button>
   </div>
@@ -267,6 +289,7 @@ let collapsedInventories = new Set();
 let activeLineFilter = null;
 	let activeDimFilter = null;  // null = all, 'has' = has dimensions, 'est' = estimated
 	let activeSort = 'default';  // 'default' | 'revenue-desc' | 'revenue-asc' | 'qty-desc' | 'qty-asc' | 'price-desc' | 'price-asc'
+		let savedConfigs = {};
 
 	// ================================================================
 //  DATA LOADING
@@ -491,6 +514,7 @@ function renderAll() {
   renderLineFilter();
   renderDimFilter();
   reapplySearch();
+  autoSave();
 }
 
 // ================================================================
@@ -682,12 +706,23 @@ function renderPlano() {
     const controls = document.createElement('div');
     controls.className = 'display-controls';
 
+    const nameWrap = document.createElement('div');
+    nameWrap.className = 'display-name-wrap';
     const name = document.createElement('span');
     name.className = 'display-name';
     const lc = lineColors[display.lineId];
     if (lc) name.style.color = lc;
     name.textContent = display.label;
-    controls.appendChild(name);
+    name.onclick = () => startRename(display.id, name);
+    name.title = 'Click to rename';
+    nameWrap.appendChild(name);
+    const editIcon = document.createElement('span');
+    editIcon.className = 'display-name-edit';
+    editIcon.textContent = '✎';
+    editIcon.onclick = (e) => { e.stopPropagation(); startRename(display.id, name); };
+    editIcon.title = 'Rename display';
+    nameWrap.appendChild(editIcon);
+    controls.appendChild(nameWrap);
 
     const actions = document.createElement('div');
     actions.className = 'display-actions';
@@ -1607,6 +1642,7 @@ function resetAll() {
   // Rebuild all displays from catalog
   displays = [];
   buildDefaultDisplays();
+  localStorage.removeItem('planogram-autosave');
   renderAll();
   toast('Reset all displays');
 }
@@ -1809,6 +1845,168 @@ function buildDefaultDisplays() {
 }
 
 // ================================================================
+//  SAVE / LOAD CONFIGURATIONS
+// ================================================================
+function serializeDisplays() {
+  return displays.map(function(d) {
+    var lo = {};
+    for (var k in d.layout) { lo[k] = d.layout[k].slice(); }
+    return { id: d.id, label: d.label, lineId: d.lineId, layout: lo, shelfRows: d.shelfRows, hidden: Array.from(d.hidden) };
+  });
+}
+
+function restoreDisplays(data) {
+  displays = [];
+  nextDisplayId = 1;
+  data.forEach(function(d) {
+    var lo = {};
+    for (var k in d.layout) { lo[k] = d.layout[k].slice(); }
+    displays.push({ id: d.id, label: d.label, lineId: d.lineId, layout: lo, shelfRows: d.shelfRows || 1, hidden: new Set(d.hidden || []) });
+    if (d.id >= nextDisplayId) nextDisplayId = d.id + 1;
+  });
+}
+
+function autoSave() {
+  try { localStorage.setItem('planogram-autosave', JSON.stringify(serializeDisplays())); } catch(e) {}
+}
+
+function restoreAutoSave() {
+  var raw = localStorage.getItem('planogram-autosave');
+  if (!raw) return;
+  try {
+    var data = JSON.parse(raw);
+    if (Array.isArray(data) && data.length > 0 && data[0].layout) {
+      restoreDisplays(data);
+    }
+  } catch(e) {}
+}
+
+function loadSavedConfigs() {
+  try {
+    var raw = localStorage.getItem('planogram-saved-configs');
+    savedConfigs = raw ? JSON.parse(raw) : {};
+  } catch(e) { savedConfigs = {}; }
+}
+
+function saveConfigsToStorage() {
+  try { localStorage.setItem('planogram-saved-configs', JSON.stringify(savedConfigs)); } catch(e) {}
+}
+
+function saveCurrentConfig() {
+  var name = prompt('Name this configuration:', 'Config ' + new Date().toLocaleDateString());
+  if (!name) return;
+  name = name.trim();
+  if (!name) return;
+  loadSavedConfigs();
+  savedConfigs[name] = { date: new Date().toISOString(), displays: serializeDisplays() };
+  saveConfigsToStorage();
+  toast('Saved: ' + escHtml(name));
+}
+
+function loadConfig(name) {
+  if (!savedConfigs[name]) return;
+  if (!confirm('Load "' + name + '"? This replaces current displays.')) return;
+  restoreDisplays(savedConfigs[name].displays);
+  renderAll();
+  toast('Loaded: ' + escHtml(name));
+}
+
+function deleteConfig(name, e) {
+  e.stopPropagation();
+  if (!confirm('Delete "' + name + '"?')) return;
+  loadSavedConfigs();
+  delete savedConfigs[name];
+  saveConfigsToStorage();
+  renderConfigDropdown();
+  toast('Deleted: ' + escHtml(name));
+}
+
+function renderConfigDropdown() {
+  var dd = document.getElementById('config-dropdown');
+  if (!dd) return;
+  loadSavedConfigs();
+  var html = '<div class="config-autosave-row"><span>Autosave</span><button class="cfg-act-btn" onclick="restoreAutoSave();renderAll();toast(\'Autosave restored\');">Restore</button></div>';
+  var names = Object.keys(savedConfigs).sort(function(a,b) { return a.localeCompare(b); });
+  if (names.length === 0) {
+    html += '<div class="config-item" style="color:#888">No saved configs</div>';
+  } else {
+    names.forEach(function(n) {
+      var d = savedConfigs[n].date ? new Date(savedConfigs[n].date).toLocaleDateString() : '';
+      html += '<div class="config-item">' +
+        '<span class="cfg-name" title="' + escAttr(n) + '">' + escHtml(n) + '</span>' +
+        '<span class="cfg-date">' + escHtml(d) + '</span>' +
+        '<button class="cfg-act-btn" onclick="loadConfig(\'' + escAttr(n) + '\');closeConfigDropdown();">Load</button>' +
+        '<button class="cfg-del-btn" onclick="deleteConfig(\'' + escAttr(n) + '\', event)">✕</button>' +
+        '</div>';
+    });
+  }
+  dd.innerHTML = html;
+}
+
+function toggleConfigDropdown(e) {
+  e.stopPropagation();
+  var dd = document.getElementById('config-dropdown');
+  if (!dd) return;
+  if (dd.classList.contains('show')) { closeConfigDropdown(); return; }
+  renderConfigDropdown();
+  dd.classList.add('show');
+  setTimeout(function() { document.addEventListener('click', closeConfigDropdown, {once: true}); }, 10);
+}
+
+function closeConfigDropdown() {
+  var dd = document.getElementById('config-dropdown');
+  if (dd) dd.classList.remove('show');
+}
+
+function escHtml(s) {
+  return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
+}
+
+function escAttr(s) {
+  return String(s).replace(/\\/g,'\\\\').replace(/'/g,"\\'").replace(/"/g,'\\"');
+}
+
+// ================================================================
+//  DISPLAY RENAME
+// ================================================================
+function startRename(displayId, nameEl) {
+  var display = getDisplay(displayId);
+  if (!display) return;
+  var input = document.createElement('input');
+  input.type = 'text';
+  input.className = 'display-name-input';
+  input.value = display.label;
+  input.onblur = function() { finishRename(display, input.value, nameEl); };
+  input.onkeydown = function(e) {
+    if (e.key === 'Enter') { finishRename(display, input.value, nameEl); }
+    if (e.key === 'Escape') { finishRename(display, display.label, nameEl); }
+  };
+  nameEl.replaceWith(input);
+  input.focus();
+  input.select();
+}
+
+function finishRename(display, newName, nameEl) {
+  var input = document.querySelector('.display-name-input');
+  newName = (newName || '').trim();
+  if (!newName) newName = display.label;
+  display.label = newName;
+  if (input) {
+    var wrap = input.closest('.display-name-wrap') || input.parentElement;
+    var name = document.createElement('span');
+    name.className = 'display-name';
+    var lc = lineColors[display.lineId];
+    if (lc) name.style.color = lc;
+    name.textContent = display.label;
+    name.onclick = function() { startRename(display.id, name); };
+    name.title = 'Click to rename';
+    input.replaceWith(name);
+  }
+  renderAll();
+  toast('Display renamed');
+}
+
+// ================================================================
 //  INIT
 // ================================================================
 (async function init() {
@@ -1816,6 +2014,9 @@ function buildDefaultDisplays() {
 
   // Build default displays from catalog
   buildDefaultDisplays();
+
+  // Restore auto-saved state (survives page refresh)
+  restoreAutoSave();
 
   // Hide loading overlay
   document.getElementById('loading').style.display = 'none';
