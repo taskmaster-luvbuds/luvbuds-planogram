@@ -66,10 +66,11 @@
       "images": [
         "images/SE-GOG-FULLYWIG-14MM-BX.png"
       ],
-      "width": null,
-      "height": null,
-      "depth": null,
-      "hasDimensions": false
+      "width": 9.0,
+      "height": 7.0,
+      "depth": 3.8,
+      "hasDimensions": true,
+      "dimensionSource": "Jon Rice product data CSV"
     },
     "SE-CC-SPINSHROOM-BX-12PK": {
       "sku": "SE-CC-SPINSHROOM-BX-12PK",
@@ -88,10 +89,11 @@
       "images": [
         "images/SE-CC-SPINSHROOM-BX-12PK.png"
       ],
-      "width": null,
-      "height": null,
-      "depth": null,
-      "hasDimensions": false
+      "width": 9.0,
+      "height": 7.0,
+      "depth": 9.0,
+      "hasDimensions": true,
+      "dimensionSource": "Jon Rice product data CSV"
     },
     "SE-TP-SHROOM50": {
       "sku": "SE-TP-SHROOM50",
@@ -251,10 +253,11 @@
         "https://cdn11.bigcommerce.com/s-ijm7dw7yvr/images/stencil/original/products/4452/12577/LUVBUDS-SirEEL-SE-wp-ursarecyc7-bx-a-Dab_Rig__40857.1774277746.jpg?c=2",
         "https://cdn11.bigcommerce.com/s-ijm7dw7yvr/images/stencil/original/products/4452/21806/LUVBUDS-SIREEL-SE-WP-URSARECYC7-A-DABRIG__32933.1774277746.png?c=2"
       ],
-      "width": 3.0,
-      "height": 7.0,
-      "depth": 2.0,
-      "hasDimensions": true
+      "width": 5.5,
+      "height": 8.0,
+      "depth": 4.0,
+      "hasDimensions": true,
+      "dimensionSource": "Jon Rice product data CSV"
     },
     "SE-WP-UVGEM5-BX": {
       "sku": "SE-WP-UVGEM5-BX",
@@ -273,10 +276,11 @@
       "images": [
         "images/SE-WP-UVGEM5-BX.png"
       ],
-      "width": 2.0,
-      "height": 5.5,
-      "depth": 2.0,
-      "hasDimensions": true
+      "width": 5.5,
+      "height": 8.0,
+      "depth": 4.0,
+      "hasDimensions": true,
+      "dimensionSource": "Jon Rice product data CSV"
     },
     "SE-WP-DONUTIRI5-BX": {
       "sku": "SE-WP-DONUTIRI5-BX",
@@ -295,10 +299,11 @@
       "images": [
         "images/SE-WP-DONUTIRI5-BX.png"
       ],
-      "width": null,
-      "height": null,
-      "depth": null,
-      "hasDimensions": false
+      "width": 1.7,
+      "height": 4.0,
+      "depth": 4.0,
+      "hasDimensions": true,
+      "dimensionSource": "Jon Rice product data CSV"
     },
     "WP-ZONGSHOWER7": {
       "sku": "WP-ZONGSHOWER7",
@@ -391,10 +396,11 @@
         "https://cdn11.bigcommerce.com/s-ijm7dw7yvr/images/stencil/original/products/5545/22261/LUVBUDS-SirEEL-SE-NC-SHROOMCHAMB12PC-BX-A-NECTARCOLLECTOR__66403.1778166664.png?c=2",
         "https://cdn11.bigcommerce.com/s-ijm7dw7yvr/images/stencil/original/products/5545/22264/LUVBUDS-SirEEL-SE-NC-SHROOMCHAMB12PC-BX-H-NECTARCOLLECTOR__60584.1778167789.jpg?c=2"
       ],
-      "width": 0.0,
-      "height": 6.5,
-      "depth": 0.0,
-      "hasDimensions": true
+      "width": 5.0,
+      "height": 7.0,
+      "depth": 5.5,
+      "hasDimensions": true,
+      "dimensionSource": "Jon Rice product data CSV"
     },
     "SE-WP-BEAKUV": {
       "sku": "SE-WP-BEAKUV",
@@ -577,10 +583,11 @@
         "https://cdn11.bigcommerce.com/s-ijm7dw7yvr/images/stencil/original/products/4556/16058/SE-HP-3P55G-BX-7__95621.1741206480.png?c=2",
         "https://cdn11.bigcommerce.com/s-ijm7dw7yvr/images/stencil/original/products/4556/21259/LUVBUDS-SIREEL-SE-HP-3P55G-BX-A-Hand_Pipes__73409.1768520140.png?c=2"
       ],
-      "width": 1.5,
-      "height": 3.5,
-      "depth": 1.25,
-      "hasDimensions": true
+      "width": 9.0,
+      "height": 5.5,
+      "depth": 9.0,
+      "hasDimensions": true,
+      "dimensionSource": "Jon Rice product data CSV"
     },
     "SE-HP-4P85G-BX": {
       "sku": "SE-HP-4P85G-BX",
@@ -625,10 +632,11 @@
         "https://cdn11.bigcommerce.com/s-ijm7dw7yvr/images/stencil/original/products/4555/15677/SE-HP-2.5P40G-BX-B__70832.1741206781.png?c=2",
         "https://cdn11.bigcommerce.com/s-ijm7dw7yvr/images/stencil/original/products/4555/15676/SE-HP-2.5P40G-BX-A__38552.1741206781.png?c=2"
       ],
-      "width": 1.25,
-      "height": 2.5,
-      "depth": 1.25,
-      "hasDimensions": true
+      "width": 9.0,
+      "height": 3.0,
+      "depth": 9.0,
+      "hasDimensions": true,
+      "dimensionSource": "Jon Rice product data CSV"
     },
     "SE-HP-MOSAIC-BX-12PK": {
       "sku": "SE-HP-MOSAIC-BX-12PK",
@@ -718,8 +726,8 @@
         "images/SE-HP-MELTFRIT12PC-BX.png"
       ],
       "width": 9.0,
-      "height": 6.5,
-      "depth": 5.0,
+      "height": 5.0,
+      "depth": 6.5,
       "hasDimensions": true,
       "dimensionSource": "Jon Rice product data CSV"
     },
