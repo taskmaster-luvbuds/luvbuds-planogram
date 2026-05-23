@@ -113,10 +113,11 @@
       "images": [
         "images/SE-TP-SHROOM50.png"
       ],
-      "width": null,
-      "height": null,
-      "depth": null,
-      "hasDimensions": false
+      "width": 2.0,
+      "height": 3.0,
+      "depth": 2.0,
+      "hasDimensions": true,
+      "dimensionSource": "Inferred from similar carb cap display"
     },
     "SE-HP-CHILL3-BX": {
       "sku": "SE-HP-CHILL3-BX",
@@ -356,10 +357,11 @@
         "https://cdn11.bigcommerce.com/s-ijm7dw7yvr/images/stencil/original/products/171/14115/WP-SG8-Assorted-B__85518.1745000606.jpg?c=2",
         "https://cdn11.bigcommerce.com/s-ijm7dw7yvr/images/stencil/original/products/171/14114/WP-SG8-Assorted-A__15597.1745000606.jpg?c=2"
       ],
-      "width": 0.0,
+      "width": 2.5,
       "height": 8.0,
-      "depth": 0.0,
-      "hasDimensions": true
+      "depth": 2.5,
+      "hasDimensions": true,
+      "dimensionSource": "Inferred from similar straight-tube glass"
     },
     "WP-SG6": {
       "sku": "WP-SG6",
@@ -381,10 +383,11 @@
         "https://cdn11.bigcommerce.com/s-ijm7dw7yvr/images/stencil/original/products/494/14113/WP-SG6-Assorted-B__91475.1744136126.jpg?c=2",
         "https://cdn11.bigcommerce.com/s-ijm7dw7yvr/images/stencil/original/products/494/14111/WP-SG6-Assorted-A__28618.1744136126.jpg?c=2"
       ],
-      "width": 0.0,
+      "width": 2.5,
       "height": 6.0,
-      "depth": 0.0,
-      "hasDimensions": true
+      "depth": 2.5,
+      "hasDimensions": true,
+      "dimensionSource": "Inferred from similar straight-tube glass"
     },
     "SE-NC-SHROOMCHAMB12PC-BX": {
       "sku": "SE-NC-SHROOMCHAMB12PC-BX",
@@ -501,10 +504,11 @@
       "images": [
         "images/SE-WP-GEOMETRICBASE.png"
       ],
-      "width": 0.0,
+      "width": 4.0,
       "height": 10.0,
-      "depth": 0.0,
-      "hasDimensions": true
+      "depth": 4.0,
+      "hasDimensions": true,
+      "dimensionSource": "Inferred from similar scientific beaker (SE-WP-BEAKUV)"
     },
     "WP-ZNG8": {
       "sku": "WP-ZNG8",
@@ -768,10 +772,11 @@
         "https://cdn11.bigcommerce.com/s-ijm7dw7yvr/images/stencil/original/products/4971/21066/LUVBUDS-SIREEL-SE-DSTM-POP-36PC-BX-A-Accessories__61824.1766077359.jpg?c=2",
         "https://cdn11.bigcommerce.com/s-ijm7dw7yvr/images/stencil/original/products/4971/18266/3__77640.1741888336.png?c=2"
       ],
-      "width": null,
-      "height": null,
-      "depth": null,
-      "hasDimensions": false
+      "width": 5.0,
+      "height": 8.0,
+      "depth": 5.0,
+      "hasDimensions": true,
+      "dimensionSource": "Inferred from similar display box"
     },
     "SE-WP-SMOKERINGMINI": {
       "sku": "SE-WP-SMOKERINGMINI",
@@ -1936,10 +1941,11 @@
       "images": [
         "images/SE-WP-COLORLIPBKR10.png"
       ],
-      "width": 0.0,
+      "width": 4.0,
       "height": 10.0,
-      "depth": 0.0,
-      "hasDimensions": true
+      "depth": 4.0,
+      "hasDimensions": true,
+      "dimensionSource": "Inferred from similar scientific beaker (SE-WP-BEAKUV)"
     },
     "SE-WP-RASTALEAF": {
       "sku": "SE-WP-RASTALEAF",
@@ -2504,11 +2510,11 @@
         "https://cdn11.bigcommerce.com/s-ijm7dw7yvr/images/stencil/original/products/2028/4716/eyce_mini__02721.1725461484.png?c=2",
         "https://cdn11.bigcommerce.com/s-ijm7dw7yvr/images/stencil/original/products/2028/15585/LUVBUDS-EYCE-MINIBKR-POP-A-Silicone__52343.1725462212.jpg?c=2"
       ],
-      "width": null,
+      "width": 4.0,
       "height": 7.25,
-      "depth": null,
-      "hasDimensions": false,
-      "dimensionSource": "Height confirmed from eyce.com; width/depth not found",
+      "depth": 4.0,
+      "hasDimensions": true,
+      "dimensionSource": "Inferred from similar silicone beaker",
       "dimensionNotes": "Partial: height only (7.25\"). Width and depth still needed. 6-unit POP display box."
     },
     "FUT-TYS2BLNTWRAP": {
@@ -3191,10 +3197,11 @@
         "https://cdn11.bigcommerce.com/s-ijm7dw7yvr/images/stencil/original/products/5450/19092/LOOK-BEAR-GY-A__92234.1708458371.1280.1280__31260.1751918182.png?c=2",
         "https://cdn11.bigcommerce.com/s-ijm7dw7yvr/images/stencil/original/products/5450/19096/LOOK-BEAR-AssortedColors-Solid__79603.1708458371.1280.1280__56542.1751918182.png?c=2"
       ],
-      "width": null,
-      "height": null,
-      "depth": null,
-      "hasDimensions": false
+      "width": 5.0,
+      "height": 6.0,
+      "depth": 3.0,
+      "hasDimensions": true,
+      "dimensionSource": "Inferred from similar vape battery display"
     },
     "SE-BT-EV-ELECTRO-10PK": {
       "sku": "SE-BT-EV-ELECTRO-10PK",
