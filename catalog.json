@@ -22,7 +22,7 @@
       "width": 7.5,
       "height": 10.0,
       "depth": 3.75,
-      "hasDimensions": true,
+      "hasDimensions": false,
       "dimensionSource": "Jon Rice product data CSV"
     },
     "BIC-MAXI-HAZMAT": {
@@ -49,7 +49,7 @@
       "width": 5.5,
       "height": 6.5,
       "depth": 4.0,
-      "hasDimensions": true,
+      "hasDimensions": false,
       "dimensionSource": "Fallback \u2014 no measured dimensions available"
     },
     "SE-GOG-FULLYWIG-14MM-BX": {
@@ -72,7 +72,7 @@
       "width": 9.0,
       "height": 7.0,
       "depth": 3.8,
-      "hasDimensions": true,
+      "hasDimensions": false,
       "dimensionSource": "Jon Rice product data CSV"
     },
     "SE-CC-SPINSHROOM-BX-12PK": {
@@ -95,7 +95,7 @@
       "width": 9.0,
       "height": 7.0,
       "depth": 9.0,
-      "hasDimensions": true,
+      "hasDimensions": false,
       "dimensionSource": "Jon Rice product data CSV"
     },
     "SE-TP-SHROOM50": {
@@ -118,7 +118,7 @@
       "width": 2.0,
       "height": 3.0,
       "depth": 2.0,
-      "hasDimensions": true,
+      "hasDimensions": false,
       "dimensionSource": "Inferred from similar carb cap display"
     },
     "SE-HP-CHILL3-BX": {
@@ -145,7 +145,7 @@
       "width": 9.0,
       "height": 10.6,
       "depth": 9.0,
-      "hasDimensions": true,
+      "hasDimensions": false,
       "dimensionSource": "Fallback \u2014 no measured dimensions available"
     },
     "WP-DONUTMACSTAR7": {
@@ -171,7 +171,7 @@
       "width": 2.75,
       "height": 6.5,
       "depth": 3.5,
-      "hasDimensions": true,
+      "hasDimensions": false,
       "dimensionSource": "Jon Rice product data CSV"
     },
     "SE-WP-CLEARETCH8": {
@@ -194,7 +194,7 @@
       "width": 3.0,
       "height": 8.0,
       "depth": 3.0,
-      "hasDimensions": true,
+      "hasDimensions": false,
       "dimensionSource": "Fallback \u2014 no measured dimensions available"
     },
     "SE-WP-CLEARHANG6": {
@@ -220,7 +220,7 @@
       "width": 2.5,
       "height": 6.0,
       "depth": 4.5,
-      "hasDimensions": true,
+      "hasDimensions": false,
       "dimensionSource": "Fallback \u2014 no measured dimensions available"
     },
     "SE-WP-MARBLEDRIG6-BX": {
@@ -243,7 +243,7 @@
       "width": 2.0,
       "height": 5.5,
       "depth": 2.0,
-      "hasDimensions": true,
+      "hasDimensions": false,
       "dimensionSource": "Fallback \u2014 no measured dimensions available"
     },
     "SE-WP-180ARMRECYC7-BX": {
@@ -269,7 +269,7 @@
       "width": 5.5,
       "height": 8.0,
       "depth": 4.0,
-      "hasDimensions": true,
+      "hasDimensions": false,
       "dimensionSource": "Jon Rice product data CSV"
     },
     "SE-WP-UVGEM5-BX": {
@@ -292,7 +292,7 @@
       "width": 5.5,
       "height": 8.0,
       "depth": 4.0,
-      "hasDimensions": true,
+      "hasDimensions": false,
       "dimensionSource": "Jon Rice product data CSV"
     },
     "SE-WP-DONUTIRI5-BX": {
@@ -315,7 +315,7 @@
       "width": 1.7,
       "height": 4.0,
       "depth": 4.0,
-      "hasDimensions": true,
+      "hasDimensions": false,
       "dimensionSource": "Jon Rice product data CSV"
     },
     "WP-ZONGSHOWER7": {
@@ -370,7 +370,7 @@
       "width": 2.5,
       "height": 8.0,
       "depth": 2.5,
-      "hasDimensions": true,
+      "hasDimensions": false,
       "dimensionSource": "Inferred from similar straight-tube glass"
     },
     "WP-SG6": {
@@ -396,7 +396,7 @@
       "width": 2.5,
       "height": 6.0,
       "depth": 2.5,
-      "hasDimensions": true,
+      "hasDimensions": false,
       "dimensionSource": "Inferred from similar straight-tube glass"
     },
     "SE-NC-SHROOMCHAMB12PC-BX": {
@@ -422,7 +422,7 @@
       "width": 5.0,
       "height": 7.0,
       "depth": 5.5,
-      "hasDimensions": true,
+      "hasDimensions": false,
       "dimensionSource": "Jon Rice product data CSV"
     },
     "SE-WP-BEAKUV": {
@@ -448,7 +448,7 @@
       "width": 4.0,
       "height": 10.0,
       "depth": 3.0,
-      "hasDimensions": true,
+      "hasDimensions": false,
       "dimensionSource": "Fallback \u2014 no measured dimensions available"
     },
     "SE-WP-COLORLIPBKR8": {
@@ -471,7 +471,7 @@
       "width": 3.0,
       "height": 8.0,
       "depth": 3.0,
-      "hasDimensions": true,
+      "hasDimensions": false,
       "dimensionSource": "Fallback \u2014 no measured dimensions available"
     },
     "SE-WP-TWISTBKR8": {
@@ -497,7 +497,7 @@
       "width": 3.0,
       "height": 8.0,
       "depth": 3.0,
-      "hasDimensions": true,
+      "hasDimensions": false,
       "dimensionSource": "Fallback \u2014 no measured dimensions available"
     },
     "SE-WP-GEOMETRICBASE": {
@@ -520,7 +520,7 @@
       "width": 4.0,
       "height": 10.0,
       "depth": 4.0,
-      "hasDimensions": true,
+      "hasDimensions": false,
       "dimensionSource": "Inferred from similar scientific beaker (SE-WP-BEAKUV)"
     },
     "WP-ZNG8": {
@@ -545,7 +545,7 @@
       "width": 3.5,
       "height": 8.0,
       "depth": 1.5,
-      "hasDimensions": true,
+      "hasDimensions": false,
       "dimensionSource": "Fallback \u2014 no measured dimensions available"
     },
     "SE-WP-LEAFNECKBASE": {
@@ -568,7 +568,7 @@
       "width": 4.0,
       "height": 9.75,
       "depth": 1.5,
-      "hasDimensions": true,
+      "hasDimensions": false,
       "dimensionSource": "Fallback \u2014 no measured dimensions available"
     },
     "SE-WP-VINTAGEDMD": {
@@ -594,7 +594,7 @@
       "width": 2.5,
       "height": 5.5,
       "depth": 2.5,
-      "hasDimensions": true,
+      "hasDimensions": false,
       "dimensionSource": "Fallback \u2014 no measured dimensions available"
     },
     "SE-HP-3P55G-BX": {
@@ -620,7 +620,7 @@
       "width": 9.0,
       "height": 5.5,
       "depth": 9.0,
-      "hasDimensions": true,
+      "hasDimensions": false,
       "dimensionSource": "Jon Rice product data CSV"
     },
     "SE-HP-4P85G-BX": {
@@ -646,7 +646,7 @@
       "width": 9.0,
       "height": 10.0,
       "depth": 9.0,
-      "hasDimensions": true,
+      "hasDimensions": false,
       "dimensionSource": "Measured SKUs physical inventory"
     },
     "SE-HP-2.5P40G-BX": {
@@ -673,7 +673,7 @@
       "width": 9.0,
       "height": 3.0,
       "depth": 9.0,
-      "hasDimensions": true,
+      "hasDimensions": false,
       "dimensionSource": "Jon Rice product data CSV"
     },
     "SE-HP-MOSAIC-BX-12PK": {
@@ -698,7 +698,7 @@
       "width": 1.5,
       "height": 4.0,
       "depth": 1.5,
-      "hasDimensions": true,
+      "hasDimensions": false,
       "dimensionSource": "Fallback \u2014 no measured dimensions available"
     },
     "SE-HP-SPOON45-BX": {
@@ -721,7 +721,7 @@
       "width": 1.0,
       "height": 4.5,
       "depth": 1.0,
-      "hasDimensions": true,
+      "hasDimensions": false,
       "dimensionSource": "Fallback \u2014 no measured dimensions available"
     },
     "SE-HP-4FRMM-BX": {
@@ -747,7 +747,7 @@
       "width": 1.0,
       "height": 4.0,
       "depth": 1.0,
-      "hasDimensions": true,
+      "hasDimensions": false,
       "dimensionSource": "Fallback \u2014 no measured dimensions available"
     },
     "SE-HP-MELTFRIT12PC-BX": {
@@ -771,7 +771,7 @@
       "width": 9.0,
       "height": 5.0,
       "depth": 6.5,
-      "hasDimensions": true,
+      "hasDimensions": false,
       "dimensionSource": "Jon Rice product data CSV"
     },
     "SE-DSTM-POP-36PC-BX": {
@@ -796,7 +796,7 @@
       "width": 5.0,
       "height": 8.0,
       "depth": 5.0,
-      "hasDimensions": true,
+      "hasDimensions": false,
       "dimensionSource": "Inferred from similar display box"
     },
     "SE-WP-SMOKERINGMINI": {
@@ -820,7 +820,7 @@
       "width": 3.0,
       "height": 7.5,
       "depth": 3.0,
-      "hasDimensions": true,
+      "hasDimensions": false,
       "dimensionSource": "Fallback \u2014 no measured dimensions available"
     },
     "SE-WP-ORACLEORB-BX": {
@@ -845,7 +845,7 @@
       "width": 5.0,
       "height": 7.5,
       "depth": 5.0,
-      "hasDimensions": true,
+      "hasDimensions": false,
       "dimensionSource": "Fallback \u2014 no measured dimensions available"
     },
     "GROOVE-GND-ACRYLIC-12PK": {
@@ -1466,7 +1466,7 @@
       "width": 3.5,
       "height": 3.5,
       "depth": 1.25,
-      "hasDimensions": true,
+      "hasDimensions": false,
       "dimensionSource": "Fallback \u2014 no measured dimensions available"
     },
     "ZZ114-48": {
@@ -1547,7 +1547,7 @@
       "width": 3.25,
       "height": 6.0,
       "depth": 1.25,
-      "hasDimensions": true,
+      "hasDimensions": false,
       "dimensionSource": "Jon Rice product data CSV"
     },
     "ZZUB48": {
@@ -1627,7 +1627,7 @@
       "width": 9.5,
       "height": 12.0,
       "depth": 8.0,
-      "hasDimensions": true,
+      "hasDimensions": false,
       "dimensionSource": "Fallback \u2014 no measured dimensions available"
     },
     "ONEHIT-3DISP-CIG": {
@@ -1769,7 +1769,7 @@
       "width": 2.0,
       "height": 4.0,
       "depth": 0.75,
-      "hasDimensions": true,
+      "hasDimensions": false,
       "dimensionSource": "Fallback \u2014 no measured dimensions available"
     },
     "SE-DUG-STATICTRIP": {
@@ -1792,7 +1792,7 @@
       "width": 2.0,
       "height": 4.0,
       "depth": 0.75,
-      "hasDimensions": true,
+      "hasDimensions": false,
       "dimensionSource": "Fallback \u2014 no measured dimensions available"
     },
     "BT-V846D2": {
@@ -1846,7 +1846,7 @@
       "width": 6.5,
       "height": 9.0,
       "depth": 3.0,
-      "hasDimensions": true,
+      "hasDimensions": false,
       "dimensionSource": "Fallback \u2014 no measured dimensions available"
     },
     "TOKPOK": {
@@ -1900,7 +1900,7 @@
       "width": 3.0,
       "height": 8.0,
       "depth": 3.0,
-      "hasDimensions": true,
+      "hasDimensions": false,
       "dimensionSource": "Jon Rice product data CSV"
     },
     "SE-LIGHTERLEASH-BX": {
@@ -2043,7 +2043,7 @@
       "width": 6.3,
       "height": 10.6,
       "depth": 0.5,
-      "hasDimensions": true,
+      "hasDimensions": false,
       "dimensionSource": "Fallback \u2014 no measured dimensions available"
     },
     "SE-RT-GODADAMPASS": {
@@ -2069,7 +2069,7 @@
       "width": 5.5,
       "height": 7.0,
       "depth": 0.5,
-      "hasDimensions": true,
+      "hasDimensions": false,
       "dimensionSource": "Fallback \u2014 no measured dimensions available"
     },
     "SE-WP-COLORLIPBKR10": {
@@ -2092,7 +2092,7 @@
       "width": 4.0,
       "height": 10.0,
       "depth": 4.0,
-      "hasDimensions": true,
+      "hasDimensions": false,
       "dimensionSource": "Inferred from similar scientific beaker (SE-WP-BEAKUV)"
     },
     "SE-WP-RASTALEAF": {
@@ -2118,7 +2118,7 @@
       "width": 5.0,
       "height": 10.5,
       "depth": 2.5,
-      "hasDimensions": true,
+      "hasDimensions": false,
       "dimensionSource": "Jon Rice product data CSV"
     },
     "PS-MET100": {
@@ -2170,7 +2170,7 @@
       "width": 1.5,
       "height": 3.5,
       "depth": 1.0,
-      "hasDimensions": true,
+      "hasDimensions": false,
       "dimensionSource": "Fallback \u2014 no measured dimensions available"
     },
     "RAW-REGTIP": {
@@ -2195,7 +2195,7 @@
       "width": 3.75,
       "height": 5.0,
       "depth": 2.25,
-      "hasDimensions": true,
+      "hasDimensions": false,
       "dimensionSource": "Fallback \u2014 no measured dimensions available"
     },
     "SE-HP-SIL-SHROOM-BX": {
@@ -2220,7 +2220,7 @@
       "width": 1.5,
       "height": 4.0,
       "depth": 1.0,
-      "hasDimensions": true,
+      "hasDimensions": false,
       "dimensionSource": "Fallback \u2014 no measured dimensions available"
     },
     "FUT-FUROL0017": {
@@ -2246,7 +2246,7 @@
       "width": 3.5,
       "height": 6.25,
       "depth": 2.25,
-      "hasDimensions": true,
+      "hasDimensions": false,
       "dimensionSource": "Jon Rice product data CSV"
     },
     "ZZHW-NAT": {
@@ -2357,7 +2357,7 @@
       "width": 9.0,
       "height": 2.5,
       "depth": 6.0,
-      "hasDimensions": true,
+      "hasDimensions": false,
       "dimensionSource": "Jon Rice product data CSV"
     },
     "SE-GND-ZNC50-6PK": {
@@ -2382,7 +2382,7 @@
       "width": 2.0,
       "height": 2.0,
       "depth": 1.75,
-      "hasDimensions": true,
+      "hasDimensions": false,
       "dimensionSource": "Fallback \u2014 no measured dimensions available"
     },
     "RAW-CONE6PK": {
@@ -2407,7 +2407,7 @@
       "width": 5.25,
       "height": 10.25,
       "depth": 5.25,
-      "hasDimensions": true,
+      "hasDimensions": false,
       "dimensionSource": "Fallback \u2014 no measured dimensions available"
     },
     "RAWCONEDISP20PK114": {
@@ -2432,7 +2432,7 @@
       "width": 5.25,
       "height": 10.25,
       "depth": 5.25,
-      "hasDimensions": true,
+      "hasDimensions": false,
       "dimensionSource": "Inferred from RAW-CONE6PK (same 1 1/4 cone display format)"
     },
     "RAW-CONE3PK": {
@@ -2457,7 +2457,7 @@
       "width": 5.25,
       "height": 10.0,
       "depth": 5.25,
-      "hasDimensions": true,
+      "hasDimensions": false,
       "dimensionSource": "Fallback \u2014 no measured dimensions available"
     },
     "POP-114-VARIETY-UB": {
@@ -2483,7 +2483,7 @@
       "width": 8.25,
       "height": 5.0,
       "depth": 4.0,
-      "hasDimensions": true,
+      "hasDimensions": false,
       "dimensionSource": "Inferred from POP-114-VARIETY-UB2.0 (same product, newer variety version)"
     },
     "DUG-RISSUN4": {
@@ -2508,7 +2508,7 @@
       "width": 1.25,
       "height": 4.0,
       "depth": 0.75,
-      "hasDimensions": true,
+      "hasDimensions": false,
       "dimensionSource": "Fallback \u2014 no measured dimensions available"
     },
     "WF-FLRA": {
@@ -2591,7 +2591,7 @@
       "width": 2.0,
       "height": 4.25,
       "depth": 1.75,
-      "hasDimensions": true,
+      "hasDimensions": false,
       "dimensionSource": "Fallback \u2014 no measured dimensions available"
     },
     "EYCE-OF-SPOON-SWTCHBK-POP": {
@@ -2616,7 +2616,7 @@
       "width": 2.0,
       "height": 4.25,
       "depth": 1.75,
-      "hasDimensions": true,
+      "hasDimensions": false,
       "dimensionSource": "Fallback \u2014 no measured dimensions available"
     },
     "EYCE-OF-SPOONSPRL-POP": {
@@ -2641,7 +2641,7 @@
       "width": 2.0,
       "height": 4.25,
       "depth": 1.75,
-      "hasDimensions": true,
+      "hasDimensions": false,
       "dimensionSource": "Confirmed from sister SKUs EYCE-OF-SPOON-FLORAL-POP / EYCE-OF-SPOON-SWTCHBK-POP (identical product, different color)"
     },
     "RAW-TIPSPREROLLED": {
@@ -2666,7 +2666,7 @@
       "width": 4.0,
       "height": 5.0,
       "depth": 2.0,
-      "hasDimensions": true,
+      "hasDimensions": false,
       "dimensionSource": "Fallback \u2014 no measured dimensions available"
     },
     "EYCE-MINIBKR-POP": {
@@ -2691,7 +2691,7 @@
       "width": 4.0,
       "height": 7.25,
       "depth": 4.0,
-      "hasDimensions": true,
+      "hasDimensions": false,
       "dimensionSource": "Inferred from similar silicone beaker",
       "dimensionNotes": "Partial: height only (7.25\"). Width and depth still needed. 6-unit POP display box."
     },
@@ -2717,7 +2717,7 @@
       "width": 3.5,
       "height": 6.25,
       "depth": 2.25,
-      "hasDimensions": true,
+      "hasDimensions": false,
       "dimensionSource": "Inferred from FUT-FUROL0017 (same 25pk blunt wrap display format)"
     },
     "LOOK-SH-COIL5": {
@@ -3002,7 +3002,7 @@
       "width": 7.0,
       "height": 3.5,
       "depth": 2.5,
-      "hasDimensions": true,
+      "hasDimensions": false,
       "dimensionSource": "Jon Rice product data CSV"
     },
     "SE-BT-IRONLUNG5P-SOLID": {
@@ -3373,7 +3373,7 @@
       "width": 1.53,
       "height": 3.22,
       "depth": 0.7,
-      "hasDimensions": true,
+      "hasDimensions": false,
       "dimensionSource": "Fallback \u2014 no measured dimensions available"
     },
     "BT-V1166D": {
@@ -3398,7 +3398,7 @@
       "width": 1.53,
       "height": 3.22,
       "depth": 0.7,
-      "hasDimensions": true,
+      "hasDimensions": false,
       "dimensionSource": "Fallback \u2014 no measured dimensions available"
     },
     "BT-WANDJAMIN-BROWN": {
@@ -3423,7 +3423,7 @@
       "width": 6.0,
       "height": 1.5,
       "depth": 0.5,
-      "hasDimensions": true,
+      "hasDimensions": false,
       "dimensionSource": "Fallback \u2014 no measured dimensions available"
     },
     "LOOK-BEAR-ASST-5PK": {
@@ -3448,7 +3448,7 @@
       "width": 5.0,
       "height": 6.0,
       "depth": 3.0,
-      "hasDimensions": true,
+      "hasDimensions": false,
       "dimensionSource": "Inferred from similar vape battery display"
     },
     "SE-BT-EV-ELECTRO-10PK": {
@@ -3472,7 +3472,7 @@
       "width": 1.1,
       "height": 3.57,
       "depth": 1.77,
-      "hasDimensions": true,
+      "hasDimensions": false,
       "dimensionSource": "Fallback \u2014 no measured dimensions available"
     },
     "PFC-PEAKPRO2-ONYX": {
@@ -3498,7 +3498,7 @@
       "width": 5.0,
       "height": 11.5,
       "depth": 4.5,
-      "hasDimensions": true,
+      "hasDimensions": false,
       "dimensionSource": "Measured SKUs physical inventory"
     },
     "ZEN-DUO-WOOD": {
@@ -3579,7 +3579,7 @@
       "width": 4.25,
       "height": 7.0,
       "depth": 2.5,
-      "hasDimensions": true,
+      "hasDimensions": false,
       "dimensionSource": "Jon Rice product data CSV"
     },
     "SE-ZZHMP48": {
