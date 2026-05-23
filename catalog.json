@@ -40,6 +40,7 @@
       "brand": "BIC",
       "url": "https://shopluvbuds.com/bic-lighter-maxi-50-pk-retail-display/",
       "images": [
+        "images/BIC-MAXI.png",
         "images/BIC-MAXI-HAZMAT.png",
         "images/Glass SSIAB/BIC-MAXI.png",
         "https://cdn11.bigcommerce.com/s-ijm7dw7yvr/images/stencil/original/products/565/14213/488_pocket_lighter_red_lifestyle__71256.1777931757.jpg?c=2",
@@ -48,7 +49,8 @@
       "width": 5.5,
       "height": 6.5,
       "depth": 4.0,
-      "hasDimensions": true
+      "hasDimensions": true,
+      "dimensionSource": "Fallback \u2014 no measured dimensions available"
     },
     "SE-GOG-FULLYWIG-14MM-BX": {
       "sku": "SE-GOG-FULLYWIG-14MM-BX",
@@ -134,6 +136,7 @@
       "brand": "SE",
       "url": "https://shopluvbuds.com/sireel-36pc-3-assorted-bulk-chillums-assorted-colors-may-vary-retail-packaging/",
       "images": [
+        "images/HP-CHILL3.png",
         "images/SE-HP-CHILL3-BX.png",
         "images/Glass SSIAB/HP-CHILL3.png",
         "https://cdn11.bigcommerce.com/s-ijm7dw7yvr/images/stencil/original/products/4554/15664/SE-HP-CHILL3-BX-A__64603.1741207069.png?c=2",
@@ -142,7 +145,8 @@
       "width": 9.0,
       "height": 10.6,
       "depth": 9.0,
-      "hasDimensions": true
+      "hasDimensions": true,
+      "dimensionSource": "Fallback \u2014 no measured dimensions available"
     },
     "WP-DONUTMACSTAR7": {
       "sku": "WP-DONUTMACSTAR7",
@@ -190,7 +194,8 @@
       "width": 3.0,
       "height": 8.0,
       "depth": 3.0,
-      "hasDimensions": true
+      "hasDimensions": true,
+      "dimensionSource": "Fallback \u2014 no measured dimensions available"
     },
     "SE-WP-CLEARHANG6": {
       "sku": "SE-WP-CLEARHANG6",
@@ -215,7 +220,8 @@
       "width": 2.5,
       "height": 6.0,
       "depth": 4.5,
-      "hasDimensions": true
+      "hasDimensions": true,
+      "dimensionSource": "Fallback \u2014 no measured dimensions available"
     },
     "SE-WP-MARBLEDRIG6-BX": {
       "sku": "SE-WP-MARBLEDRIG6-BX",
@@ -237,7 +243,8 @@
       "width": 2.0,
       "height": 5.5,
       "depth": 2.0,
-      "hasDimensions": true
+      "hasDimensions": true,
+      "dimensionSource": "Fallback \u2014 no measured dimensions available"
     },
     "SE-WP-180ARMRECYC7-BX": {
       "sku": "SE-WP-180ARMRECYC7-BX",
@@ -335,7 +342,10 @@
       "height": 7.5,
       "depth": 5.0,
       "hasDimensions": true,
-      "dimensionSource": "Measured SKUs physical inventory"
+      "dimensionSource": "Measured SKUs physical inventory",
+      "w": 5.0,
+      "h": 7.5,
+      "d": 5.0
     },
     "WP-SG8": {
       "sku": "WP-SG8",
@@ -438,7 +448,8 @@
       "width": 4.0,
       "height": 10.0,
       "depth": 3.0,
-      "hasDimensions": true
+      "hasDimensions": true,
+      "dimensionSource": "Fallback \u2014 no measured dimensions available"
     },
     "SE-WP-COLORLIPBKR8": {
       "sku": "SE-WP-COLORLIPBKR8",
@@ -460,7 +471,8 @@
       "width": 3.0,
       "height": 8.0,
       "depth": 3.0,
-      "hasDimensions": true
+      "hasDimensions": true,
+      "dimensionSource": "Fallback \u2014 no measured dimensions available"
     },
     "SE-WP-TWISTBKR8": {
       "sku": "SE-WP-TWISTBKR8",
@@ -485,7 +497,8 @@
       "width": 3.0,
       "height": 8.0,
       "depth": 3.0,
-      "hasDimensions": true
+      "hasDimensions": true,
+      "dimensionSource": "Fallback \u2014 no measured dimensions available"
     },
     "SE-WP-GEOMETRICBASE": {
       "sku": "SE-WP-GEOMETRICBASE",
@@ -532,7 +545,8 @@
       "width": 3.5,
       "height": 8.0,
       "depth": 1.5,
-      "hasDimensions": true
+      "hasDimensions": true,
+      "dimensionSource": "Fallback \u2014 no measured dimensions available"
     },
     "SE-WP-LEAFNECKBASE": {
       "sku": "SE-WP-LEAFNECKBASE",
@@ -554,7 +568,8 @@
       "width": 4.0,
       "height": 9.75,
       "depth": 1.5,
-      "hasDimensions": true
+      "hasDimensions": true,
+      "dimensionSource": "Fallback \u2014 no measured dimensions available"
     },
     "SE-WP-VINTAGEDMD": {
       "sku": "SE-WP-VINTAGEDMD",
@@ -579,7 +594,8 @@
       "width": 2.5,
       "height": 5.5,
       "depth": 2.5,
-      "hasDimensions": true
+      "hasDimensions": true,
+      "dimensionSource": "Fallback \u2014 no measured dimensions available"
     },
     "SE-HP-3P55G-BX": {
       "sku": "SE-HP-3P55G-BX",
@@ -596,6 +612,7 @@
       "brand": "SE",
       "url": "https://shopluvbuds.com/sireel-25pc-3-5-bulk-glass-hand-pipes-assorted-colors-may-vary-retail-packaging/",
       "images": [
+        "images/SE-HP-3P55G-BXpsd.png",
         "images/SE-HP-3P55G-BX.png",
         "https://cdn11.bigcommerce.com/s-ijm7dw7yvr/images/stencil/original/products/4556/16058/SE-HP-3P55G-BX-7__95621.1741206480.png?c=2",
         "https://cdn11.bigcommerce.com/s-ijm7dw7yvr/images/stencil/original/products/4556/21259/LUVBUDS-SIREEL-SE-HP-3P55G-BX-A-Hand_Pipes__73409.1768520140.png?c=2"
@@ -647,6 +664,7 @@
       "brand": "SE",
       "url": "https://shopluvbuds.com/sireel-25pc-2-5-bulk-glass-hand-pipes-assorted-colors-may-vary-retail-packaging/",
       "images": [
+        "images/HP-2.5P40G.png",
         "images/SE-HP-2.5P40G-BX.png",
         "images/Glass SSIAB/HP-2.5P40G.png",
         "https://cdn11.bigcommerce.com/s-ijm7dw7yvr/images/stencil/original/products/4555/15677/SE-HP-2.5P40G-BX-B__70832.1741206781.png?c=2",
@@ -680,7 +698,8 @@
       "width": 1.5,
       "height": 4.0,
       "depth": 1.5,
-      "hasDimensions": true
+      "hasDimensions": true,
+      "dimensionSource": "Fallback \u2014 no measured dimensions available"
     },
     "SE-HP-SPOON45-BX": {
       "sku": "SE-HP-SPOON45-BX",
@@ -702,7 +721,8 @@
       "width": 1.0,
       "height": 4.5,
       "depth": 1.0,
-      "hasDimensions": true
+      "hasDimensions": true,
+      "dimensionSource": "Fallback \u2014 no measured dimensions available"
     },
     "SE-HP-4FRMM-BX": {
       "sku": "SE-HP-4FRMM-BX",
@@ -727,7 +747,8 @@
       "width": 1.0,
       "height": 4.0,
       "depth": 1.0,
-      "hasDimensions": true
+      "hasDimensions": true,
+      "dimensionSource": "Fallback \u2014 no measured dimensions available"
     },
     "SE-HP-MELTFRIT12PC-BX": {
       "sku": "SE-HP-MELTFRIT12PC-BX",
@@ -799,7 +820,8 @@
       "width": 3.0,
       "height": 7.5,
       "depth": 3.0,
-      "hasDimensions": true
+      "hasDimensions": true,
+      "dimensionSource": "Fallback \u2014 no measured dimensions available"
     },
     "SE-WP-ORACLEORB-BX": {
       "sku": "SE-WP-ORACLEORB-BX",
@@ -823,7 +845,8 @@
       "width": 5.0,
       "height": 7.5,
       "depth": 5.0,
-      "hasDimensions": true
+      "hasDimensions": true,
+      "dimensionSource": "Fallback \u2014 no measured dimensions available"
     },
     "GROOVE-GND-ACRYLIC-12PK": {
       "sku": "GROOVE-GND-ACRYLIC-12PK",
@@ -848,7 +871,10 @@
       "height": 7.0,
       "depth": 6.0,
       "hasDimensions": true,
-      "dimensionSource": "Measured SKUs physical inventory"
+      "dimensionSource": "Measured SKUs physical inventory",
+      "w": 8.0,
+      "h": 7.0,
+      "d": 6.0
     },
     "GND-ACR-60mm-24PK": {
       "sku": "GND-ACR-60mm-24PK",
@@ -865,6 +891,7 @@
       "brand": "GND",
       "url": "https://shopluvbuds.com/luvbuds-24pk-60mm-2-piece-magnetic-acrylic-grinder-retail-display-assorted-colors-may-vary/",
       "images": [
+        "images/GND-ACR-60MM-24PK.png",
         "images/Herb Only SSIAB/GND-ACR-60MM-24PK.png",
         "images/GND-ACR-60mm-24PK.png",
         "https://cdn11.bigcommerce.com/s-ijm7dw7yvr/images/stencil/original/products/513/21209/LUVBUDS-GND-ACR-60mm-24PK-B-Acrylic_Grinder__83312.1768328773.jpg?c=2"
@@ -873,7 +900,10 @@
       "height": 9.0,
       "depth": 6.0,
       "hasDimensions": true,
-      "dimensionSource": "Measured SKUs physical inventory"
+      "dimensionSource": "Measured SKUs physical inventory",
+      "w": 8.5,
+      "h": 9.0,
+      "d": 6.0
     },
     "GND-ALLOY-50MM-12PK": {
       "sku": "GND-ALLOY-50MM-12PK",
@@ -899,7 +929,10 @@
       "height": 7.0,
       "depth": 5.0,
       "hasDimensions": true,
-      "dimensionSource": "Measured SKUs physical inventory"
+      "dimensionSource": "Measured SKUs physical inventory",
+      "w": 7.5,
+      "h": 7.0,
+      "d": 5.0
     },
     "ZAZA-GND-63-4PC-WNDW-GUNM": {
       "sku": "ZAZA-GND-63-4PC-WNDW-GUNM",
@@ -925,7 +958,10 @@
       "height": 3.0,
       "depth": 3.0,
       "hasDimensions": true,
-      "dimensionSource": "Measured SKUs physical inventory"
+      "dimensionSource": "Measured SKUs physical inventory",
+      "w": 3.0,
+      "h": 3.0,
+      "d": 3.0
     },
     "ZAZA-GND-63-4PC-WNDW-TURQ": {
       "sku": "ZAZA-GND-63-4PC-WNDW-TURQ",
@@ -950,7 +986,11 @@
       "width": 2.5,
       "height": 2.1,
       "depth": 2.5,
-      "hasDimensions": true
+      "hasDimensions": true,
+      "w": 3.0,
+      "h": 3.0,
+      "d": 3.0,
+      "dimensionSource": "Measured SKUs physical inventory"
     },
     "ZAZA-GND-63-4PC-WNDW-GREE": {
       "sku": "ZAZA-GND-63-4PC-WNDW-GREE",
@@ -967,6 +1007,7 @@
       "brand": "ZAZA",
       "url": "https://shopluvbuds.com/zaza-2-5-63mm-4-piece-window-grinder-green/",
       "images": [
+        "images/ZAZA-GND-63-4PC-WNDW-GREEN.png",
         "images/Herb Only SSIAB/ZAZA-GND-63-4PC-WNDW-GREEN.png",
         "images/ZAZA-GND-63-4PC-WNDW-GREE.png"
       ],
@@ -974,7 +1015,10 @@
       "height": 3.0,
       "depth": 3.0,
       "hasDimensions": true,
-      "dimensionSource": "Jon Rice product data CSV"
+      "dimensionSource": "Measured SKUs physical inventory",
+      "w": 3.0,
+      "h": 3.0,
+      "d": 3.0
     },
     "ZAZA-GND-63-4PC-WNDW-LILA": {
       "sku": "ZAZA-GND-63-4PC-WNDW-LILA",
@@ -991,6 +1035,7 @@
       "brand": "ZAZA",
       "url": "https://shopluvbuds.com/zaza-2-5-63mm-4-piece-window-grinder-lilac/",
       "images": [
+        "images/ZAZA-GND063-4PC-WNDW-LILAC.png",
         "images/Herb Only SSIAB/ZAZA-GND063-4PC-WNDW-LILAC.png",
         "images/ZAZA-GND-63-4PC-WNDW-LILA.png"
       ],
@@ -998,7 +1043,10 @@
       "height": 3.0,
       "depth": 3.0,
       "hasDimensions": true,
-      "dimensionSource": "Jon Rice product data CSV"
+      "dimensionSource": "Measured SKUs physical inventory",
+      "w": 3.0,
+      "h": 3.0,
+      "d": 3.0
     },
     "ZAZA-GND-63-4PC-WNDW-PINK": {
       "sku": "ZAZA-GND-63-4PC-WNDW-PINK",
@@ -1022,7 +1070,11 @@
       "width": 2.5,
       "height": 2.1,
       "depth": 2.5,
-      "hasDimensions": true
+      "hasDimensions": true,
+      "w": 3.0,
+      "h": 3.0,
+      "d": 3.0,
+      "dimensionSource": "Measured SKUs physical inventory"
     },
     "ZAZA-GND-63-4PC-WNDW-BLAC": {
       "sku": "ZAZA-GND-63-4PC-WNDW-BLAC",
@@ -1039,6 +1091,7 @@
       "brand": "ZAZA",
       "url": "https://shopluvbuds.com/zaza-2-5-63mm-4-piece-window-grinder-black/",
       "images": [
+        "images/ZAZGND-63-4PC-WNDW-BLACK.png",
         "images/Herb Only SSIAB/ZAZGND-63-4PC-WNDW-BLACK.png",
         "images/ZAZA-GND-63-4PC-WNDW-BLAC.png"
       ],
@@ -1046,7 +1099,10 @@
       "height": 3.0,
       "depth": 3.0,
       "hasDimensions": true,
-      "dimensionSource": "Jon Rice product data CSV"
+      "dimensionSource": "Measured SKUs physical inventory",
+      "w": 3.0,
+      "h": 3.0,
+      "d": 3.0
     },
     "ZAZA-GND-50-4PC-TURQ": {
       "sku": "ZAZA-GND-50-4PC-TURQ",
@@ -1070,7 +1126,10 @@
       "height": 2.0,
       "depth": 3.0,
       "hasDimensions": true,
-      "dimensionSource": "Measured SKUs physical inventory"
+      "dimensionSource": "Measured SKUs physical inventory",
+      "w": 3.0,
+      "h": 2.0,
+      "d": 3.0
     },
     "ZAZA-GND-50-4PC-LILAC": {
       "sku": "ZAZA-GND-50-4PC-LILAC",
@@ -1095,7 +1154,11 @@
       "width": 2.5,
       "height": 2.1,
       "depth": 2.5,
-      "hasDimensions": true
+      "hasDimensions": true,
+      "dimensionSource": "Measured SKUs physical inventory",
+      "w": 3.0,
+      "h": 2.0,
+      "d": 3.0
     },
     "ZAZA-GND-50-4PC-GREEN": {
       "sku": "ZAZA-GND-50-4PC-GREEN",
@@ -1119,7 +1182,11 @@
       "width": 2.5,
       "height": 2.1,
       "depth": 2.5,
-      "hasDimensions": true
+      "hasDimensions": true,
+      "dimensionSource": "Measured SKUs physical inventory",
+      "w": 3.0,
+      "h": 2.0,
+      "d": 3.0
     },
     "ZAZA-GND-50-4PC-WNDW-MTGR": {
       "sku": "ZAZA-GND-50-4PC-WNDW-MTGR",
@@ -1136,6 +1203,7 @@
       "brand": "ZAZA",
       "url": "https://shopluvbuds.com/zaza-2-50mm-4-piece-window-grinder-matte-green/",
       "images": [
+        "images/ZAZA-GND-50-4PC-WNDW-MTGRN.png",
         "images/Herb Only SSIAB/ZAZA-GND-50-4PC-WNDW-MTGRN.png",
         "images/ZAZA-GND-50-4PC-WNDW-MTGR.png"
       ],
@@ -1143,7 +1211,10 @@
       "height": 2.0,
       "depth": 2.5,
       "hasDimensions": true,
-      "dimensionSource": "Measured SKUs physical inventory"
+      "dimensionSource": "Measured SKUs physical inventory",
+      "w": 2.5,
+      "h": 2.0,
+      "d": 2.5
     },
     "ZAZA-GND-50-4PC-WNDW-MTPN": {
       "sku": "ZAZA-GND-50-4PC-WNDW-MTPN",
@@ -1167,7 +1238,10 @@
       "height": 2.1,
       "depth": 2.5,
       "hasDimensions": true,
-      "dimensionSource": "Jon Rice product data CSV"
+      "dimensionSource": "Measured SKUs physical inventory",
+      "w": 2.5,
+      "h": 2.0,
+      "d": 2.5
     },
     "ZAZA-GND-63-4PC-BLACK": {
       "sku": "ZAZA-GND-63-4PC-BLACK",
@@ -1184,6 +1258,7 @@
       "brand": "ZAZA",
       "url": "https://shopluvbuds.com/zaza-2-5-63mm-4-piece-grinder-black/",
       "images": [
+        "images/ZAZA-GND-63-4PC-BLK.png",
         "images/Herb Only SSIAB/ZAZA-GND-63-4PC-BLK.png",
         "images/ZAZA-GND-63-4PC-BLACK.png",
         "https://cdn11.bigcommerce.com/s-ijm7dw7yvr/images/stencil/original/products/5520/20761/LUVBUDS-ZAZA-GND-63-4PC-BLK-B-GRINDER__77154.1765305413.png?c=2",
@@ -1193,7 +1268,10 @@
       "height": 2.0,
       "depth": 3.0,
       "hasDimensions": true,
-      "dimensionSource": "Measured SKUs physical inventory"
+      "dimensionSource": "Measured SKUs physical inventory",
+      "w": 3.0,
+      "h": 2.0,
+      "d": 3.0
     },
     "ZAZA-GND-50-4PC-PINK": {
       "sku": "ZAZA-GND-50-4PC-PINK",
@@ -1210,6 +1288,7 @@
       "brand": "ZAZA",
       "url": "https://shopluvbuds.com/zaza-2-50mm-4-piece-grinder-pink/",
       "images": [
+        "images/ZAZA-GND-50-4PC-WNDW-MTPINK.png",
         "images/Herb Only SSIAB/ZAZA-GND-50-4PC-PINK.png",
         "images/ZAZA-GND-50-4PC-PINK.png",
         "https://cdn11.bigcommerce.com/s-ijm7dw7yvr/images/stencil/original/products/5529/20793/LUVBUDS-ZAZA-GND-63-4PC-PINK-A-GRINDER__80882.1765308597.png?c=2",
@@ -1218,7 +1297,11 @@
       "width": 2.5,
       "height": 2.1,
       "depth": 2.5,
-      "hasDimensions": true
+      "hasDimensions": true,
+      "dimensionSource": "Measured SKUs physical inventory",
+      "w": 3.0,
+      "h": 2.0,
+      "d": 3.0
     },
     "ZAZA-GND-63-4PC-LILAC": {
       "sku": "ZAZA-GND-63-4PC-LILAC",
@@ -1243,7 +1326,11 @@
       "width": 2.5,
       "height": 2.1,
       "depth": 2.5,
-      "hasDimensions": true
+      "hasDimensions": true,
+      "dimensionSource": "Measured SKUs physical inventory",
+      "w": 3.0,
+      "h": 2.0,
+      "d": 3.0
     },
     "ZAZA-GND-63-4PC-PINK": {
       "sku": "ZAZA-GND-63-4PC-PINK",
@@ -1269,7 +1356,10 @@
       "height": 2.0,
       "depth": 3.0,
       "hasDimensions": true,
-      "dimensionSource": "Measured SKUs physical inventory"
+      "dimensionSource": "Measured SKUs physical inventory",
+      "w": 3.0,
+      "h": 2.0,
+      "d": 3.0
     },
     "ZAZA-GND-50-4PC-BLACK": {
       "sku": "ZAZA-GND-50-4PC-BLACK",
@@ -1295,7 +1385,10 @@
       "height": 2.0,
       "depth": 3.0,
       "hasDimensions": true,
-      "dimensionSource": "Measured SKUs physical inventory"
+      "dimensionSource": "Measured SKUs physical inventory",
+      "w": 3.0,
+      "h": 2.0,
+      "d": 3.0
     },
     "ZAZA-GND-50-4PC-WNDW-MTTU": {
       "sku": "ZAZA-GND-50-4PC-WNDW-MTTU",
@@ -1312,6 +1405,7 @@
       "brand": "ZAZA",
       "url": "https://shopluvbuds.com/zaza-2-50mm-4-piece-window-grinder-matte-turquoise/",
       "images": [
+        "images/ZAZA-GND-50-4PC-WNDW-MTTURQ.png",
         "images/Herb Only SSIAB/ZAZA-GND-50-4PC-WNDW-MTTURQ.png",
         "images/ZAZA-GND-50-4PC-WNDW-MTTU.png"
       ],
@@ -1319,7 +1413,10 @@
       "height": 2.1,
       "depth": 2.5,
       "hasDimensions": true,
-      "dimensionSource": "Jon Rice product data CSV"
+      "dimensionSource": "Measured SKUs physical inventory",
+      "w": 2.5,
+      "h": 2.0,
+      "d": 2.5
     },
     "ZAZA-GND-50-4PC-GUNM": {
       "sku": "ZAZA-GND-50-4PC-GUNM",
@@ -1344,7 +1441,11 @@
       "width": 2.5,
       "height": 2.1,
       "depth": 2.5,
-      "hasDimensions": true
+      "hasDimensions": true,
+      "dimensionSource": "Measured SKUs physical inventory",
+      "w": 3.0,
+      "h": 2.0,
+      "d": 3.0
     },
     "ASH-FACET4": {
       "sku": "ASH-FACET4",
@@ -1366,7 +1467,8 @@
       "width": 3.5,
       "height": 3.5,
       "depth": 1.25,
-      "hasDimensions": true
+      "hasDimensions": true,
+      "dimensionSource": "Fallback \u2014 no measured dimensions available"
     },
     "ZZ114-48": {
       "sku": "ZZ114-48",
@@ -1392,7 +1494,10 @@
       "height": 8.5,
       "depth": 6.5,
       "hasDimensions": true,
-      "dimensionSource": "Measured SKUs physical inventory"
+      "dimensionSource": "Measured SKUs physical inventory",
+      "w": 6.0,
+      "h": 8.5,
+      "d": 6.5
     },
     "ZZUT48": {
       "sku": "ZZUT48",
@@ -1417,7 +1522,8 @@
       "width": 6.0,
       "height": 8.0,
       "depth": 4.0,
-      "hasDimensions": true
+      "hasDimensions": true,
+      "dimensionSource": "Fallback \u2014 no measured dimensions available"
     },
     "ZZ114": {
       "sku": "ZZ114",
@@ -1469,7 +1575,10 @@
       "height": 8.5,
       "depth": 6.5,
       "hasDimensions": true,
-      "dimensionSource": "Measured SKUs physical inventory"
+      "dimensionSource": "Measured SKUs physical inventory",
+      "w": 6.0,
+      "h": 8.5,
+      "d": 6.5
     },
     "ZZHMP48": {
       "sku": "ZZHMP48",
@@ -1494,7 +1603,10 @@
       "height": 8.5,
       "depth": 6.5,
       "hasDimensions": true,
-      "dimensionSource": "Measured SKUs physical inventory"
+      "dimensionSource": "Measured SKUs physical inventory",
+      "w": 6.0,
+      "h": 8.5,
+      "d": 6.5
     },
     "HP-OGCHILL": {
       "sku": "HP-OGCHILL",
@@ -1516,7 +1628,8 @@
       "width": 9.5,
       "height": 12.0,
       "depth": 8.0,
-      "hasDimensions": true
+      "hasDimensions": true,
+      "dimensionSource": "Fallback \u2014 no measured dimensions available"
     },
     "ONEHIT-3DISP-CIG": {
       "sku": "ONEHIT-3DISP-CIG",
@@ -1542,7 +1655,10 @@
       "height": 3.0,
       "depth": 5.5,
       "hasDimensions": true,
-      "dimensionSource": "Measured SKUs physical inventory"
+      "dimensionSource": "Measured SKUs physical inventory",
+      "w": 5.5,
+      "h": 3.0,
+      "d": 5.5
     },
     "POP-114-VARIETY-UB2.0": {
       "sku": "POP-114-VARIETY-UB2.0",
@@ -1568,7 +1684,10 @@
       "height": 8.5,
       "depth": 4.0,
       "hasDimensions": true,
-      "dimensionSource": "Measured SKUs physical inventory"
+      "dimensionSource": "Measured SKUs physical inventory",
+      "w": 8.5,
+      "h": 8.5,
+      "d": 4.0
     },
     "ZZUB11436": {
       "sku": "ZZUB11436",
@@ -1594,7 +1713,10 @@
       "height": 7.8,
       "depth": 5.0,
       "hasDimensions": true,
-      "dimensionSource": "Measured SKUs physical inventory"
+      "dimensionSource": "Measured SKUs physical inventory",
+      "w": 8.0,
+      "h": 7.8,
+      "d": 5.0
     },
     "ST-CROSSCONE13PK-84MM": {
       "sku": "ST-CROSSCONE13PK-84MM",
@@ -1620,7 +1742,10 @@
       "height": 10.0,
       "depth": 11.5,
       "hasDimensions": true,
-      "dimensionSource": "Measured SKUs physical inventory"
+      "dimensionSource": "Measured SKUs physical inventory",
+      "w": 3.5,
+      "h": 10.0,
+      "d": 11.5
     },
     "SE-DUG-METGRIND": {
       "sku": "SE-DUG-METGRIND",
@@ -1645,7 +1770,8 @@
       "width": 2.0,
       "height": 4.0,
       "depth": 0.75,
-      "hasDimensions": true
+      "hasDimensions": true,
+      "dimensionSource": "Fallback \u2014 no measured dimensions available"
     },
     "SE-DUG-STATICTRIP": {
       "sku": "SE-DUG-STATICTRIP",
@@ -1667,7 +1793,8 @@
       "width": 2.0,
       "height": 4.0,
       "depth": 0.75,
-      "hasDimensions": true
+      "hasDimensions": true,
+      "dimensionSource": "Fallback \u2014 no measured dimensions available"
     },
     "BT-V846D2": {
       "sku": "BT-V846D2",
@@ -1693,7 +1820,10 @@
       "height": 7.0,
       "depth": 6.0,
       "hasDimensions": true,
-      "dimensionSource": "Measured SKUs physical inventory"
+      "dimensionSource": "Measured SKUs physical inventory",
+      "w": 4.0,
+      "h": 7.0,
+      "d": 6.0
     },
     "BOV-MB62-04-OWC": {
       "sku": "BOV-MB62-04-OWC",
@@ -1717,7 +1847,8 @@
       "width": 6.5,
       "height": 9.0,
       "depth": 3.0,
-      "hasDimensions": true
+      "hasDimensions": true,
+      "dimensionSource": "Fallback \u2014 no measured dimensions available"
     },
     "TOKPOK": {
       "sku": "TOKPOK",
@@ -1743,7 +1874,10 @@
       "height": 10.0,
       "depth": 7.0,
       "hasDimensions": true,
-      "dimensionSource": "Measured SKUs physical inventory"
+      "dimensionSource": "Measured SKUs physical inventory",
+      "w": 7.0,
+      "h": 10.0,
+      "d": 7.0
     },
     "F-420": {
       "sku": "F-420",
@@ -1794,7 +1928,10 @@
       "height": 7.0,
       "depth": 3.5,
       "hasDimensions": true,
-      "dimensionSource": "Measured SKUs physical inventory"
+      "dimensionSource": "Measured SKUs physical inventory",
+      "w": 4.0,
+      "h": 7.0,
+      "d": 3.5
     },
     "SHROOMCLIP25PK-BX": {
       "sku": "SHROOMCLIP25PK-BX",
@@ -1820,7 +1957,10 @@
       "height": 5.0,
       "depth": 3.0,
       "hasDimensions": true,
-      "dimensionSource": "Measured SKUs physical inventory"
+      "dimensionSource": "Measured SKUs physical inventory",
+      "w": 3.5,
+      "h": 5.0,
+      "d": 3.0
     },
     "ZZ100RM": {
       "sku": "ZZ100RM",
@@ -1846,7 +1986,10 @@
       "height": 6.0,
       "depth": 6.0,
       "hasDimensions": true,
-      "dimensionSource": "Measured SKUs physical inventory"
+      "dimensionSource": "Measured SKUs physical inventory",
+      "w": 4.0,
+      "h": 6.0,
+      "d": 6.0
     },
     "SE-RT-2XCONETRAY-BX": {
       "sku": "SE-RT-2XCONETRAY-BX",
@@ -1863,6 +2006,7 @@
       "brand": "SirEEL",
       "url": "https://shopluvbuds.com/sireel-cone-oisseur-hover-cone-rolling-tray-9-3-x-4-4-assorted-styles-retail-packaging/",
       "images": [
+        "images/SE-RT-2XCONETRAY.png",
         "images/Herb Only SSIAB/SE-RT-2XCONETRAY.png",
         "images/SE-RT-2XCONETRAY-BX.png",
         "https://cdn11.bigcommerce.com/s-ijm7dw7yvr/images/stencil/original/products/4883/18564/3__78280.1754325324.png?c=2",
@@ -1872,7 +2016,10 @@
       "height": 4.5,
       "depth": 2.0,
       "hasDimensions": true,
-      "dimensionSource": "Measured SKUs physical inventory"
+      "dimensionSource": "Measured SKUs physical inventory",
+      "w": 9.5,
+      "h": 4.5,
+      "d": 2.0
     },
     "SE-RT-NEONSHROOMS": {
       "sku": "SE-RT-NEONSHROOMS",
@@ -1897,7 +2044,8 @@
       "width": 6.3,
       "height": 10.6,
       "depth": 0.5,
-      "hasDimensions": true
+      "hasDimensions": true,
+      "dimensionSource": "Fallback \u2014 no measured dimensions available"
     },
     "SE-RT-GODADAMPASS": {
       "sku": "SE-RT-GODADAMPASS",
@@ -1922,7 +2070,8 @@
       "width": 5.5,
       "height": 7.0,
       "depth": 0.5,
-      "hasDimensions": true
+      "hasDimensions": true,
+      "dimensionSource": "Fallback \u2014 no measured dimensions available"
     },
     "SE-WP-COLORLIPBKR10": {
       "sku": "SE-WP-COLORLIPBKR10",
@@ -1996,7 +2145,11 @@
       "width": 4.5,
       "height": 6.5,
       "depth": 2.0,
-      "hasDimensions": true
+      "hasDimensions": true,
+      "w": 2.0,
+      "h": 7.5,
+      "d": 4.5,
+      "dimensionSource": "Measured SKUs physical inventory"
     },
     "SE-HP-SIL-LTL-BX-25PK": {
       "sku": "SE-HP-SIL-LTL-BX-25PK",
@@ -2018,7 +2171,8 @@
       "width": 1.5,
       "height": 3.5,
       "depth": 1.0,
-      "hasDimensions": true
+      "hasDimensions": true,
+      "dimensionSource": "Fallback \u2014 no measured dimensions available"
     },
     "RAW-REGTIP": {
       "sku": "RAW-REGTIP",
@@ -2042,7 +2196,8 @@
       "width": 3.75,
       "height": 5.0,
       "depth": 2.25,
-      "hasDimensions": true
+      "hasDimensions": true,
+      "dimensionSource": "Fallback \u2014 no measured dimensions available"
     },
     "SE-HP-SIL-SHROOM-BX": {
       "sku": "SE-HP-SIL-SHROOM-BX",
@@ -2066,7 +2221,8 @@
       "width": 1.5,
       "height": 4.0,
       "depth": 1.0,
-      "hasDimensions": true
+      "hasDimensions": true,
+      "dimensionSource": "Fallback \u2014 no measured dimensions available"
     },
     "FUT-FUROL0017": {
       "sku": "FUT-FUROL0017",
@@ -2118,7 +2274,10 @@
       "height": 7.5,
       "depth": 5.0,
       "hasDimensions": true,
-      "dimensionSource": "Measured SKUs physical inventory"
+      "dimensionSource": "Measured SKUs physical inventory",
+      "w": 2.0,
+      "h": 7.5,
+      "d": 5.0
     },
     "ZZHW-OGP": {
       "sku": "ZZHW-OGP",
@@ -2144,7 +2303,10 @@
       "height": 7.5,
       "depth": 5.0,
       "hasDimensions": true,
-      "dimensionSource": "Measured SKUs physical inventory"
+      "dimensionSource": "Measured SKUs physical inventory",
+      "w": 2.0,
+      "h": 7.5,
+      "d": 5.0
     },
     "ZZHW-SUMMER": {
       "sku": "ZZHW-SUMMER",
@@ -2169,7 +2331,10 @@
       "height": 7.5,
       "depth": 5.0,
       "hasDimensions": true,
-      "dimensionSource": "Measured SKUs physical inventory"
+      "dimensionSource": "Measured SKUs physical inventory",
+      "w": 2.0,
+      "h": 7.5,
+      "d": 5.0
     },
     "SE-GND-ZNC63-6PK": {
       "sku": "SE-GND-ZNC63-6PK",
@@ -2218,7 +2383,8 @@
       "width": 2.0,
       "height": 2.0,
       "depth": 1.75,
-      "hasDimensions": true
+      "hasDimensions": true,
+      "dimensionSource": "Fallback \u2014 no measured dimensions available"
     },
     "RAW-CONE6PK": {
       "sku": "RAW-CONE6PK",
@@ -2242,7 +2408,8 @@
       "width": 5.25,
       "height": 10.25,
       "depth": 5.25,
-      "hasDimensions": true
+      "hasDimensions": true,
+      "dimensionSource": "Fallback \u2014 no measured dimensions available"
     },
     "RAWCONEDISP20PK114": {
       "sku": "RAWCONEDISP20PK114",
@@ -2291,7 +2458,8 @@
       "width": 5.25,
       "height": 10.0,
       "depth": 5.25,
-      "hasDimensions": true
+      "hasDimensions": true,
+      "dimensionSource": "Fallback \u2014 no measured dimensions available"
     },
     "POP-114-VARIETY-UB": {
       "sku": "POP-114-VARIETY-UB",
@@ -2308,6 +2476,7 @@
       "brand": "Pop Cones",
       "url": "https://shopluvbuds.com/pop-cones-unbleached-1-1-4-size-pre-rolled-retail-cones-variety-pack/",
       "images": [
+        "images/POP-114-VARIETY-UB2.0.png",
         "images/POP-114-VARIETY-UB.png",
         "https://cdn11.bigcommerce.com/s-ijm7dw7yvr/images/stencil/original/products/4396/12119/SHOPLUVBUDS-POP-SJ-114__29071.1686933262.1280.1280__59209.1741813366.png?c=2",
         "https://cdn11.bigcommerce.com/s-ijm7dw7yvr/images/stencil/original/products/4396/12118/LUVBUDS-POP-114-VARIETY-UB-Prerolled_Cones__87670.1741813366.png?c=2"
@@ -2340,7 +2509,8 @@
       "width": 1.25,
       "height": 4.0,
       "depth": 0.75,
-      "hasDimensions": true
+      "hasDimensions": true,
+      "dimensionSource": "Fallback \u2014 no measured dimensions available"
     },
     "WF-FLRA": {
       "sku": "WF-FLRA",
@@ -2366,7 +2536,10 @@
       "height": 5.0,
       "depth": 3.5,
       "hasDimensions": true,
-      "dimensionSource": "Measured SKUs physical inventory"
+      "dimensionSource": "Measured SKUs physical inventory",
+      "w": 1.5,
+      "h": 5.0,
+      "d": 3.5
     },
     "LOOK-IC-BK": {
       "sku": "LOOK-IC-BK",
@@ -2392,7 +2565,10 @@
       "height": 6.5,
       "depth": 3.0,
       "hasDimensions": true,
-      "dimensionSource": "Measured SKUs physical inventory"
+      "dimensionSource": "Measured SKUs physical inventory",
+      "w": 2.0,
+      "h": 6.5,
+      "d": 3.0
     },
     "EYCE-OF-SPOON-FLORAL-POP": {
       "sku": "EYCE-OF-SPOON-FLORAL-POP",
@@ -2416,7 +2592,8 @@
       "width": 2.0,
       "height": 4.25,
       "depth": 1.75,
-      "hasDimensions": true
+      "hasDimensions": true,
+      "dimensionSource": "Fallback \u2014 no measured dimensions available"
     },
     "EYCE-OF-SPOON-SWTCHBK-POP": {
       "sku": "EYCE-OF-SPOON-SWTCHBK-POP",
@@ -2440,7 +2617,8 @@
       "width": 2.0,
       "height": 4.25,
       "depth": 1.75,
-      "hasDimensions": true
+      "hasDimensions": true,
+      "dimensionSource": "Fallback \u2014 no measured dimensions available"
     },
     "EYCE-OF-SPOONSPRL-POP": {
       "sku": "EYCE-OF-SPOONSPRL-POP",
@@ -2489,7 +2667,8 @@
       "width": 4.0,
       "height": 5.0,
       "depth": 2.0,
-      "hasDimensions": true
+      "hasDimensions": true,
+      "dimensionSource": "Fallback \u2014 no measured dimensions available"
     },
     "EYCE-MINIBKR-POP": {
       "sku": "EYCE-MINIBKR-POP",
@@ -2566,7 +2745,10 @@
       "height": 4.5,
       "depth": 2.0,
       "hasDimensions": true,
-      "dimensionSource": "Measured SKUs physical inventory"
+      "dimensionSource": "Measured SKUs physical inventory",
+      "w": 0.5,
+      "h": 4.5,
+      "d": 2.0
     },
     "YOCAN-KODOPRO": {
       "sku": "YOCAN-KODOPRO",
@@ -2591,7 +2773,10 @@
       "height": 5.5,
       "depth": 4.0,
       "hasDimensions": true,
-      "dimensionSource": "Measured SKUs physical inventory"
+      "dimensionSource": "Measured SKUs physical inventory",
+      "w": 4.0,
+      "h": 5.5,
+      "d": 4.0
     },
     "SE-BT-GASTANKDISP": {
       "sku": "SE-BT-GASTANKDISP",
@@ -2616,7 +2801,10 @@
       "height": 6.8,
       "depth": 5.0,
       "hasDimensions": true,
-      "dimensionSource": "Measured SKUs physical inventory"
+      "dimensionSource": "Measured SKUs physical inventory",
+      "w": 3.5,
+      "h": 6.8,
+      "d": 5.0
     },
     "BT-GROOVE-BOLT-24PK": {
       "sku": "BT-GROOVE-BOLT-24PK",
@@ -2641,7 +2829,10 @@
       "height": 6.0,
       "depth": 5.5,
       "hasDimensions": true,
-      "dimensionSource": "Measured SKUs physical inventory"
+      "dimensionSource": "Measured SKUs physical inventory",
+      "w": 4.0,
+      "h": 6.0,
+      "d": 5.5
     },
     "SE-BT-DOPPLEGANGER": {
       "sku": "SE-BT-DOPPLEGANGER",
@@ -2666,7 +2857,10 @@
       "height": 7.0,
       "depth": 6.0,
       "hasDimensions": true,
-      "dimensionSource": "Measured SKUs physical inventory"
+      "dimensionSource": "Measured SKUs physical inventory",
+      "w": 4.5,
+      "h": 7.0,
+      "d": 6.0
     },
     "OOZ-1453": {
       "sku": "OOZ-1453",
@@ -2683,6 +2877,7 @@
       "brand": "Ooze",
       "url": "https://shopluvbuds.com/ooze-400mah-hivo-conceal-510-variable-voltage-battery-assorted-colors-may-vary/",
       "images": [
+        "images/OO-1453.png",
         "images/OOZ-1453.png",
         "images/Vape SSIAB/OO-1453.png",
         "https://cdn11.bigcommerce.com/s-ijm7dw7yvr/images/stencil/original/products/5429/20517/LUVBUDS-OOZ-1453-C-Battery__15626.1768344343.jpg?c=2",
@@ -2692,7 +2887,10 @@
       "height": 6.0,
       "depth": 1.5,
       "hasDimensions": true,
-      "dimensionSource": "Measured SKUs physical inventory"
+      "dimensionSource": "Measured SKUs physical inventory",
+      "w": 1.0,
+      "h": 6.0,
+      "d": 1.5
     },
     "YOCAN-FLATPLUS": {
       "sku": "YOCAN-FLATPLUS",
@@ -2709,6 +2907,7 @@
       "brand": "Yocan",
       "url": "https://shopluvbuds.com/yocan-20pc-flat-plus-900mah-variable-voltage-battery-pop-display-assorted-colors-may-vary/",
       "images": [
+        "images/YOCAN-FLAT-PLUS.png",
         "images/YOCAN-FLATPLUS.png",
         "images/Vape SSIAB/YOCAN-FLAT-PLUS.png",
         "https://cdn11.bigcommerce.com/s-ijm7dw7yvr/images/stencil/original/products/4585/13797/YOCAN-FLATPLUS-A__54200.1739921617.png?c=2",
@@ -2718,7 +2917,10 @@
       "height": 4.5,
       "depth": 4.0,
       "hasDimensions": true,
-      "dimensionSource": "Measured SKUs physical inventory"
+      "dimensionSource": "Measured SKUs physical inventory",
+      "w": 5.0,
+      "h": 4.5,
+      "d": 4.0
     },
     "YOCAN-ZIVAPRO-ASST-10PK": {
       "sku": "YOCAN-ZIVAPRO-ASST-10PK",
@@ -2735,6 +2937,7 @@
       "brand": "Yocan",
       "url": "https://shopluvbuds.com/yocan-10pk-ziva-pro-650mah-variable-voltage-battery-assorted-colors-may-vary-retail-display/",
       "images": [
+        "images/YOCAN-ZOVA{RP-ASST-10PK.png",
         "images/YOCAN-ZIVAPRO-ASST-10PK.png",
         "https://cdn11.bigcommerce.com/s-ijm7dw7yvr/images/stencil/original/products/5556/20154/LUVBUDS-YOCAN-ZIVAPRO-ASST-10PK-B-Battery__70944.1760461296.jpg?c=2",
         "https://cdn11.bigcommerce.com/s-ijm7dw7yvr/images/stencil/original/products/5556/20152/LUVBUDS-YOCAN-ZIVAPRO-ASST-10PK-A-Battery__15931.1760461296.jpg?c=2"
@@ -2743,7 +2946,10 @@
       "height": 6.0,
       "depth": 4.5,
       "hasDimensions": true,
-      "dimensionSource": "Measured SKUs physical inventory"
+      "dimensionSource": "Measured SKUs physical inventory",
+      "w": 3.5,
+      "h": 6.0,
+      "d": 4.5
     },
     "SE-BT-380VV-BX-24PK": {
       "sku": "SE-BT-380VV-BX-24PK",
@@ -2769,7 +2975,10 @@
       "height": 6.0,
       "depth": 5.5,
       "hasDimensions": true,
-      "dimensionSource": "Measured SKUs physical inventory"
+      "dimensionSource": "Measured SKUs physical inventory",
+      "w": 4.0,
+      "h": 6.0,
+      "d": 5.5
     },
     "LOOK-SNAIL2.0-ASST-6PK": {
       "sku": "LOOK-SNAIL2.0-ASST-6PK",
@@ -2786,6 +2995,7 @@
       "brand": "Lookah",
       "url": "https://shopluvbuds.com/lookah-6pk-snail-2-0-variable-voltage-510-battery-assorted-colors-may-vary/",
       "images": [
+        "images/LOOK-SNAIL-2.0-ASST-6PK.png",
         "images/LOOK-SNAIL2.0-ASST-6PK.png",
         "images/Vape SSIAB/LOOK-SNAIL-2.0-ASST-6PK.png",
         "https://cdn11.bigcommerce.com/s-ijm7dw7yvr/images/stencil/original/products/5452/19103/LOOK-SNAIL2.0__53961.1751920967.1280.1280__19594.1777667239.jpg?c=2",
@@ -2812,6 +3022,8 @@
       "brand": "SirEEL",
       "url": "https://shopluvbuds.com/sireel-5pk-iron-lung-dual-mode-forced-air-dab-cartridge-510-battery-650mah-variable-voltage-solid-color-series-retail-display/",
       "images": [
+        "images/SE_IRONLUNG5P-SOLID.png",
+        "images/SE-BT-IRONLUNG5p-SOLID.png",
         "images/SE-BT-IRONLUNG5P-SOLID.png",
         "images/Vape SSIAB/SE-BT-IRONLUNG5p-SOLID.png",
         "images/Vape SSIAB/SE_IRONLUNG5P-SOLID.png",
@@ -2821,7 +3033,10 @@
       "height": 11.0,
       "depth": 8.5,
       "hasDimensions": true,
-      "dimensionSource": "Measured SKUs physical inventory"
+      "dimensionSource": "Measured SKUs physical inventory",
+      "w": 3.0,
+      "h": 11.0,
+      "d": 8.5
     },
     "SE-BT-IRONLUNG5P-THERMO": {
       "sku": "SE-BT-IRONLUNG5P-THERMO",
@@ -2872,7 +3087,10 @@
       "height": 7.0,
       "depth": 4.0,
       "hasDimensions": true,
-      "dimensionSource": "Measured SKUs physical inventory"
+      "dimensionSource": "Measured SKUs physical inventory",
+      "w": 2.0,
+      "h": 7.0,
+      "d": 4.0
     },
     "PFC-PIVOTONYX": {
       "sku": "PFC-PIVOTONYX",
@@ -2898,7 +3116,10 @@
       "height": 6.5,
       "depth": 2.5,
       "hasDimensions": true,
-      "dimensionSource": "Jon Rice product data CSV"
+      "dimensionSource": "Measured SKUs physical inventory",
+      "w": 2.5,
+      "h": 6.5,
+      "d": 2.5
     },
     "BT-GROOVE-CARA": {
       "sku": "BT-GROOVE-CARA",
@@ -2924,7 +3145,10 @@
       "height": 5.5,
       "depth": 3.5,
       "hasDimensions": true,
-      "dimensionSource": "Measured SKUs physical inventory"
+      "dimensionSource": "Measured SKUs physical inventory",
+      "w": 1.0,
+      "h": 5.5,
+      "d": 3.5
     },
     "PFC-PEAKNEWBLK": {
       "sku": "PFC-PEAKNEWBLK",
@@ -2950,7 +3174,10 @@
       "height": 9.0,
       "depth": 4.5,
       "hasDimensions": true,
-      "dimensionSource": "Measured SKUs physical inventory"
+      "dimensionSource": "Measured SKUs physical inventory",
+      "w": 3.5,
+      "h": 9.0,
+      "d": 4.5
     },
     "YOCAN-BLK-POCKET": {
       "sku": "YOCAN-BLK-POCKET",
@@ -2967,6 +3194,7 @@
       "brand": "Yocan",
       "url": "https://shopluvbuds.com/yocan-black-pocket-1400mah-concentrate-device-black/",
       "images": [
+        "images/TOCAN-BLK-POCKET.png",
         "images/YOCAN-BLK-POCKET.png",
         "images/Vape SSIAB/TOCAN-BLK-POCKET.png",
         "https://cdn11.bigcommerce.com/s-ijm7dw7yvr/images/stencil/original/products/5485/19430/LUVBUDS-YOCAN-POCKET-A-Battery__52746.1776893166.jpg?c=2",
@@ -2976,7 +3204,10 @@
       "height": 4.5,
       "depth": 2.5,
       "hasDimensions": true,
-      "dimensionSource": "Measured SKUs physical inventory"
+      "dimensionSource": "Measured SKUs physical inventory",
+      "w": 2.5,
+      "h": 4.5,
+      "d": 2.5
     },
     "PFC-PROXY2-ONYX": {
       "sku": "PFC-PROXY2-ONYX",
@@ -3002,7 +3233,10 @@
       "height": 9.5,
       "depth": 2.5,
       "hasDimensions": true,
-      "dimensionSource": "Measured SKUs physical inventory"
+      "dimensionSource": "Measured SKUs physical inventory",
+      "w": 2.5,
+      "h": 9.5,
+      "d": 2.5
     },
     "BT-V1220BK": {
       "sku": "BT-V1220BK",
@@ -3027,7 +3261,10 @@
       "height": 7.5,
       "depth": 5.8,
       "hasDimensions": true,
-      "dimensionSource": "Measured SKUs physical inventory"
+      "dimensionSource": "Measured SKUs physical inventory",
+      "w": 2.5,
+      "h": 7.5,
+      "d": 5.8
     },
     "BT-GROOVE-CARAPLUS": {
       "sku": "BT-GROOVE-CARAPLUS",
@@ -3053,7 +3290,10 @@
       "height": 6.0,
       "depth": 3.3,
       "hasDimensions": true,
-      "dimensionSource": "Measured SKUs physical inventory"
+      "dimensionSource": "Measured SKUs physical inventory",
+      "w": 2.0,
+      "h": 6.0,
+      "d": 3.3
     },
     "LOOK-SHPROPLUS-ASST-6PK": {
       "sku": "LOOK-SHPROPLUS-ASST-6PK",
@@ -3078,7 +3318,10 @@
       "height": 7.0,
       "depth": 5.5,
       "hasDimensions": true,
-      "dimensionSource": "Jon Rice product data CSV"
+      "dimensionSource": "Measured SKUs physical inventory",
+      "w": 5.5,
+      "h": 7.0,
+      "d": 5.5
     },
     "VP-TRPPEN2-BLACK": {
       "sku": "VP-TRPPEN2-BLACK",
@@ -3095,6 +3338,7 @@
       "brand": "Boundless",
       "url": "https://shopluvbuds.com/boundless-the-terp-pen-2-black/",
       "images": [
+        "images/VP-TERPPEN2-BLACK.png",
         "images/VP-TRPPEN2-BLACK.png",
         "images/Vape SSIAB/VP-TERPPEN2-BLACK.png",
         "https://cdn11.bigcommerce.com/s-ijm7dw7yvr/images/stencil/original/products/4969/22000/LUVBUDS-VP-TRPPEN2-BLACK-D-Battery__96552.1776185294.jpg?c=2",
@@ -3104,7 +3348,10 @@
       "height": 6.5,
       "depth": 1.5,
       "hasDimensions": true,
-      "dimensionSource": "Measured SKUs physical inventory"
+      "dimensionSource": "Measured SKUs physical inventory",
+      "w": 2.0,
+      "h": 6.5,
+      "d": 1.5
     },
     "BT-V985D": {
       "sku": "BT-V985D",
@@ -3128,7 +3375,8 @@
       "width": 1.53,
       "height": 3.22,
       "depth": 0.7,
-      "hasDimensions": true
+      "hasDimensions": true,
+      "dimensionSource": "Fallback \u2014 no measured dimensions available"
     },
     "BT-V1166D": {
       "sku": "BT-V1166D",
@@ -3152,7 +3400,8 @@
       "width": 1.53,
       "height": 3.22,
       "depth": 0.7,
-      "hasDimensions": true
+      "hasDimensions": true,
+      "dimensionSource": "Fallback \u2014 no measured dimensions available"
     },
     "BT-WANDJAMIN-BROWN": {
       "sku": "BT-WANDJAMIN-BROWN",
@@ -3176,7 +3425,8 @@
       "width": 6.0,
       "height": 1.5,
       "depth": 0.5,
-      "hasDimensions": true
+      "hasDimensions": true,
+      "dimensionSource": "Fallback \u2014 no measured dimensions available"
     },
     "LOOK-BEAR-ASST-5PK": {
       "sku": "LOOK-BEAR-ASST-5PK",
@@ -3224,7 +3474,8 @@
       "width": 1.1,
       "height": 3.57,
       "depth": 1.77,
-      "hasDimensions": true
+      "hasDimensions": true,
+      "dimensionSource": "Fallback \u2014 no measured dimensions available"
     },
     "PFC-PEAKPRO2-ONYX": {
       "sku": "PFC-PEAKPRO2-ONYX",
@@ -3276,7 +3527,10 @@
       "height": 7.5,
       "depth": 9.0,
       "hasDimensions": true,
-      "dimensionSource": "Measured SKUs physical inventory"
+      "dimensionSource": "Measured SKUs physical inventory",
+      "w": 5.5,
+      "h": 7.5,
+      "d": 9.0
     },
     "LOOK-UNICORNMINI-BK": {
       "sku": "LOOK-UNICORNMINI-BK",
@@ -3302,7 +3556,10 @@
       "height": 7.5,
       "depth": 2.5,
       "hasDimensions": true,
-      "dimensionSource": "Measured SKUs physical inventory"
+      "dimensionSource": "Measured SKUs physical inventory",
+      "w": 2.0,
+      "h": 7.5,
+      "d": 2.5
     },
     "SE-WP-FABEGGSHWR6-BX": {
       "sku": "SE-WP-FABEGGSHWR6-BX",
