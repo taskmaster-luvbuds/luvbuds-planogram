@@ -652,7 +652,7 @@ function mkInventoryProduct(sku, dims, x, rowY, rowH, cat) {
   if (imgUrl && viewMode !== 'shape') {
     const img = document.createElement('img');
     img.className = 'pimg';
-    img.src = imgUrl;
+    img.src = encodeURI(imgUrl);
     img.alt = product ? product.name : '';
     img.draggable = false;
     img.loading = 'lazy';
@@ -940,7 +940,7 @@ function mkProduct(id, dims, x, cls, deep, shelfId, colIdx, pos, displayId, rota
   if (imgUrl && viewMode !== 'shape') {
     const img = document.createElement('img');
     img.className = 'pimg';
-    img.src = imgUrl;
+    img.src = encodeURI(imgUrl);
     img.alt = product ? product.name : '';
     img.draggable = false;
     img.loading = 'lazy';
@@ -1041,7 +1041,7 @@ function startDrag(id, dims, el, e) {
   const imgUrl = getProductImage(id);
   if (imgUrl && viewMode !== 'shape') {
     const img = document.createElement('img');
-    img.src = imgUrl;
+    img.src = encodeURI(imgUrl);
     img.style.cssText = 'width:100%;height:100%;object-fit:contain';
     ghost.appendChild(img);
   }
@@ -1302,7 +1302,7 @@ function renderIndex() {
       thumb.className = 'idx-thumb';
       const imgUrl = getProductImage(pl.id);
       if (imgUrl) {
-        thumb.src = imgUrl;
+        thumb.src = encodeURI(imgUrl);
         thumb.onerror = function() { this.style.display = 'none'; };
       }
       row.appendChild(thumb);
