@@ -3623,7 +3623,11 @@
       "depth": 5.0,
       "hasDimensions": true,
       "dimensionSource": "Measured SKUs physical inventory",
-      "images": [],
+      "images": [
+        "images/Herb Only SSIAB/ZZHW-NAT.png",
+        "images/ZZHW-NAT copy.png",
+        "images/ZZHW-NAT.png"
+      ],
       "qtySold": 0,
       "available": 100,
       "unitPrice": null,
@@ -3647,7 +3651,11 @@
       "depth": 5.0,
       "hasDimensions": true,
       "dimensionSource": "Measured SKUs physical inventory",
-      "images": [],
+      "images": [
+        "images/Herb Only SSIAB/ZZHW-OGP.png",
+        "images/ZZHW-OGP copy.png",
+        "images/ZZHW-OGP.png"
+      ],
       "qtySold": 0,
       "available": 100,
       "unitPrice": null,
@@ -3940,7 +3948,9 @@
       "depth": 2.0,
       "hasDimensions": true,
       "dimensionSource": "Measured SKUs physical inventory",
-      "images": [],
+      "images": [
+        "images/ONG-ALMDUGOUT-BLK-CON.png"
+      ],
       "qtySold": 0,
       "available": 100,
       "unitPrice": null,
@@ -4016,7 +4026,11 @@
       "depth": 5.0,
       "hasDimensions": true,
       "dimensionSource": "Measured SKUs physical inventory",
-      "images": [],
+      "images": [
+        "images/ONG-ALMSPOON1-BLK-CON.png",
+        "images/ONG-ALMSPOON1-GRN-CON.png",
+        "images/ONG-ALMSPOON1-PINK-CON.png"
+      ],
       "qtySold": 0,
       "available": 100,
       "unitPrice": null,
