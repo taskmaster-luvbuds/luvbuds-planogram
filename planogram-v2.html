@@ -440,52 +440,40 @@ function createDisplay(label, lineId, skus) {
 }
 
 function autoPlaceProducts(display, skus) {
-  // Width-aware placement: fill each shelf up to SW (27.5").
-  // When all 3 shelves in a row overflow, create additional shelf rows
-  // so all products are visible and accessible.
+  // Width-aware placement for a single fixed display (3 shelves only).
   const shelfOrder = ['top','mid','bot'];
 
-  // Always reset layout for fresh placement
+  // Always reset layout for fresh placement (fixed 3-shelf model)
   display.layout = {top:[], mid:[], bot:[]};
   display.shelfRows = 1;
 
-  // Track current width used per shelf in the active row
+  // Track current width used per shelf
   let rowWidths = {top: 0, mid: 0, bot: 0};
-  let currentRow = 1;
 
   for (const sku of skus) {
     const dims = getProductDims(sku);
     const w = dims.w;
 
-    // Find first shelf in current row with enough remaining width
-    let placed = false;
+    // Prefer shelf with the most remaining width that can fit this SKU.
+    let bestShelf = null;
+    let bestRemaining = -1;
     for (const sid of shelfOrder) {
-      if (rowWidths[sid] + w <= SW) {
-        const key = currentRow === 1 ? sid : sid + currentRow;
-        if (!display.layout[key]) display.layout[key] = [];
-        display.layout[key].push({b: sku, f: null, br: false, fr: false});
-        rowWidths[sid] += w;
-        placed = true;
-        break;
+      const remaining = SW - rowWidths[sid];
+      if (remaining >= w && remaining > bestRemaining) {
+        bestRemaining = remaining;
+        bestShelf = sid;
       }
     }
 
-    if (!placed) {
-      // Start a new shelf row
-      currentRow++;
-      display.shelfRows = currentRow;
-      rowWidths = {top: 0, mid: 0, bot: 0};
-
-      // Create layout keys for new row
-      for (const sid of shelfOrder) {
-        display.layout[sid + currentRow] = [];
-      }
-
-      // Place on top shelf of new row
-      const newKey = 'top' + currentRow;
-      display.layout[newKey].push({b: sku, f: null, br: false, fr: false});
-      rowWidths.top = w;
+    if (!bestShelf) {
+      // Fixed display is full; caller should split to another display.
+      continue;
     }
+
+    let placed = false;
+    display.layout[bestShelf].push({b: sku, f: null, br: false, fr: false});
+    rowWidths[bestShelf] += w;
+    placed = true;
   }
 }
 
@@ -1937,7 +1925,7 @@ function shortName(name) {
 }
 
 function buildDefaultDisplays() {
-  // Group products by line, alphabetically sort within each
+  // Group products by line, then sort by business performance.
   const byLine = {};
   for (const [sku, p] of Object.entries(products)) {
     const line = p.line || 'unknown';
@@ -1945,21 +1933,88 @@ function buildDefaultDisplays() {
     byLine[line].push(sku);
   }
 
+  // Sort SKUs by strongest business signal first.
+  function sortSkusByPerformance(a, b) {
+    const pa = products[a] || {};
+    const pb = products[b] || {};
+    const ra = Number(pa.revenue || 0);
+    const rb = Number(pb.revenue || 0);
+    if (rb !== ra) return rb - ra;
+    const qa = Number(pa.qtySold || 0);
+    const qb = Number(pb.qtySold || 0);
+    if (qb !== qa) return qb - qa;
+    return String(a).localeCompare(String(b));
+  }
+
+  // Pack a line into multiple fixed displays (3 shelves each).
+  function buildLineDisplays(lineId, skus) {
+    const pending = skus.slice().sort(sortSkusByPerformance);
+    const created = [];
+
+    while (pending.length > 0) {
+      const shelfOrder = ['top', 'mid', 'bot'];
+      const shelfWidths = {top: 0, mid: 0, bot: 0};
+      const used = new Set();
+      const selected = [];
+
+      for (let i = 0; i < pending.length; i++) {
+        const sku = pending[i];
+        const dims = getProductDims(sku);
+        const w = dims.w;
+
+        // Choose shelf with best remaining capacity.
+        let bestShelf = null;
+        let bestRemaining = -1;
+        for (const sid of shelfOrder) {
+          const remaining = SW - shelfWidths[sid];
+          if (remaining >= w && remaining > bestRemaining) {
+            bestRemaining = remaining;
+            bestShelf = sid;
+          }
+        }
+
+        if (bestShelf) {
+          shelfWidths[bestShelf] += w;
+          selected.push(sku);
+          used.add(i);
+        }
+      }
+
+      if (selected.length === 0) {
+        // If an oversize SKU cannot fit, force one product to avoid deadlock.
+        selected.push(pending[0]);
+        used.add(0);
+      }
+
+      const idx = created.length + 1;
+      const base = CATALOG.lines[lineId]?.label || lineId;
+      const label = `${base} · Display ${idx} (${selected.length} SKUs)`;
+      created.push(createDisplay(label, lineId, selected));
+
+      // Remove selected SKUs from pending
+      const next = [];
+      for (let i = 0; i < pending.length; i++) {
+        if (!used.has(i)) next.push(pending[i]);
+      }
+      pending.length = 0;
+      Array.prototype.push.apply(pending, next);
+    }
+
+    return created;
+  }
+
   // Sort lines consistently
   const lineOrder = ['vape-green','vape-yellow','herb-green','herb-yellow','glass-green','glass-yellow'];
   for (const lid of lineOrder) {
     if (byLine[lid] && byLine[lid].length > 0) {
-      byLine[lid].sort();
-      const label = (CATALOG.lines[lid]?.label || lid) + ` (${byLine[lid].length} SKUs)`;
-      createDisplay(label, lid, byLine[lid]);
+      buildLineDisplays(lid, byLine[lid]);
     }
   }
 
   // Handle any lines not in the canonical order
   for (const [lid, skus] of Object.entries(byLine)) {
     if (!lineOrder.includes(lid) && skus.length > 0) {
-      skus.sort();
-      createDisplay(lid + ` (${skus.length} SKUs)`, lid, skus);
+      buildLineDisplays(lid, skus);
     }
   }
 }
