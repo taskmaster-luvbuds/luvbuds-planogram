@@ -185,6 +185,14 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;b
     <input type="file" id="import-file" accept=".json" style="display:none" onchange="importLayoutFile(event)">
     <button class="btn" onclick="document.getElementById('import-file').click()" title="Restore layout from a previously exported file">📥 Import</button>
     <button class="btn" onclick="loadCatalogPreset('ohio-top150')" title="Load premade Ohio Top 150 displays">Load Ohio Displays</button>
+    <select class="btn" id="box-config-select" style="max-width:180px">
+      <option value="standard">Standard</option>
+      <option value="deluxe-pcl">Deluxe + PCL</option>
+      <option value="electronic-station">Electronic Station</option>
+      <option value="sireel-glass-station">SirEEL Glass Station</option>
+      <option value="sireel-simple-pipes">SirEEL Simple Pipes</option>
+    </select>
+    <button class="btn" onclick="loadSelectedBoxConfiguration()" title="Load premade box configuration">Load Box</button>
     <div class="config-wrap">
       <button class="btn" onclick="saveCurrentConfig()" title="Save current layout to browser storage">💾 Save</button>
       <button class="btn" onclick="toggleConfigDropdown(event)" title="Load a saved layout">📂 Load</button>
@@ -322,6 +330,69 @@ let OHIO_LINES = null;
 const CATALOG_PRESETS = {
   'ohio-top150': {path: 'ohio_preset_catalog.json', label: 'Ohio Top 150'}
 };
+const BOX_CONFIGURATIONS = {
+  'standard': {
+    label: 'Standard',
+    displays: [{
+      label: 'Standard',
+      shelves: {
+        top: ['LOOK-SH-PRO-PLUS-BK','BT-380VV','LOOK-SNAIL2.0-BK','SE-BT-EV-THERMO-10PK','SE-BT-IRONLUNG5P-SOLID','OOZ-1187','BT-PENJAMINCARKEY-ASST','GND-ZNC50','BT-V846D2'],
+        mid: ['SE-HP-CHILL3-BX','WP-DONUTMACSTAR7','WP-WIGWAGDONUT6','SE-WP-TUBE10','SE-WP-TWISTBKR8','SE-WP-LEAFNECKBASE','WP-SPOREORBRIG','SE-HP-4P85G-BX'],
+        bot: ['ZZ114C24','ZZUB11424','BIC-MAXI-HAZMAT','ZZ114-48','ZZHMP48']
+      }
+    }]
+  },
+  'deluxe-pcl': {
+    label: 'Deluxe + PCL',
+    displays: [
+      {
+        label: 'Deluxe + PCL',
+        shelves: {
+          top: ['SE-BT-380VV-BLK','SE-BT-IRONLUNG5P-THERMO','BT-GROOVE-BOLT-24PK','LOOK-SNAIL2.0-ASST-6PK','SE-BT-DOPPLEGANGER','LOOK-BEAR-ASST-5PK'],
+          mid: ['SE-HP-MOSAIC-BX-12PK','HP-OGCHILL','BT-GROOVE-CARAPLUS','LOOK-SHPROPLUS-ASST-6PK','ZAZA-GND-63-4PC-WNDW-ASST'],
+          bot: ['SE-HP-4P85G-BX','FL SB5-HAZMAT','GROOVE-SPARK','SE-WP-DONUTIRI5-BX','CLE-RANDYBLK12','CB-GLOB-TRAVEL']
+        }
+      },
+      {
+        label: 'Deluxe + PCL Counter',
+        shelves: { top: ['BUNDLE-PCLDISPFULL'], mid: [], bot: [] }
+      }
+    ]
+  },
+  'electronic-station': {
+    label: 'Electronic Station',
+    displays: [{
+      label: 'Electronic Station',
+      shelves: {
+        top: ['SE-BT-380VV-BLK','SE-BT-GASTANKDISP','SE-BT-DOPPLEGANGER','SE-BT-IRONLUNG5P-THERMO','SE-BT-EV-THERMO-10PK','BT-GROOVE-BOLT-24PK'],
+        mid: ['LOOK-UNICORNMINI-BK','LOOK-SNAIL2.0-ASST-6PK','LOOK-GTA-ASST-5PK','LOOK-BEARTDYE-ASST-5PK','LOOK-BEAR-ASST-5PK','LOOK-CAT-BL','LOOK-SHPROPLUS-ASST-6PK'],
+        bot: ['YOCAN-KODOPRO','YOCAN-POCKET','YOCAN-FLATPLUS','YOCAN-EVOLVE-PLUS-XL','VP-TRPPEN2','BT-GROOVE-CARAPLUS','GROOVE-GND-RIPSTER']
+      }
+    }]
+  },
+  'sireel-glass-station': {
+    label: 'SirEEL Glass Station',
+    displays: [{
+      label: 'SirEEL Glass Station',
+      shelves: {
+        top: ['SE-HP-4P85G-BX','SE-HP-SPOON45-BX','SE-HP-MOSAIC-BX-12PK'],
+        mid: ['SE-WP-DONUTIRI5-BX','SE-WP-INCYCFAB5-BX','SE-WP-FUMRECYC5-BX','SE-WP-MARBLEDRIG6-BX','SE-WP-ORACLEORB-BX','SE-HP-COLRGLYC45-BX'],
+        bot: ['SE-QBNG-ETCHBCKT-14M-BX','SE-CC-SPINSHROOM-BX-12PK','SE-GOG-FULLYWIG-14MM-BX']
+      }
+    }]
+  },
+  'sireel-simple-pipes': {
+    label: 'SirEEL Simple Pipes',
+    displays: [{
+      label: 'SirEEL Simple Pipes',
+      shelves: {
+        top: ['SE-HP-4P85G-BX','SE-HP-SPOON45-BX','SE-HP-MOSAIC-BX-12PK'],
+        mid: ['SE-HP-2.5P40G-BX','SE-HP-CHILL3-BX','SE-HP-3P55G-BX'],
+        bot: ['SE-DSTM-POP-36PC-BX','SE-GOG-FULLYWIG-14MM-BX','SE-WP-DONUTIRI5-BX','SE-WP-INCYCFAB5-BX']
+      }
+    }]
+  }
+};
 
 	// ================================================================
 //  DATA LOADING
@@ -358,6 +429,27 @@ function mergeCatalogSources() {
   CATALOG = { products, categories: categoryColors, lines: mergedLines };
 }
 
+async function ensureOhioCatalogLoaded(silent) {
+  if (OHIO_PRODUCTS) return true;
+  const preset = CATALOG_PRESETS['ohio-top150'];
+  if (!preset) return false;
+  try {
+    const resp = await fetch(preset.path, {cache: 'no-store'});
+    if (!resp.ok) throw new Error(preset.path + ' HTTP ' + resp.status);
+    const data = await resp.json();
+    OHIO_PRODUCTS = data.products || {};
+    OHIO_CATEGORY_COLORS = data.categories || {};
+    OHIO_LINES = data.lines || {};
+    mergeCatalogSources();
+    if (!silent) toast('Loaded preset: ' + preset.label);
+    return true;
+  } catch (err) {
+    console.error('Failed to load Ohio preset:', err);
+    if (!silent) toast('Preset load failed');
+    return false;
+  }
+}
+
 async function loadCatalog() {
   try {
     const resp = await fetch('catalog.json', {cache: 'no-store'});
@@ -383,38 +475,73 @@ async function loadCatalog() {
 }
 
 async function loadCatalogPreset(presetId) {
-  const preset = CATALOG_PRESETS[presetId];
-  if (!preset) {
+  if (presetId !== 'ohio-top150') {
     toast('Preset not found');
     return;
   }
-  try {
-    const resp = await fetch(preset.path, {cache: 'no-store'});
-    if (!resp.ok) throw new Error(preset.path + ' HTTP ' + resp.status);
-    const data = await resp.json();
-    OHIO_PRODUCTS = data.products || {};
-    OHIO_CATEGORY_COLORS = data.categories || {};
-    OHIO_LINES = data.lines || {};
+  const ok = await ensureOhioCatalogLoaded(false);
+  if (!ok) return;
+  displays = [];
+  buildDefaultDisplays(OHIO_PRODUCTS);
+  localStorage.removeItem('planogram-autosave');
+  updateSubtitle();
+  renderAll();
+}
 
-    if (!DEFAULT_PRODUCTS) {
-      applyCatalogData(data);
-      DEFAULT_PRODUCTS = Object.assign({}, products);
-      DEFAULT_CATEGORY_COLORS = Object.assign({}, categoryColors);
-      DEFAULT_LINES = Object.assign({}, CATALOG.lines || {});
-    } else {
-      mergeCatalogSources();
-    }
-
-    displays = [];
-    buildDefaultDisplays(OHIO_PRODUCTS);
-    localStorage.removeItem('planogram-autosave');
-    updateSubtitle();
-    renderAll();
-    toast('Loaded preset: ' + preset.label);
-  } catch (err) {
-    console.error('Failed to load preset:', err);
-    toast('Preset load failed');
+function detectLineForSkus(skus) {
+  const counts = {};
+  skus.forEach(sku => {
+    const p = products[sku];
+    const lid = p && p.line ? p.line : 'unknown';
+    counts[lid] = (counts[lid] || 0) + 1;
+  });
+  let best = null, bestN = -1;
+  for (const [lid, n] of Object.entries(counts)) {
+    if (n > bestN) { best = lid; bestN = n; }
   }
+  return best || null;
+}
+
+function applyBoxConfiguration(key) {
+  const cfg = BOX_CONFIGURATIONS[key];
+  if (!cfg) {
+    toast('Unknown box configuration');
+    return;
+  }
+  const missing = [];
+  displays = [];
+  cfg.displays.forEach(d => {
+    const allSkus = [...(d.shelves.top || []), ...(d.shelves.mid || []), ...(d.shelves.bot || [])];
+    const present = allSkus.filter(sku => !!products[sku]);
+    const lineId = detectLineForSkus(present);
+    const display = createDisplay(d.label, lineId, []);
+    display.layout = {top: [], mid: [], bot: []};
+    ['top', 'mid', 'bot'].forEach(sid => {
+      (d.shelves[sid] || []).forEach(sku => {
+        if (products[sku]) {
+          display.layout[sid].push({b: sku, f: null, br: false, fr: false});
+        } else {
+          missing.push(sku);
+        }
+      });
+    });
+  });
+  localStorage.removeItem('planogram-autosave');
+  updateSubtitle();
+  renderAll();
+  if (missing.length > 0) {
+    toast(`Loaded ${cfg.label} (${missing.length} SKU(s) missing)`);
+  } else {
+    toast('Loaded box: ' + cfg.label);
+  }
+}
+
+async function loadSelectedBoxConfiguration() {
+  const sel = document.getElementById('box-config-select');
+  const key = sel ? sel.value : 'standard';
+  const ok = await ensureOhioCatalogLoaded(true);
+  if (!ok) return;
+  applyBoxConfiguration(key);
 }
 
 function getProduct(id) {
@@ -2226,7 +2353,7 @@ function finishRename(display, newName, nameEl) {
   DEFAULT_PRODUCTS = Object.assign({}, products);
   DEFAULT_CATEGORY_COLORS = Object.assign({}, categoryColors);
   DEFAULT_LINES = Object.assign({}, CATALOG.lines || {});
-  mergeCatalogSources();
+  await ensureOhioCatalogLoaded(true);
 
   // Build default displays from catalog
   buildDefaultDisplays(DEFAULT_PRODUCTS || products);
