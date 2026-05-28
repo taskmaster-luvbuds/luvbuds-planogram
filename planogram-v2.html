@@ -1778,10 +1778,22 @@ function importLayoutFile(event) {
   reader.onload = function(e) {
     try {
       var raw = JSON.parse(e.target.result);
+      // Allow importing a catalog/preset file directly
+      if (raw && raw.products && typeof raw.products === 'object') {
+        if (!confirm('Import catalog preset "' + escHtml(file.name) + '"? This replaces current catalog and displays.')) return;
+        applyCatalogData(raw);
+        displays = [];
+        buildDefaultDisplays();
+        renderAll();
+        autoSave();
+        updateSubtitle();
+        toast('Imported catalog preset from ' + escHtml(file.name));
+        return;
+      }
       // Accept both wrapped {version, displays} and raw display array
       var arr = Array.isArray(raw) ? raw : raw.displays;
       if (!arr || !Array.isArray(arr) || arr.length === 0 || !arr[0].layout) {
-        toast('Invalid layout file — missing display data');
+        toast('Invalid file — expected layout JSON or catalog preset JSON');
         return;
       }
       if (!confirm('Import "' + escHtml(file.name) + '"? This replaces current displays.')) return;
