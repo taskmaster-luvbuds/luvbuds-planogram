@@ -393,6 +393,11 @@ const BOX_CONFIGURATIONS = {
     }]
   }
 };
+const SKU_ALIASES = {
+  'VP-TRPPEN2': 'VP-TRPPEN2-BLACK',
+  'YOCAN-POCKET': 'YOCAN-BLK-POCKET',
+  'ZAZA-GND-63-4PC-WNDW-ASST': 'ZAZA-GND-63-4PC-WNDW'
+};
 
 	// ================================================================
 //  DATA LOADING
@@ -502,6 +507,13 @@ function detectLineForSkus(skus) {
   return best || null;
 }
 
+function resolveBoxSku(sku) {
+  if (products[sku]) return sku;
+  const alias = SKU_ALIASES[sku];
+  if (alias && products[alias]) return alias;
+  return sku;
+}
+
 function applyBoxConfiguration(key) {
   const cfg = BOX_CONFIGURATIONS[key];
   if (!cfg) {
@@ -511,15 +523,16 @@ function applyBoxConfiguration(key) {
   const missing = [];
   displays = [];
   cfg.displays.forEach(d => {
-    const allSkus = [...(d.shelves.top || []), ...(d.shelves.mid || []), ...(d.shelves.bot || [])];
+    const allSkus = [...(d.shelves.top || []), ...(d.shelves.mid || []), ...(d.shelves.bot || [])].map(resolveBoxSku);
     const present = allSkus.filter(sku => !!products[sku]);
     const lineId = detectLineForSkus(present);
     const display = createDisplay(d.label, lineId, []);
     display.layout = {top: [], mid: [], bot: []};
     ['top', 'mid', 'bot'].forEach(sid => {
       (d.shelves[sid] || []).forEach(sku => {
-        if (products[sku]) {
-          display.layout[sid].push({b: sku, f: null, br: false, fr: false});
+        const resolved = resolveBoxSku(sku);
+        if (products[resolved]) {
+          display.layout[sid].push({b: resolved, f: null, br: false, fr: false});
         } else {
           missing.push(sku);
         }
