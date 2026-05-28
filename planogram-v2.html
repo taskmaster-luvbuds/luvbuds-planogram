@@ -184,7 +184,7 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;b
     <button class="btn" onclick="exportLayoutFile()" title="Download layout file for backup or transfer">📤 Export</button>
     <input type="file" id="import-file" accept=".json" style="display:none" onchange="importLayoutFile(event)">
     <button class="btn" onclick="document.getElementById('import-file').click()" title="Restore layout from a previously exported file">📥 Import</button>
-    <button class="btn" onclick="loadCatalogPreset('ohio-top150')" title="Load built-in Ohio Top 150 preset">Ohio Preset</button>
+    <button class="btn" onclick="loadCatalogPreset('ohio-top150')" title="Load premade Ohio Top 150 displays">Load Ohio Displays</button>
     <div class="config-wrap">
       <button class="btn" onclick="saveCurrentConfig()" title="Save current layout to browser storage">💾 Save</button>
       <button class="btn" onclick="toggleConfigDropdown(event)" title="Load a saved layout">📂 Load</button>
@@ -248,6 +248,7 @@ const INVENTORY_CATEGORIES = {
   'herb':  { label: 'Herb Inventory',  lines: ['herb-green','herb-yellow'] },
   'glass': { label: 'Glass Inventory', lines: ['glass-green','glass-yellow'] },
   'vape':  { label: 'Vape Inventory',  lines: ['vape-green','vape-yellow'] },
+  'ohio':  { label: 'Ohio Inventory',  lines: ['ohio-top'] },
 };
 
 // Default dimensions for products missing real dimensions (by subcategory)
@@ -312,6 +313,12 @@ let activeLineFilter = null;
 	let activeDimFilter = null;  // null = all, 'has' = has dimensions, 'est' = estimated
 	let activeSort = 'default';  // 'default' | 'revenue-desc' | 'revenue-asc' | 'qty-desc' | 'qty-asc' | 'price-desc' | 'price-asc'
 		let savedConfigs = {};
+let DEFAULT_PRODUCTS = null;
+let DEFAULT_CATEGORY_COLORS = null;
+let DEFAULT_LINES = null;
+let OHIO_PRODUCTS = null;
+let OHIO_CATEGORY_COLORS = null;
+let OHIO_LINES = null;
 const CATALOG_PRESETS = {
   'ohio-top150': {path: 'ohio_preset_catalog.json', label: 'Ohio Top 150'}
 };
@@ -332,6 +339,23 @@ function applyCatalogData(data) {
 function updateSubtitle() {
   document.getElementById('subtitle').textContent =
     `FRONT VIEW · Shape-based rendering · ${Object.keys(products).length} products · ${displays.length} displays · Drag across shelves & displays`;
+}
+
+function mergeCatalogSources() {
+  const mergedProducts = Object.assign({}, DEFAULT_PRODUCTS || {});
+  const mergedCategories = Object.assign({}, DEFAULT_CATEGORY_COLORS || {});
+  const mergedLines = Object.assign({}, DEFAULT_LINES || {});
+  if (OHIO_PRODUCTS) Object.assign(mergedProducts, OHIO_PRODUCTS);
+  if (OHIO_CATEGORY_COLORS) Object.assign(mergedCategories, OHIO_CATEGORY_COLORS);
+  if (OHIO_LINES) Object.assign(mergedLines, OHIO_LINES);
+
+  products = mergedProducts;
+  categoryColors = mergedCategories;
+  lineColors = {};
+  for (const [lid, info] of Object.entries(mergedLines)) {
+    lineColors[lid] = info.color;
+  }
+  CATALOG = { products, categories: categoryColors, lines: mergedLines };
 }
 
 async function loadCatalog() {
@@ -368,9 +392,21 @@ async function loadCatalogPreset(presetId) {
     const resp = await fetch(preset.path, {cache: 'no-store'});
     if (!resp.ok) throw new Error(preset.path + ' HTTP ' + resp.status);
     const data = await resp.json();
-    applyCatalogData(data);
+    OHIO_PRODUCTS = data.products || {};
+    OHIO_CATEGORY_COLORS = data.categories || {};
+    OHIO_LINES = data.lines || {};
+
+    if (!DEFAULT_PRODUCTS) {
+      applyCatalogData(data);
+      DEFAULT_PRODUCTS = Object.assign({}, products);
+      DEFAULT_CATEGORY_COLORS = Object.assign({}, categoryColors);
+      DEFAULT_LINES = Object.assign({}, CATALOG.lines || {});
+    } else {
+      mergeCatalogSources();
+    }
+
     displays = [];
-    buildDefaultDisplays();
+    buildDefaultDisplays(OHIO_PRODUCTS);
     localStorage.removeItem('planogram-autosave');
     updateSubtitle();
     renderAll();
@@ -580,13 +616,14 @@ function renderAll() {
 function renderInventory() {
   const container = document.getElementById('inventory-container');
   container.innerHTML = '';
+  const sourceProducts = products;
 
   for (const [cat, cfg] of Object.entries(INVENTORY_CATEGORIES)) {
     const skus = [];
-    for (const [sku, p] of Object.entries(products)) {
+    for (const [sku, p] of Object.entries(sourceProducts)) {
       if (cfg.lines.includes(p.line)) skus.push(sku);
     }
-    skus.sort();
+    skus.sort((a, b) => sortSkusByPerformance(a, b));
 
     const isCollapsed = collapsedInventories.has(cat);
 
@@ -1698,7 +1735,7 @@ function resetAll() {
   document.getElementById('sort-select').value = 'default';
   // Rebuild all displays from catalog
   displays = [];
-  buildDefaultDisplays();
+  buildDefaultDisplays(DEFAULT_PRODUCTS || products);
   localStorage.removeItem('planogram-autosave');
   renderAll();
   toast('Reset all displays');
@@ -1924,26 +1961,26 @@ function shortName(name) {
   return s;
 }
 
-function buildDefaultDisplays() {
+function sortSkusByPerformance(a, b) {
+  const pa = products[a] || {};
+  const pb = products[b] || {};
+  const ra = Number(pa.revenue || 0);
+  const rb = Number(pb.revenue || 0);
+  if (rb !== ra) return rb - ra;
+  const qa = Number(pa.qtySold || 0);
+  const qb = Number(pb.qtySold || 0);
+  if (qb !== qa) return qb - qa;
+  return String(a).localeCompare(String(b));
+}
+
+function buildDefaultDisplays(sourceProducts) {
+  const source = sourceProducts || products;
   // Group products by line, then sort by business performance.
   const byLine = {};
-  for (const [sku, p] of Object.entries(products)) {
+  for (const [sku, p] of Object.entries(source)) {
     const line = p.line || 'unknown';
     if (!byLine[line]) byLine[line] = [];
     byLine[line].push(sku);
-  }
-
-  // Sort SKUs by strongest business signal first.
-  function sortSkusByPerformance(a, b) {
-    const pa = products[a] || {};
-    const pb = products[b] || {};
-    const ra = Number(pa.revenue || 0);
-    const rb = Number(pb.revenue || 0);
-    if (rb !== ra) return rb - ra;
-    const qa = Number(pa.qtySold || 0);
-    const qb = Number(pb.qtySold || 0);
-    if (qb !== qa) return qb - qa;
-    return String(a).localeCompare(String(b));
   }
 
   // Pack a line into multiple fixed displays (3 shelves each).
@@ -2186,9 +2223,13 @@ function finishRename(display, newName, nameEl) {
 // ================================================================
 (async function init() {
   await loadCatalog();
+  DEFAULT_PRODUCTS = Object.assign({}, products);
+  DEFAULT_CATEGORY_COLORS = Object.assign({}, categoryColors);
+  DEFAULT_LINES = Object.assign({}, CATALOG.lines || {});
+  mergeCatalogSources();
 
   // Build default displays from catalog
-  buildDefaultDisplays();
+  buildDefaultDisplays(DEFAULT_PRODUCTS || products);
 
   // Restore auto-saved state (survives page refresh)
   restoreAutoSave();
