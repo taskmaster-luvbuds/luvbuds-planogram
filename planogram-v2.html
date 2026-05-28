@@ -184,6 +184,7 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;b
     <button class="btn" onclick="exportLayoutFile()" title="Download layout file for backup or transfer">📤 Export</button>
     <input type="file" id="import-file" accept=".json" style="display:none" onchange="importLayoutFile(event)">
     <button class="btn" onclick="document.getElementById('import-file').click()" title="Restore layout from a previously exported file">📥 Import</button>
+    <button class="btn" onclick="loadCatalogPreset('ohio-top150')" title="Load built-in Ohio Top 150 preset">Ohio Preset</button>
     <div class="config-wrap">
       <button class="btn" onclick="saveCurrentConfig()" title="Save current layout to browser storage">💾 Save</button>
       <button class="btn" onclick="toggleConfigDropdown(event)" title="Load a saved layout">📂 Load</button>
@@ -311,25 +312,72 @@ let activeLineFilter = null;
 	let activeDimFilter = null;  // null = all, 'has' = has dimensions, 'est' = estimated
 	let activeSort = 'default';  // 'default' | 'revenue-desc' | 'revenue-asc' | 'qty-desc' | 'qty-asc' | 'price-desc' | 'price-asc'
 		let savedConfigs = {};
+const CATALOG_PRESETS = {
+  'ohio-top150': {path: 'ohio_preset_catalog.json', label: 'Ohio Top 150'}
+};
 
 	// ================================================================
 //  DATA LOADING
 // ================================================================
+function applyCatalogData(data) {
+  CATALOG = data || {};
+  products = CATALOG.products || {};
+  categoryColors = CATALOG.categories || {};
+  lineColors = {};
+  for (const [lid, info] of Object.entries(CATALOG.lines || {})) {
+    lineColors[lid] = info.color;
+  }
+}
+
+function updateSubtitle() {
+  document.getElementById('subtitle').textContent =
+    `FRONT VIEW · Shape-based rendering · ${Object.keys(products).length} products · ${displays.length} displays · Drag across shelves & displays`;
+}
+
 async function loadCatalog() {
   try {
-    const resp = await fetch('catalog.json');
-    CATALOG = await resp.json();
-    products = CATALOG.products;
-    categoryColors = CATALOG.categories || {};
-    lineColors = {};
-    for (const [lid, info] of Object.entries(CATALOG.lines || {})) {
-      lineColors[lid] = info.color;
-    }
+    const resp = await fetch('catalog.json', {cache: 'no-store'});
+    if (!resp.ok) throw new Error('catalog.json HTTP ' + resp.status);
+    const data = await resp.json();
+    applyCatalogData(data);
   } catch (err) {
-    console.error('Failed to load catalog.json:', err);
-    document.getElementById('loading').innerHTML =
-      '<div style="color:#e94560;font-size:24px">✕</div><div>Failed to load catalog.json</div><div style="font-size:12px;color:#888">Run build_catalog.py first</div>';
-    throw err;
+    console.warn('Failed to load catalog.json, trying Ohio preset:', err);
+    const preset = CATALOG_PRESETS['ohio-top150'];
+    try {
+      const resp = await fetch(preset.path, {cache: 'no-store'});
+      if (!resp.ok) throw new Error(preset.path + ' HTTP ' + resp.status);
+      const data = await resp.json();
+      applyCatalogData(data);
+      toast('Loaded fallback preset: ' + preset.label);
+    } catch (presetErr) {
+      console.error('Failed to load fallback preset:', presetErr);
+      document.getElementById('loading').innerHTML =
+        '<div style="color:#e94560;font-size:24px">✕</div><div>Failed to load catalog</div><div style="font-size:12px;color:#888">Missing catalog.json and ohio_preset_catalog.json</div>';
+      throw presetErr;
+    }
+  }
+}
+
+async function loadCatalogPreset(presetId) {
+  const preset = CATALOG_PRESETS[presetId];
+  if (!preset) {
+    toast('Preset not found');
+    return;
+  }
+  try {
+    const resp = await fetch(preset.path, {cache: 'no-store'});
+    if (!resp.ok) throw new Error(preset.path + ' HTTP ' + resp.status);
+    const data = await resp.json();
+    applyCatalogData(data);
+    displays = [];
+    buildDefaultDisplays();
+    localStorage.removeItem('planogram-autosave');
+    updateSubtitle();
+    renderAll();
+    toast('Loaded preset: ' + preset.label);
+  } catch (err) {
+    console.error('Failed to load preset:', err);
+    toast('Preset load failed');
   }
 }
 
@@ -2082,8 +2130,7 @@ function finishRename(display, newName, nameEl) {
   document.getElementById('loading').style.display = 'none';
 
   // Update subtitle
-  document.getElementById('subtitle').textContent =
-    `FRONT VIEW · Shape-based rendering · ${Object.keys(products).length} products · ${displays.length} displays · Drag across shelves & displays`;
+  updateSubtitle();
 
   renderAll();
 })();
