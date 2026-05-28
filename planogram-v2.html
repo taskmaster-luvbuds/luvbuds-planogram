@@ -252,7 +252,7 @@ const SHELVES = [
 ];
 
 // Inventory categories — group lines into 3 browseable pools
-const INVENTORY_CATEGORIES = {
+const BASE_INVENTORY_CATEGORIES = {
   'herb':  { label: 'Herb Inventory',  lines: ['herb-green','herb-yellow'] },
   'glass': { label: 'Glass Inventory', lines: ['glass-green','glass-yellow'] },
   'vape':  { label: 'Vape Inventory',  lines: ['vape-green','vape-yellow'] },
@@ -514,6 +514,52 @@ function resolveBoxSku(sku) {
   return sku;
 }
 
+function getBoxConfigSkuList(cfg) {
+  const out = [];
+  const seen = new Set();
+  if (!cfg || !cfg.displays) return out;
+  cfg.displays.forEach(d => {
+    ['top','mid','bot'].forEach(sid => {
+      (d.shelves[sid] || []).forEach(rawSku => {
+        const sku = resolveBoxSku(rawSku);
+        if (!sku || seen.has(sku)) return;
+        seen.add(sku);
+        out.push(sku);
+      });
+    });
+  });
+  return out;
+}
+
+function buildInventorySections() {
+  const sections = [];
+
+  // Core inventories
+  for (const [cat, cfg] of Object.entries(BASE_INVENTORY_CATEGORIES)) {
+    const skus = [];
+    for (const [sku, p] of Object.entries(products)) {
+      if (cfg.lines.includes(p.line)) skus.push(sku);
+    }
+    skus.sort((a, b) => sortSkusByPerformance(a, b));
+    sections.push({id: cat, label: cfg.label, skus});
+  }
+
+  // Premade box inventories
+  const allBoxSkus = new Set();
+  for (const [key, cfg] of Object.entries(BOX_CONFIGURATIONS)) {
+    const skus = getBoxConfigSkuList(cfg).filter(sku => !!products[sku]);
+    skus.forEach(s => allBoxSkus.add(s));
+    sections.push({id: 'box-' + key, label: cfg.label + ' Box', skus});
+  }
+
+  // Combined QR catalog inventory across all curated boxes
+  const qrSkus = Array.from(allBoxSkus);
+  qrSkus.sort((a, b) => sortSkusByPerformance(a, b));
+  sections.push({id: 'box-qr-catalog', label: 'QR Catalog', skus: qrSkus});
+
+  return sections;
+}
+
 function applyBoxConfiguration(key) {
   const cfg = BOX_CONFIGURATIONS[key];
   if (!cfg) {
@@ -756,14 +802,11 @@ function renderAll() {
 function renderInventory() {
   const container = document.getElementById('inventory-container');
   container.innerHTML = '';
-  const sourceProducts = products;
+  const sections = buildInventorySections();
 
-  for (const [cat, cfg] of Object.entries(INVENTORY_CATEGORIES)) {
-    const skus = [];
-    for (const [sku, p] of Object.entries(sourceProducts)) {
-      if (cfg.lines.includes(p.line)) skus.push(sku);
-    }
-    skus.sort((a, b) => sortSkusByPerformance(a, b));
+  for (const sectionData of sections) {
+    const cat = sectionData.id;
+    const skus = sectionData.skus || [];
 
     const isCollapsed = collapsedInventories.has(cat);
 
@@ -774,7 +817,7 @@ function renderInventory() {
     header.className = 'inv-header';
     header.onclick = () => { toggleInventory(cat); };
     header.innerHTML = `<span class="inv-caret">${isCollapsed ? '▸' : '▾'}</span>
-      <span>${cfg.label}</span>
+      <span>${sectionData.label}</span>
       <span class="inv-count">${skus.length} SKUs</span>`;
     section.appendChild(header);
 
